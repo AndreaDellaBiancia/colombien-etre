@@ -2,7 +2,7 @@
     position: fixed;
     width: 100%;
     z-index: 9999;
-    border-bottom:1px solid #5eaabd;
+    border-bottom: 1px solid #5eaabd;
 }
 
 .nav_list {
@@ -93,7 +93,6 @@ p {
 }
 
 article {
-
     display: flex;
     justify-content: center;
 }
@@ -117,7 +116,7 @@ article h3 {
 .home-shop_title {
     font-family: 'Dancing Script', cursive;
     color: #5eaabd;
-    margin: 7rem 0 2rem;
+    margin: 7rem 0 1rem;
     font-size: 2.5rem;
     text-align: center;
 }
@@ -128,84 +127,100 @@ article h3 {
     font-weight: 700;
 }
 
-.home-shop_title-img {
-    width: 50px;
-    float: right;
-}
-
 .home-shop {
-    margin-top: 4rem;
+    margin-top: 3.5rem;
     display: flex;
     justify-content: center;
+    box-sizing: border-box;
 }
-
-
 
 .home-shop-left {
     width: 30%;
     margin-right: 2rem;
-    box-sizing: border-box;
-    height: 900px;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .home-shop-left img {
-    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.home-shop-left h3{
+    position: absolute;
+    font-size: 2rem;
+    color: red;
+    padding: 1.5rem 2rem;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.home-shop-left h3:hover{
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #5eaabd;
+    padding: 2rem 2.5rem;
+    background-color: rgba(255, 255, 255);
+    transition: 1.4s;
 }
 
 .home-shop-right {
-    box-sizing: border-box;
     width: 60%;
-    height: 700px;
     display: flex;
     flex-wrap: wrap;
-    
 }
 
 .shop-item {
-    box-sizing: border-box;
     width: calc(100% / 3);
     display: flex;
     flex-wrap: wrap;
-    height: 700px; 
-    padding: 1rem;  
-    align-self: center; 
+    height: 600px;
+    padding: 1rem;
+    align-self: center;
+}
+.shop-item:hover{
+    transition: 1.1s;
+    transform: translate(-26px, -20px);
+    box-shadow: 3px 3px  4px  #afb2b3;
 }
 
 .shop-item img {
-    display: inline-block;
-    height: 50%;
+    max-width: 100%;
+    max-height: 60%;
 }
 
 .item-detail {
     display: block;
     text-transform: uppercase;
     align-self: flex-end;
-    height: 30%;
+    max-height: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0;
-    
+
 }
 
-.item-title{
+.item-title {
     font-size: 1.2rem;
     font-weight: bold;
 }
 
-.item-price{
+.item-price {
     margin-top: 2rem;
     font-size: 1.5rem;
 }
 
-.item-show{
+.item-show {
     text-align: center;
-    width: 100%; 
+    max-width: 100%;
     background-color: #5eaabd;
     padding: 0.5rem 4.5rem;
     border-radius: 10px;
 }
-.item-show p{
-   margin: 0;
-   color: white;
+
+.item-show p {
+    margin: 0;
+    color: white;
 }
