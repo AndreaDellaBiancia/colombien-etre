@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Colombienetre{% endblock %}
+
+{% block body %}
+
+<ul class="fil-ariane">
+    <li>
+        <a href="{{ path('home') }}">Accueil</a>
+    </li>
+    <li>></li>
+    <li>Corps & Esprit</li>
+</ul>
+
+<section class="corps-esprit-cards">
+    <article>
+        <a href="">
+            <div><img src="{{ asset('assets/images/alimentation.jpg') }}" alt=""></div>
+            <h2>Alimentation</h2>
+        </a>
+    </article>
+    <article>
+        <a href="">
+            <div><img src="{{ asset('assets/images/sport.jpg') }}" alt=""></div>
+            <h2>Sport</h2>
+        </a>
+    </article>
+    <article>
+        <a href="">
+            <div><img src="{{ asset('assets/images/massage.jpg') }}" alt=""></div>
+            <h2>Massages</h2>
+        </a>
+    </article>
+    <article>
+        <a href="">
+            <div><img src="{{ asset('assets/images/perma.jpg') }}" alt=""></div>
+            <h2>Permathérapie</h2>
+        </a>
+    </article>
+    <article>
+        <a href="">
+            <div><img src="{{ asset('assets/images/fleurs.jpg') }}" alt=""></div>
+            <h2>Fleurs de Bach</h2>
+        </a>
+    </article>
+    <article>
+        <a href="">
+            <div><img src="{{ asset('assets/images/hypnose.jpg') }}" alt=""></div>
+            <h2>Autohypnose</h2>
+        </a>
+    </article>
+    <article>
+        <a href="">
+            <div><img src="{{ asset('assets/images/reiki.jpg') }}" alt=""></div>
+            <h2>Reiki</h2>
+        </a>
+    </article>
+    <article>
+        <a href="">
+            <div><img src="{{ asset('assets/images/phyto.jpg') }}" alt=""></div>
+            <h2>Phytothérapie</h2>
+        </a>
+    </article>
+    <article>
+        <a href="">
+            <div><img src="{{ asset('assets/images/meditation.jpg') }}" alt=""></div>
+            <h2>Meditation</h2>
+        </a>
+    </article>
+</section>
+
+{% endblock %}
