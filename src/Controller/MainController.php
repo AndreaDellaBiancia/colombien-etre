@@ -25,7 +25,7 @@ class MainController extends AbstractController
     }
 
     /**
-    * @Route("/qui-suis-je?", name="quiSuisJe")
+    * @Route("/qui-suis-je", name="quiSuisJe")
     */
     public function quiSuisJe(): Response
     {
