@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<ul class="fil-ariane">
+    <li>
+        <a href="{{ path('home') }}">Accueil</a>
+    </li>
+    <li>></li>
+    <li><a href="{{ path('corpsEsprit') }}">Corps & Esprit</a></li>
+    <li>></li>
+    <li>Sport</li>
+</ul>
+
+<section class="posts">
+
+    <div class="posts_menu">
+
+        <h2>Sport</h2>
+
+        <div class="search-form">
+            <form action="">
+                <input class="" name="search" type="search" placeholder="Rechercher...">
+                <button class="btn btn-outline-danger" type="submit"><i class="bi bi-search"></i></button>
+
+            </form>
+        </div>
+    </div>
+
+    <article class="post">
+        <img src="https://images.pexels.com/photos/317157/pexels-photo-317157.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt="">
+        <div class="post_description">
+            <h3>Sport</h3>
+            <p class="post_p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat blanditiis vitae
+                maiores, totam corrupti reiciendis corporis dicta molestiae. Explicabo tempora ea tenetur blanditiis
+                minus!</p>
+            <p class="post_show">Lire la suite</p>
+        </div>
+    </article>
+    <article class="post">
+        <img src="https://images.pexels.com/photos/317157/pexels-photo-317157.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt="">
+        <div class="post_description">
+            <h3>Sport</h3>
+            <p class="post_p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat blanditiis vitae
+                maiores, totam corrupti reiciendis corporis dicta molestiae. Explicabo tempora ea tenetur blanditiis
+                minus!</p>
+            <p class="post_show">Lire la suite</p>
+        </div>
+    </article>
+    <article class="post">
+        <img src="https://images.pexels.com/photos/317157/pexels-photo-317157.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt="">
+        <div class="post_description">
+            <h3>Sport</h3>
+            <p class="post_p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat blanditiis vitae
+                maiores, totam corrupti reiciendis corporis dicta molestiae. Explicabo tempora ea tenetur blanditiis
+                minus!</p>
+            <p class="post_show">Lire la suite</p>
+        </div>
+    </article>
+
+</section>
+
+{% endblock %}

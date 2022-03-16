@@ -13,7 +13,7 @@ class FeedController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('feed/index.html.twig', [
+        return $this->render('front/feed/index.html.twig', [
             'controller_name' => 'FeedController',
         ]);
     }

@@ -9,11 +9,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class BachFlowerController extends AbstractController
 {
     /**
-     * @Route("/bach/flower", name="app_bach_flower")
+     * @Route("/fleurs-de-bach", name="bachFlower")
      */
     public function index(): Response
     {
-        return $this->render('bach_flower/index.html.twig', [
+        return $this->render('front/bachFlower/index.html.twig', [
             'controller_name' => 'BachFlowerController',
         ]);
     }

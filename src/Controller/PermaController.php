@@ -9,11 +9,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class PermaController extends AbstractController
 {
     /**
-     * @Route("/perma", name="app_perma")
+     * @Route("/permatherapie", name="perma")
      */
     public function index(): Response
     {
-        return $this->render('perma/index.html.twig', [
+        return $this->render('front/perma/index.html.twig', [
             'controller_name' => 'PermaController',
         ]);
     }

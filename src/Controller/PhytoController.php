@@ -9,11 +9,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class PhytoController extends AbstractController
 {
     /**
-     * @Route("/phyto", name="app_phyto")
+     * @Route("/phytotherapie", name="phyto")
      */
     public function index(): Response
     {
-        return $this->render('phyto/index.html.twig', [
+        return $this->render('front/phyto/index.html.twig', [
             'controller_name' => 'PhytoController',
         ]);
     }

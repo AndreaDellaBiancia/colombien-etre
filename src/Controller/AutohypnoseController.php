@@ -9,11 +9,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class AutohypnoseController extends AbstractController
 {
     /**
-     * @Route("/autohypnose", name="app_autohypnose")
+     * @Route("/autohypnose", name="autohypnose")
      */
     public function index(): Response
     {
-        return $this->render('autohypnose/index.html.twig', [
+        return $this->render('front/autohypnose/index.html.twig', [
             'controller_name' => 'AutohypnoseController',
         ]);
     }

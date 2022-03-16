@@ -13,7 +13,7 @@ class MainController extends AbstractController
      */
     public function home(): Response
     {
-        return $this->render('main/home.html.twig');
+        return $this->render('front/main/home.html.twig');
     }
 
     /**
@@ -21,7 +21,7 @@ class MainController extends AbstractController
     */
     public function corpsEsprit(): Response
     {
-        return $this->render('main/corpsEsprit.html.twig');
+        return $this->render('front/main/corpsEsprit.html.twig');
     }
 
     /**
@@ -29,6 +29,6 @@ class MainController extends AbstractController
     */
     public function quiSuisJe(): Response
     {
-        return $this->render('main/quiSuisJe.html.twig');
+        return $this->render('front/main/quiSuisJe.html.twig');
     }
 }

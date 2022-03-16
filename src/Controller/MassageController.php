@@ -9,11 +9,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class MassageController extends AbstractController
 {
     /**
-     * @Route("/massage", name="app_massage")
+     * @Route("/massages", name="massage")
      */
     public function index(): Response
     {
-        return $this->render('massage/index.html.twig', [
+        return $this->render('front/massage/index.html.twig', [
             'controller_name' => 'MassageController',
         ]);
     }

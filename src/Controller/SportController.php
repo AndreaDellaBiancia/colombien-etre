@@ -9,11 +9,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class SportController extends AbstractController
 {
     /**
-     * @Route("/sport", name="app_sport")
+     * @Route("/sport", name="sport")
      */
     public function index(): Response
     {
-        return $this->render('sport/index.html.twig', [
+        return $this->render('front/sport/index.html.twig', [
             'controller_name' => 'SportController',
         ]);
     }

@@ -9,11 +9,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class ReikiController extends AbstractController
 {
     /**
-     * @Route("/reiki", name="app_reiki")
+     * @Route("/reiki", name="reiki")
      */
     public function index(): Response
     {
-        return $this->render('reiki/index.html.twig', [
+        return $this->render('front/reiki/index.html.twig', [
             'controller_name' => 'ReikiController',
         ]);
     }
