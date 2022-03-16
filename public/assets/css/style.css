@@ -354,48 +354,77 @@ p {
   font-size: 1.1rem;
 }
 
-.feed h2 {
+.posts_menu{
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+ justify-items: center;
+  
+}
+
+.posts h2 {
+  display: block;
   font-family: 'Caveat', cursive;
   color: red;
   font-size: 3.5rem;
-  text-align: center;
   margin-top: 3rem;
 }
 
-.feed_post {
+.search-form{
+  align-self: flex-end;
+  margin-right: 20rem;
+  margin-top: 2rem;
+ }
+
+.search-form input {
+  justify-self: end;
+  height: 2rem;
+}
+
+.search-form form {
+  font-size: 0;
+}
+
+.search-form button {
+  width: 2rem;
+  height: 2rem;
+}
+
+.post {
   display: flex;
   font-size: 0;
-  width: 60%;
+  width: 50%;
   margin: 5rem auto;
   background-color: rgb(240, 238, 238);
 }
 
 
-.feed img {
+.post img {
   font-size: 0;
   max-width: 50%;
   background-color: rgb(240, 238, 238);
 }
 
-.feed_description {
+.post_description {
   width: 50%;
   background-color: white;
   position: relative;
   margin: 2rem 0 2rem -2rem;
+  padding-bottom: 2rem;
   
 
 }
 
 
-.feed_description h3 {
+.post_description h3 {
   font-size: 2rem;
   font-weight: bold;
   margin: 2rem 0;
   text-align: center;
 }
 
-.feed_p {
-  font-size: 1.5rem;
+.post_p {
+  font-size: 1.2rem;
   padding: 0 0.5rem 0 0.5rem;
   text-align: center;
   line-height: 1.3rem;
@@ -403,7 +432,7 @@ p {
 
 }
 
-.feed_description_show {
+.post_show {
   margin: 0 auto;
   text-transform: uppercase;
   text-align: center;
@@ -412,24 +441,14 @@ p {
   font-weight: bold;
   color: #5eaabd;
   font-size: 1rem;
+  margin-top: 2rem;
   padding: 0.5rem 1rem;
+  
 }
 
-.feed_description_show:hover {
+.post_show:hover {
   color: white;
   background-color: #5eaabd;
 }
 
-form input {
-  height: 2rem;
-}
 
-form {
-  font-size: 0;
-}
-
-form button {
-  width: 2rem;
-  height: 2rem;
-
-}
