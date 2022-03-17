@@ -210,13 +210,14 @@ p {
 }
 
 .shop_item-title {
+  margin-top: 0.5rem;
   font-size: 1.2rem;
   font-weight: bold;
+  height: 4rem;
 }
 
 .shop_item-brand{
   font-size: 1rem;
-  margin: 1rem 0;
 }
 
 .shop_item-description{
@@ -461,9 +462,22 @@ p {
   color: white;
   background-color: #5eaabd;
 }
+.shop{
+display: flex ;
+}
+
+.filters{
+  box-sizing: border-box;
+  margin-top: 5rem;
+  width: 15%;
+  border: 1px solid black;
+  height: 500px;
+}
 
 
-.shop_filters{
+
+
+/* .shop_filters{
   margin: 3rem auto;
   max-width: 55%;
   display: flex;
@@ -483,7 +497,7 @@ p {
  border: 0px;
  color: black;
  font-weight: 400;
-}
+} */
 
 .shop_item-list{
   max-width: 80%;
