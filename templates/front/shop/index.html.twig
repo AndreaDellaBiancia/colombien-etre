@@ -10,6 +10,8 @@
     <li>></li>
     <li>Boutique</li>
 </ul>
+<p class="found-items">Produits totales : {{totalProducts}}</p>
+
 
 <section class="shop">
 
@@ -23,216 +25,38 @@
         <li>Entretien</li>
         <li>Tous les produits</li>
     </ul>
-    <p class="found-items">Produits trouvés : </p> #}
+     #}
+
     <div class="filters">
-    <p>jsdhosdzefzezefzeffeezfzef</p>
+        <form action="{{path('searchProduct')}}">
+            <input type="search" name="q" placeholder="Search" required="required">
+            <input type="submit" value="Go">
+        </form>
+
+        {% if foundProducts is defined %}
+        <p>Vous avez recherché : {{ searchTerm }}</p>
+        <p>Produits trouvés : {{ foundProducts }}</p>
+        {% else %}
+        <p>Vous avez recherché : {{ app.request.get('q') }}</p>
+        <p>Produits trouvés : 0</p>
+        {% endif %}
+
+        
     </div>
     <div class="shop_item-list">
+        {% for product in products %}
         <article class="shop_item">
-            <img src="https://profumeriemediterraneo.it/13780-large_default/dikson-gel-noir-per-capelli-gel-modellante-nero-per-capelli-grigi-100ml.jpg"
-                alt="">
+            <img src="{{product.picture}}" alt="">
             <div class="shop_item-detail">
-                <h4 class="shop_item-brand">Nivea</h4>
-                <h3 class="shop_item-title">Gel bum</h3>
-                <p class="shop_item-description"></p>
-                <p class="shop_item-price">€ 20 </p>
-                <a class="shop_item-show" href="">
+                <h4 class="shop_item-brand">{{product.brand}}</h4>
+                <h3 class="shop_item-title">{{product.title}}</h3>
+                <p class="shop_item-price">€ {{product.price}} </p>
+                <a class="shop_item-show" href="{{ product.source }}">
                     <p>Voir le produit</p>
                 </a>
             </div>
         </article>
-        <article class="shop_item">
-            <img src="https://profumeriemediterraneo.it/13780-large_default/dikson-gel-noir-per-capelli-gel-modellante-nero-per-capelli-grigi-100ml.jpg"
-                alt="">
-            <div class="shop_item-detail">
-                <h4 class="shop_item-brand">Nivea</h4>
-                <h3 class="shop_item-title">Shampooing solide eiohzefhoih zefoihzfio fzeihfiozhiozfiop</h3>
-
-                <p class="shop_item-price">€ 20 </p>
-                <a class="shop_item-show" href="">
-                    <p>Voir le produit</p>
-                </a>
-            </div>
-        </article>
-        <article class="shop_item">
-            <img src="https://profumeriemediterraneo.it/13780-large_default/dikson-gel-noir-per-capelli-gel-modellante-nero-per-capelli-grigi-100ml.jpg"
-                alt="">
-            <div class="shop_item-detail">
-                <h3 class="shop_item-title">Gel cheveux</h3>
-                <h4 class="shop_item-brand">Nivea</h4>
-                <p class="shop_item-description"></p>
-                <p class="shop_item-price">€ 20 </p>
-                <a class="shop_item-show" href="">
-                    <p>Voir le produit</p>
-                </a>
-            </div>
-        </article>
-        <article class="shop_item">
-            <img src="https://profumeriemediterraneo.it/13780-large_default/dikson-gel-noir-per-capelli-gel-modellante-nero-per-capelli-grigi-100ml.jpg"
-                alt="">
-            <div class="shop_item-detail">
-                <h3 class="shop_item-title">Gel cheveux</h3>
-                <h4 class="shop_item-brand">Nivea</h4>
-                <p class="shop_item-price">€ 20 </p>
-                <a class="shop_item-show" href="">
-                    <p>Voir le produit</p>
-                </a>
-            </div>
-        </article>
-        <article class="shop_item">
-            <img src="https://profumeriemediterraneo.it/13780-large_default/dikson-gel-noir-per-capelli-gel-modellante-nero-per-capelli-grigi-100ml.jpg"
-                alt="">
-            <div class="shop_item-detail">
-                <h3 class="shop_item-title">Gel cheveux</h3>
-                <h4 class="shop_item-brand">Nivea</h4>
-                <p class="shop_item-price">€ 20 </p>
-                <a class="shop_item-show" href="">
-                    <p>Voir le produit</p>
-                </a>
-            </div>
-        </article>
-        <article class="shop_item">
-            <img src="https://profumeriemediterraneo.it/13780-large_default/dikson-gel-noir-per-capelli-gel-modellante-nero-per-capelli-grigi-100ml.jpg"
-                alt="">
-            <div class="shop_item-detail">
-                <h3 class="shop_item-title">Gel cheveux</h3>
-                <h4 class="shop_item-brand">Nivea</h4>
-                <p class="shop_item-price">€ 20 </p>
-                <a class="shop_item-show" href="">
-                    <p>Voir le produit</p>
-                </a>
-            </div>
-        </article>
-        <article class="shop_item">
-            <img src="https://profumeriemediterraneo.it/13780-large_default/dikson-gel-noir-per-capelli-gel-modellante-nero-per-capelli-grigi-100ml.jpg"
-                alt="">
-            <div class="shop_item-detail">
-                <h4 class="shop_item-brand">Nivea</h4>
-                <h3 class="shop_item-title">Shampooing solide eiohzefhoih zefoihzfio fzeihfiozhiozfiop</h3>
-
-                <p class="shop_item-price">€ 20 </p>
-                <a class="shop_item-show" href="">
-                    <p>Voir le produit</p>
-                </a>
-            </div>
-        </article>
-        <article class="shop_item">
-            <img src="https://profumeriemediterraneo.it/13780-large_default/dikson-gel-noir-per-capelli-gel-modellante-nero-per-capelli-grigi-100ml.jpg"
-                alt="">
-            <div class="shop_item-detail">
-                <h4 class="shop_item-brand">Nivea</h4>
-                <h3 class="shop_item-title">Shampooing solide eiohzefhoih zefoihzfio fzeihfiozhiozfiop</h3>
-
-                <p class="shop_item-price">€ 20 </p>
-                <a class="shop_item-show" href="">
-                    <p>Voir le produit</p>
-                </a>
-            </div>
-        </article>
-        <article class="shop_item">
-            <img src="https://profumeriemediterraneo.it/13780-large_default/dikson-gel-noir-per-capelli-gel-modellante-nero-per-capelli-grigi-100ml.jpg"
-                alt="">
-            <div class="shop_item-detail">
-                <h4 class="shop_item-brand">Nivea</h4>
-                <h3 class="shop_item-title">Shampooing solide eiohzefhoih zefoihzfio fzeihfiozhiozfiop</h3>
-
-                <p class="shop_item-price">€ 20 </p>
-                <a class="shop_item-show" href="">
-                    <p>Voir le produit</p>
-                </a>
-            </div>
-        </article>
-        <article class="shop_item">
-            <img src="https://profumeriemediterraneo.it/13780-large_default/dikson-gel-noir-per-capelli-gel-modellante-nero-per-capelli-grigi-100ml.jpg"
-                alt="">
-            <div class="shop_item-detail">
-                <h4 class="shop_item-brand">Nivea</h4>
-                <h3 class="shop_item-title">Shampooing solide eiohzefhoih zefoihzfio fzeihfiozhiozfiop</h3>
-
-                <p class="shop_item-price">€ 20 </p>
-                <a class="shop_item-show" href="">
-                    <p>Voir le produit</p>
-                </a>
-            </div>
-        </article>
-        <article class="shop_item">
-            <img src="https://profumeriemediterraneo.it/13780-large_default/dikson-gel-noir-per-capelli-gel-modellante-nero-per-capelli-grigi-100ml.jpg"
-                alt="">
-            <div class="shop_item-detail">
-                <h4 class="shop_item-brand">Nivea</h4>
-                <h3 class="shop_item-title">Shampooing solide eiohzefhoih zefoihzfio fzeihfiozhiozfiop</h3>
-
-                <p class="shop_item-price">€ 20 </p>
-                <a class="shop_item-show" href="">
-                    <p>Voir le produit</p>
-                </a>
-            </div>
-        </article>
-        <article class="shop_item">
-            <img src="https://profumeriemediterraneo.it/13780-large_default/dikson-gel-noir-per-capelli-gel-modellante-nero-per-capelli-grigi-100ml.jpg"
-                alt="">
-            <div class="shop_item-detail">
-                <h4 class="shop_item-brand">Nivea</h4>
-                <h3 class="shop_item-title">Shampooing solide eiohzefhoih zefoihzfio fzeihfiozhiozfiop</h3>
-
-                <p class="shop_item-price">€ 20 </p>
-                <a class="shop_item-show" href="">
-                    <p>Voir le produit</p>
-                </a>
-            </div>
-        </article>
-        <article class="shop_item">
-            <img src="https://profumeriemediterraneo.it/13780-large_default/dikson-gel-noir-per-capelli-gel-modellante-nero-per-capelli-grigi-100ml.jpg"
-                alt="">
-            <div class="shop_item-detail">
-                <h4 class="shop_item-brand">Nivea</h4>
-                <h3 class="shop_item-title">Shampooing solide eiohzefhoih zefoihzfio fzeihfiozhiozfiop</h3>
-
-                <p class="shop_item-price">€ 20 </p>
-                <a class="shop_item-show" href="">
-                    <p>Voir le produit</p>
-                </a>
-            </div>
-        </article>
-        <article class="shop_item">
-            <img src="https://profumeriemediterraneo.it/13780-large_default/dikson-gel-noir-per-capelli-gel-modellante-nero-per-capelli-grigi-100ml.jpg"
-                alt="">
-            <div class="shop_item-detail">
-                <h4 class="shop_item-brand">Nivea</h4>
-                <h3 class="shop_item-title">Shampooing solide eiohzefhoih zefoihzfio fzeihfiozhiozfiop</h3>
-
-                <p class="shop_item-price">€ 20 </p>
-                <a class="shop_item-show" href="">
-                    <p>Voir le produit</p>
-                </a>
-            </div>
-        </article>
-        <article class="shop_item">
-            <img src="https://profumeriemediterraneo.it/13780-large_default/dikson-gel-noir-per-capelli-gel-modellante-nero-per-capelli-grigi-100ml.jpg"
-                alt="">
-            <div class="shop_item-detail">
-                <h4 class="shop_item-brand">Nivea</h4>
-                <h3 class="shop_item-title">Shampooing solide eiohzefhoih zefoihzfio fzeihfiozhiozfiop</h3>
-
-                <p class="shop_item-price">€ 20 </p>
-                <a class="shop_item-show" href="">
-                    <p>Voir le produit</p>
-                </a>
-            </div>
-        </article>
-        <article class="shop_item">
-            <img src="https://profumeriemediterraneo.it/13780-large_default/dikson-gel-noir-per-capelli-gel-modellante-nero-per-capelli-grigi-100ml.jpg"
-                alt="">
-            <div class="shop_item-detail">
-                <h4 class="shop_item-brand">Nivea</h4>
-                <h3 class="shop_item-title">Shampooing solide eiohzefhoih zefoihzfio fzeihfiozhiozfiop</h3>
-
-                <p class="shop_item-price">€ 20 </p>
-                <a class="shop_item-show" href="">
-                    <p>Voir le produit</p>
-                </a>
-            </div>
-        </article>
+        {% endfor %}
     </div>
 
 </section>

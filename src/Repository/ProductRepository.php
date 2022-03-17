@@ -45,6 +45,27 @@ class ProductRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * @return Product[] Returns an array of Product objects
+     */
+    public function findAllBySearchTerm($searchTerm)
+    {
+        return
+            // SELECT * FROM tv_show
+            // tvshow est un alias representant l'entité TvShow (côté SQL la table tv_show)
+            // on peut donner le nom que l'on veut à cet alias
+            $this->createQueryBuilder('product')
+
+            // WHERE title LIKE searchTerm
+            ->andWhere('product.tag LIKE :searchTerm')
+            ->orWhere('product.title LIKE :searchTerm')
+            ->orWhere('product.brand LIKE :searchTerm')
+            ->setParameter(':searchTerm', "%$searchTerm%")
+
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Product[] Returns an array of Product objects
     //  */
