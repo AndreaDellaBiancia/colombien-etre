@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<ul class="fil-ariane">
+    <li>
+        <a href="{{ path('home') }}">Accueil</a>
+    </li>
+    <li>></li>
+    <li><a href="{{ path('corpsEsprit') }}">Corps & Esprit</a></li>
+    <li>></li>
+    <li>Phytothérapie</li>
+</ul>
+
+<section class="posts">
+
+    <div class="posts_menu">
+
+        <h2>Phytothérapie</h2>
+
+        <div class="search-form">
+            <form action="">
+                <input class="" name="search" type="search" placeholder="Rechercher...">
+                <button class="btn btn-outline-danger" type="submit"><i class="bi bi-search"></i></button>
+
+            </form>
+        </div>
+    </div>
+
+    <article class="post">
+        <img src="https://img-3.journaldesfemmes.fr/OcoswFme7m_qyUnLcOZBZWvEqTg=/1500x/smart/6eeafdefbe15407fbadb010e41f6abcd/ccmcms-jdf/11530402.jpg"
+            alt="">
+        <div class="post_description">
+            <h3>Phytothérapie</h3>
+            <p class="post_p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat blanditiis vitae
+                maiores, totam corrupti reiciendis corporis dicta molestiae. Explicabo tempora ea tenetur blanditiis
+                minus!</p>
+            <p class="post_show">Lire la suite</p>
+        </div>
+    </article>
+    <article class="post">
+        <img src="https://img-3.journaldesfemmes.fr/OcoswFme7m_qyUnLcOZBZWvEqTg=/1500x/smart/6eeafdefbe15407fbadb010e41f6abcd/ccmcms-jdf/11530402.jpg"
+            alt="">
+        <div class="post_description">
+            <h3>Phytothérapie</h3>
+            <p class="post_p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat blanditiis vitae
+                maiores, totam corrupti reiciendis corporis dicta molestiae. Explicabo tempora ea tenetur blanditiis
+                minus!</p>
+            <p class="post_show">Lire la suite</p>
+        </div>
+    </article>
+    <article class="post">
+        <img src="https://img-3.journaldesfemmes.fr/OcoswFme7m_qyUnLcOZBZWvEqTg=/1500x/smart/6eeafdefbe15407fbadb010e41f6abcd/ccmcms-jdf/11530402.jpg"
+            alt="">
+        <div class="post_description">
+            <h3>Phytothérapie</h3>
+            <p class="post_p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat blanditiis vitae
+                maiores, totam corrupti reiciendis corporis dicta molestiae. Explicabo tempora ea tenetur blanditiis
+                minus!</p>
+            <p class="post_show">Lire la suite</p>
+        </div>
+    </article>
+
+</section>
+
+{% endblock %}

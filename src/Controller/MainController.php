@@ -11,10 +11,24 @@ class MainController extends AbstractController
     /**
      * @Route("", name="home")
      */
-    public function index(): Response
+    public function home(): Response
     {
-        return $this->render('main/index.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
+        return $this->render('front/main/home.html.twig');
+    }
+
+    /**
+    * @Route("/corps-esprit", name="corpsEsprit")
+    */
+    public function corpsEsprit(): Response
+    {
+        return $this->render('front/main/corpsEsprit.html.twig');
+    }
+
+    /**
+    * @Route("/qui-suis-je", name="quiSuisJe")
+    */
+    public function quiSuisJe(): Response
+    {
+        return $this->render('front/main/quiSuisJe.html.twig');
     }
 }

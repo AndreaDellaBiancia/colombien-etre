@@ -7,16 +7,21 @@
          </li>
 
          <li  class="nav_list_item">
-            <a class="nav_link"  href="" >Accueil</a>
+            <a class="nav_link"  href="{{ path('home') }}" >Accueil</a>
          </li>
 
          <li class="nav_list_item">
-            <a class="nav_link" href="">Corps & esprit</a>
+            <a class="nav_link" href="{{ path('corpsEsprit') }}">Corps & esprit</a>
             <div class="nav_links_children">
-               <a href="" class="nav_link_child">Sport</a>
-               <a href="" class="nav_link_child">EFT</a>
-               <a href="" class="nav_link_child">Autohypnose</a>
-               <a href="" class="nav_link_child">Reki</a>
+               <a href="{{ path('feed') }}" class="nav_link_child">Alimentation</a>
+               <a href="{{ path('sport') }}" class="nav_link_child">Sport</a>
+               <a href="{{ path('massage') }}" class="nav_link_child">Massages</a>
+               <a href="{{ path('perma') }}" class="nav_link_child">Permathérapie</a>
+               <a href="{{ path('bachFlower') }}" class="nav_link_child">Fleurs de Bach</a>
+               <a href="{{ path('autohypnose') }}" class="nav_link_child">Autohypnose</a>
+               <a href="{{ path('reiki') }}" class="nav_link_child">Reiki</a>
+               <a href="{{ path('phyto') }}" class="nav_link_child">Phytothérapie</a>
+               <a href="{{ path('meditation') }}" class="nav_link_child">Méditation</a>
             </div>
          </li>
             
@@ -31,17 +36,11 @@
          </li>
 
          <li class="nav_list_item">
-            <a class="nav_link" href="">Conseils santé</a>
-            <div class="nav_links_children">
-               <a href="" class="nav_link_child">E</a>
-               <a href="" class="nav_link_child">F</a>
-               <a href="" class="nav_link_child">G</a>
-               <a href="" class="nav_link_child">H</a>
-            </div>
+            <a class="nav_link" href="{{ path('shop') }}">Boutique</a>
          </li>
 
          <li class="nav_list_item">
-            <a class="nav_link" href="">Qui suis-je ?</a>
+            <a class="nav_link" href="{{ path('quiSuisJe') }}">Qui suis-je ?</a>
          </li>
          
       </ul>      
