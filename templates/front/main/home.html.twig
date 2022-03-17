@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Colombienetre{% endblock %}
+
+{% block body %}
+
+<img class="main-img" src="{{ asset('assets/images/home.jpg') }} " alt="Femme sur balançoire devant cascade">
+
+<section class="home-description">
+    <h2>Titre de niveau H2</h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, modi magnam! Expedita illo mollitia eius
+        adipisci libero, voluptas inventore, nemo quasi sequi necessitatibus labore voluptate possimus sed assumenda sit
+        beatae?
+        Amet aliquam doloribus earum mollitia perspiciatis error omnis asperiores modi, optio velit sint labore
+        obcaecati laborum aspernatur magnam aperiam voluptatum suscipit quis inventore deleniti expedita. Assumenda
+        blanditiis porro amet quaerat?
+        excepturi?</p>
+</section>
+
+<section class="home-cards">
+    <article class="home-card">
+        <img src="{{ asset('assets/images/bien-etrecorps.jpeg') }}" alt="">
+        <div>
+            <h3>Bien-être dans son corps</h3>
+        </div>
+    </article>
+    <article class="home-card">
+        <img src="{{ asset('assets/images/bien-etretete.jpeg') }}" alt="">
+        <div>
+            <h3>Bien-être dans sa tête</h3>
+        </div>
+    </article>
+    <article class="home-card">
+        <img src="{{ asset('assets/images/bien-etresoi.jpeg') }}" alt="">
+        <div>
+            <h3>Bien-être chez soi</h3>
+        </div>
+    </article>
+    <article class="home-card">
+        <img src="{{ asset('assets/images/spiritualite.jpeg') }}" alt="">
+        <div>
+            <h3>Spiritualité</h3>
+        </div>
+    </article>
+</section>
+
+
+<h2 class="home-shop_title">Les produits bien-être <span>que je vous conseille</span></h2>
+
+<section class="home-shop">
+    
+    <div class="home-shop-left">
+        <h3><a href="{{ path('shop') }}">Tous les produits</a></h3>
+        <img src="{{ asset('assets/images/shop.jpg') }}" alt="">
+    </div>
+    <div class="home-shop-right">
+
+        <article class="shop_item">
+            <img src="https://www.rougj.com/wp-content/uploads/2020/04/%C3%A8toile-by-rougj-crema-viso-%C3%A9toile-by-rougj-ricca-di-collagene-03-600x600.jpg" alt="">
+            <div class="shop_item-detail">
+                <h3 class="shop_item-title">Creme visage</h3>
+                <h4 class="shop_item-brand">Nivea</h4>
+                <p class="shop_item-price">€ 15 </p>
+                <a class="shop_item-show" href="">
+                    <p>Voir le produit <i class="bi bi-box-arrow-up-right"></i></p>
+                </a>
+            </div>
+        </article>
+        <article class="shop_item">
+            <img src="https://profumeriemediterraneo.it/13780-large_default/dikson-gel-noir-per-capelli-gel-modellante-nero-per-capelli-grigi-100ml.jpg" alt="">
+            <div class="shop_item-detail">
+                <h3 class="shop_item-title">Gel cheveux</h3>
+                <h4 class="shop_item-brand">Nivea</h4>
+                <p class="shop_item-price">€ 20 </p>
+                <a class="shop_item-show" href="">
+                    <p >Voir le produit <i class="bi bi-box-arrow-up-right"></i></p>
+                </a>
+            </div>
+        </article>
+        <article class="shop_item">
+            <img src="https://cdn.shopify.com/s/files/1/0051/1675/6083/products/deodorant-bio-naturel-menthe-citron-vert_650x.png?v=1595252961" alt="">
+            <div class="shop_item-detail">
+                <h3 class="shop_item-title">Deodorant naturel dsgzgezg zggzegzrge</h3>
+                <h4 class="shop_item-brand">Nivea</h4>
+                <p class="shop_item-price">€ 25 </p>
+                <a class="shop_item-show" href="">
+                    <p >Voir le produit <i class="bi bi-box-arrow-up-right"></i></p>
+                </a>
+            </div>
+        </article>
+    </div>
+</section>
+
+{% endblock %}
