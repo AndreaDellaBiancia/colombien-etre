@@ -178,13 +178,16 @@ p {
 
 }
 
-.shop_item {
+.shop_item--home {
   width: calc(100% / 3);
+}
+
+.shop_item {
   margin: 3rem 1rem;
   padding: 1rem;
   align-self: center;
-  font-family: 'Nunito','Helvetica Neue',Helvetica,Arial,sans-serif;
-  
+  font-family: 'Nunito', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
 }
 
 .shop_item:hover {
@@ -216,18 +219,18 @@ p {
   height: 4rem;
 }
 
-.shop_item-brand{
+.shop_item-brand {
   font-size: 1rem;
 }
 
-.shop_item-description{
+.shop_item-description {
   font-size: 1rem;
   text-transform: capitalize;
   margin: 0;
 }
 
 .shop_item-price {
-  margin: 1.5rem  0;
+  margin: 1.5rem 0;
   font-size: 1.5rem;
 }
 
@@ -242,7 +245,7 @@ p {
 }
 
 .shop_item-show p {
-  margin: 0 ;
+  margin: 0;
   color: white;
 }
 
@@ -462,11 +465,12 @@ p {
   color: white;
   background-color: #5eaabd;
 }
-.shop{
-display: flex ;
+
+.shop {
+  display: flex;
 }
 
-.filters{
+.filters {
   box-sizing: border-box;
   margin-top: 5rem;
   width: 15%;
@@ -499,20 +503,37 @@ display: flex ;
  font-weight: 400;
 } */
 
-.shop_item-list{
-  max-width: 80%;
+.shop_item-list {
+  width: 80%;
   margin: 2rem auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   font-size: 0;
 }
 
-.shop_item-list article{
+.shop_item--shop {
   max-width: calc(100% / 5);
 }
 
-.found-items{
+.found-items {
   font-size: 1.2rem;
   margin-left: 2rem;
 }
+
+.no-products{
+  font-size: 2rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.no-products span{
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.no-products a{
+  text-decoration: underline;
+}
+
