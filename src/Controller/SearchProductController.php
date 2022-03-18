@@ -11,31 +11,27 @@ use Symfony\Component\Validator\Constraints\Length;
 class SearchProductController extends AbstractController
 {
     /**
-     * @Route("/search", name="searchProduct")
+     * @Route("/boutique/search", name="searchProduct")
      */
     public function index(ProductRepository $productRepository): Response
-    {       
-         $searchTerm = $_GET['q'];
-        
+    {
+        $searchTerm = $_GET['q'];
+
+        $a = $_POST['coleur'];
+        dump($a);
+
         $results = $productRepository->findAllBySearchTerm($searchTerm);
         $resultsNb = count($results);
         $allProducts = $productRepository->findAll();
         $allProductsNb = count($allProducts);
-        
-        if($results == true){
-            return $this->render('front/shop/index.html.twig', [
-                'products' =>  $results,
-                'foundProducts' => $resultsNb,
-                'searchTerm' => $searchTerm,
-                'totalProducts' => $allProductsNb
-             ]);
-        }else{
-            return $this->render('front/shop/index.html.twig', [
-                'products' => $allProducts,
-                'totalProducts' => $allProductsNb
-             ]);
-        }
-        
-       
+
+
+        return $this->render('front/shop/index.html.twig', [
+            'products' =>  $results,
+            'foundProducts' => $resultsNb,
+            'searchTerm' => $searchTerm,
+            'totalProducts' => $allProductsNb
+        ]);
     }
+
 }

@@ -10,8 +10,9 @@
     <li>></li>
     <li>Boutique</li>
 </ul>
-<p class="found-items">Produits totales : {{totalProducts}}</p>
-
+<a href="{{ path('shop') }}">
+    <p class="found-items">Produits totales : {{totalProducts}}</p>
+</a>
 
 <section class="shop">
 
@@ -28,24 +29,34 @@
      #}
 
     <div class="filters">
-        <form action="{{path('searchProduct')}}">
-            <input type="search" name="q" placeholder="Search" required="required">
-            <input type="submit" value="Go">
-        </form>
+        <div class="filter_search">
+            <form action="{{path('searchProduct')}}">
+                <input type="search" name="q" placeholder="Search" required="required">
+                <input type="submit" value="Go">
+            </form>
+            {% if foundProducts is defined %}
+            <p>Vous avez recherché : {{ searchTerm }}</p>
+            <p>Produits trouvés : {{ foundProducts }}</p>
+            {% endif %}
+        </div>
+        <div class="filter_checkbox" >
+            <form method='POST' action='{{path('searchProduct')}}'>
+                Merci de cocher vos 2 couleurs préférées:<br>
+                <input type="checkbox" name="couleur[]" value="beaute">Beauté<br>
+                <input type="checkbox" name="couleur[]" value="hygiene">Hygiene<br>
+                <input type="checkbox" name="couleur[]" value="huiles">Huiles essentielles<br>
+                <input type="checkbox" name="couleur[]" value="sante">Sante<br>
+                <input type="checkbox" name="couleur[]" value="alimentaire">Alimentaire<br>
+                <input type="checkbox" name="couleur[]" value="entretien">Entretien<br>
+                <input type="submit" name="submit" value="Résultats">
+                </form>
+        </div>
 
-        {% if foundProducts is defined %}
-        <p>Vous avez recherché : {{ searchTerm }}</p>
-        <p>Produits trouvés : {{ foundProducts }}</p>
-        {% else %}
-        <p>Vous avez recherché : {{ app.request.get('q') }}</p>
-        <p>Produits trouvés : 0</p>
-        {% endif %}
-
-        
     </div>
     <div class="shop_item-list">
+        {% if products == true %}
         {% for product in products %}
-        <article class="shop_item">
+        <article class="shop_item shop_item--shop">
             <img src="{{product.picture}}" alt="">
             <div class="shop_item-detail">
                 <h4 class="shop_item-brand">{{product.brand}}</h4>
@@ -57,6 +68,14 @@
             </div>
         </article>
         {% endfor %}
+        {% else %}
+        <div class="no-products">
+            <p>Aucun resultat pour :<span> {{ searchTerm }}</span></p>
+            <a href="{{ path('shop') }}">
+                <p>Revenir à la liste des produits</p>
+            </a>
+        </div>
+        {% endif %}
     </div>
 
 </section>
