@@ -15,23 +15,50 @@ class SearchProductController extends AbstractController
      */
     public function index(ProductRepository $productRepository): Response
     {
-        $searchTerm = $_GET['q'];
 
-        $a = $_POST['coleur'];
-        dump($a);
+        if (isset($_GET['q'])) {
+            $searchTerm = $_GET['q'];
+            $results = $productRepository->findAllBySearchTerm($searchTerm);
+        } elseif (isset($_POST['category']) and !empty($_POST['category'])) {
+            $searchTerms = $_POST['category'];
 
-        $results = $productRepository->findAllBySearchTerm($searchTerm);
+            //Je recupere un tableau multidimensionnel avec des sous-tableaux qui contiennent 
+            //la liste des produis pour chaque categorie selectionné
+            $listsProducts = $productRepository->findAllBycheckbox($searchTerms);
+
+            $results = [];
+
+            //Je fais une double boucle pour recuperer tous les produits des sous-tableaux et je les stoke
+            //dans un nouveau tableau ($results)
+            foreach ($listsProducts as $listProducts) {
+                foreach ($listProducts as $product) {
+                    $results[] = $product;
+                }
+            }
+            //Si le bouton des checkbox est utilisé sans avoir selectionné au moins une categorie, je renvoie un tableau vide    
+        } else {
+            $results = [];
+        }
+
+
         $resultsNb = count($results);
         $allProducts = $productRepository->findAll();
         $allProductsNb = count($allProducts);
 
-
-        return $this->render('front/shop/index.html.twig', [
-            'products' =>  $results,
-            'foundProducts' => $resultsNb,
-            'searchTerm' => $searchTerm,
-            'totalProducts' => $allProductsNb
-        ]);
+        //Si get recupere "q" (input rechercher) je peux returner le searchTerm sinon je ne le retourne pas
+        if (isset($_GET['q'])) {
+            return $this->render('front/shop/index.html.twig', [
+                'products' =>  $results,
+                'foundProducts' => $resultsNb,
+                'searchTerm' => $searchTerm,
+                'totalProducts' => $allProductsNb
+            ]);
+        } else {
+            return $this->render('front/shop/index.html.twig', [
+                'products' =>  $results,
+                'foundProducts' => $resultsNb,
+                'totalProducts' => $allProductsNb
+            ]);
+        }
     }
-
 }

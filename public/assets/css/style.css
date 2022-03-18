@@ -478,31 +478,6 @@ p {
   height: 500px;
 }
 
-
-
-
-/* .shop_filters{
-  margin: 3rem auto;
-  max-width: 55%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.shop_filters li{
-  border: 1px solid  #5eaabd ;
-  font-size: 1.2rem;
-  padding: 0.7rem 0.9rem;
-  border-radius: 10px;
-  font-weight: 600;
-  color: #5eaabd;
-}
-
-.shop_filters :first-child{
- border: 0px;
- color: black;
- font-weight: 400;
-} */
-
 .shop_item-list {
   width: 80%;
   margin: 2rem auto;
@@ -521,19 +496,18 @@ p {
   margin-left: 2rem;
 }
 
-.no-products{
+.no-products {
   font-size: 2rem;
   margin: 0 auto;
   margin-bottom: 1rem;
 }
 
-.no-products span{
+.no-products span {
   font-size: 2rem;
   font-weight: bold;
   margin: 0 auto;
 }
 
-.no-products a{
+.no-products a {
   text-decoration: underline;
 }
-

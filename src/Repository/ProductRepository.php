@@ -51,13 +51,10 @@ class ProductRepository extends ServiceEntityRepository
     public function findAllBySearchTerm($searchTerm)
     {
         return
-            // SELECT * FROM tv_show
-            // tvshow est un alias representant l'entité TvShow (côté SQL la table tv_show)
-            // on peut donner le nom que l'on veut à cet alias
             $this->createQueryBuilder('product')
 
             // WHERE title LIKE searchTerm
-            ->andWhere('product.tag LIKE :searchTerm')
+            ->andWhere('product.category LIKE :searchTerm')
             ->orWhere('product.title LIKE :searchTerm')
             ->orWhere('product.brand LIKE :searchTerm')
             ->setParameter(':searchTerm', "%$searchTerm%")
@@ -66,32 +63,30 @@ class ProductRepository extends ServiceEntityRepository
             ->getResult();
     }
 
-    // /**
-    //  * @return Product[] Returns an array of Product objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return Product[] Returns an array of Product objects
+     */
+    public function findAllBycheckbox($searchTerms)
     {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+        // Je crée un tableau vide pour recuperer les resultats
+        $results = [];
 
-    /*
-    public function findOneBySomeField($value): ?Product
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        //Je recupere la liste des checkbox coché (searchTerms) 
+        //et pour chaque checkbox(searchTerm) je fais une recherce sur la table produit
+        foreach ($searchTerms as $searchTerm) {
+
+            //Je stocke dans le tableau $result les differentes listes des produits qui correspondent aux checkbox
+            $results[] = $this->createQueryBuilder('product')
+
+
+                ->andWhere('product.category LIKE :searchTerm')
+                ->orWhere('product.title LIKE :searchTerm')
+                ->orWhere('product.brand LIKE :searchTerm')
+                ->setParameter(':searchTerm', "%$searchTerm%")
+
+                ->getQuery()
+                ->getResult();
+        }
+        return $results;
     }
-    */
 }

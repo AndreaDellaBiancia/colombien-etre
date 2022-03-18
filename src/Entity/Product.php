@@ -52,10 +52,12 @@ class Product
      */
     private $updatedAt;
 
+    
+
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $tag;
+    private $category;
 
     public function getId(): ?int
     {
@@ -146,14 +148,15 @@ class Product
         return $this;
     }
 
-    public function getTag(): ?string
+
+    public function getCategory(): ?string
     {
-        return $this->tag;
+        return $this->category;
     }
 
-    public function setTag(string $tag): self
+    public function setCategory(string $category): self
     {
-        $this->tag = $tag;
+        $this->category = $category;
 
         return $this;
     }

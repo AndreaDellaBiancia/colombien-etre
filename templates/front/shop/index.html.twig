@@ -13,20 +13,10 @@
 <a href="{{ path('shop') }}">
     <p class="found-items">Produits totales : {{totalProducts}}</p>
 </a>
+{% if foundProducts is defined %}<p>Produits trouvés : {{ foundProducts }}</p>{% endif %}
+
 
 <section class="shop">
-
-    {# <ul class="shop_filters">
-        <li>Filtres :</li>
-        <li>Beauté</li>
-        <li>Higiéne</li>
-        <li>Huiles essentielles</li>
-        <li>Santé</li>
-        <li>Alimentaire</li>
-        <li>Entretien</li>
-        <li>Tous les produits</li>
-    </ul>
-     #}
 
     <div class="filters">
         <div class="filter_search">
@@ -34,22 +24,21 @@
                 <input type="search" name="q" placeholder="Search" required="required">
                 <input type="submit" value="Go">
             </form>
-            {% if foundProducts is defined %}
+            {% if foundProducts is defined and searchTerm is defined %}
             <p>Vous avez recherché : {{ searchTerm }}</p>
-            <p>Produits trouvés : {{ foundProducts }}</p>
             {% endif %}
         </div>
-        <div class="filter_checkbox" >
+        <div class="filter_checkbox">
             <form method='POST' action='{{path('searchProduct')}}'>
-                Merci de cocher vos 2 couleurs préférées:<br>
-                <input type="checkbox" name="couleur[]" value="beaute">Beauté<br>
-                <input type="checkbox" name="couleur[]" value="hygiene">Hygiene<br>
-                <input type="checkbox" name="couleur[]" value="huiles">Huiles essentielles<br>
-                <input type="checkbox" name="couleur[]" value="sante">Sante<br>
-                <input type="checkbox" name="couleur[]" value="alimentaire">Alimentaire<br>
-                <input type="checkbox" name="couleur[]" value="entretien">Entretien<br>
+
+                <input type="checkbox" name="category[]" value="beaute">Beauté<br>
+                <input type="checkbox" name="category[]" value="hygiene">Hygiene<br>
+                <input type="checkbox" name="category[]" value="huiles">Huiles essentielles<br>
+                <input type="checkbox" name="category[]" value="sante">Sante<br>
+                <input type="checkbox" name="category[]" value="alimentaire">Alimentaire<br>
+                <input type="checkbox" name="category[]" value="entretien">Entretien<br>
                 <input type="submit" name="submit" value="Résultats">
-                </form>
+            </form>
         </div>
 
     </div>
@@ -70,7 +59,7 @@
         {% endfor %}
         {% else %}
         <div class="no-products">
-            <p>Aucun resultat pour :<span> {{ searchTerm }}</span></p>
+            <p>Aucun resultat </span></p>
             <a href="{{ path('shop') }}">
                 <p>Revenir à la liste des produits</p>
             </a>
