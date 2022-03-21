@@ -56,11 +56,11 @@
     <div class="home-shop-right">
         {% for product in products %}
         <article class="shop_item shop_item--home">
-            <img src="{{product.picture}}" alt="">
+            <div class="shop_item_img-conteiner"><img src="{{product.picture}}" alt=""></div>
             <div class="shop_item-detail">
                 <h4 class="shop_item-brand">{{product.brand}}</h4>
                 <h3 class="shop_item-title">{{product.title}}</h3>
-                <p class="shop_item-price">{{product.price}}</p>
+                <p class="shop_item-price">€ {{product.price}}</p>
                 <a class="shop_item-show" href="{{ product.source }}">
                     <p>Voir le produit <i class="bi bi-box-arrow-up-right"></i></p>
                 </a>
