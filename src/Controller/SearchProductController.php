@@ -19,12 +19,13 @@ class SearchProductController extends AbstractController
         if (isset($_GET['q'])) {
             $searchTerm = $_GET['q'];
             $results = $productRepository->findAllBySearchTerm($searchTerm);
+
         } elseif (isset($_POST['category']) and !empty($_POST['category'])) {
-            $searchTerms = $_POST['category'];
+            $searchCategories = $_POST['category'];
 
             //Je recupere un tableau multidimensionnel avec des sous-tableaux qui contiennent 
             //la liste des produis pour chaque categorie selectionné
-            $listsProducts = $productRepository->findAllBycheckbox($searchTerms);
+            $listsProducts = $productRepository->findAllBycheckbox($searchCategories);
 
             $results = [];
 
@@ -38,6 +39,7 @@ class SearchProductController extends AbstractController
             //Si le bouton des checkbox est utilisé sans avoir selectionné au moins une categorie, je renvoie un tableau vide    
         } else {
             $results = [];
+            $searchCategories = [];
         }
 
 
@@ -45,7 +47,7 @@ class SearchProductController extends AbstractController
         $allProducts = $productRepository->findAll();
         $allProductsNb = count($allProducts);
 
-        //Si get recupere "q" (input rechercher) je peux returner le searchTerm sinon je ne le retourne pas
+     
         if (isset($_GET['q'])) {
             return $this->render('front/shop/index.html.twig', [
                 'products' =>  $results,
@@ -57,7 +59,9 @@ class SearchProductController extends AbstractController
             return $this->render('front/shop/index.html.twig', [
                 'products' =>  $results,
                 'foundProducts' => $resultsNb,
-                'totalProducts' => $allProductsNb
+                'totalProducts' => $allProductsNb,
+                'searchCategories' => $searchCategories,
+
             ]);
         }
     }

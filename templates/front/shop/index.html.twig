@@ -10,10 +10,22 @@
     <li>></li>
     <li>Boutique</li>
 </ul>
+
+<h2 class="shop-title">Produis conseillés</h2>
 <a href="{{ path('shop') }}">
     <p class="found-items">Produits totales : {{totalProducts}}</p>
 </a>
-{% if foundProducts is defined %}<p>Produits trouvés : {{ foundProducts }}</p>{% endif %}
+
+{% if foundProducts is defined and searchTerm is defined %}
+<p>Votre recherche : "{{ searchTerm }}" - Produits trouvés : {{ foundProducts }} </p>
+{% endif %}
+<p>
+{% if searchCategories is defined %} Votre recherche : 
+    {% for category in searchCategories %}
+        "{{ category }}"  
+    {% endfor %}
+    - Produits trouvés : {{ foundProducts }} 
+{% endif %}</p>
 
 
 <section class="shop">
@@ -24,21 +36,20 @@
                 <input type="search" name="q" placeholder="Search" required="required">
                 <input type="submit" value="Go">
             </form>
-            {% if foundProducts is defined and searchTerm is defined %}
-            <p>Vous avez recherché : {{ searchTerm }}</p>
-            {% endif %}
+
         </div>
         <div class="filter_checkbox">
             <form method='POST' action='{{path('searchProduct')}}'>
 
-                <input type="checkbox" name="category[]" value="beaute">Beauté<br>
-                <input type="checkbox" name="category[]" value="hygiene">Hygiene<br>
-                <input type="checkbox" name="category[]" value="huiles">Huiles essentielles<br>
-                <input type="checkbox" name="category[]" value="sante">Sante<br>
+                <input type="checkbox" name="category[]" value="beauté">Beauté<br>
+                <input type="checkbox" name="category[]" value="hygiéne">Hygiène<br>
+                <input type="checkbox" name="category[]" value="huiles-essentielles">Huiles essentielles<br>
+                <input type="checkbox" name="category[]" value="santé">Santé<br>
                 <input type="checkbox" name="category[]" value="alimentaire">Alimentaire<br>
                 <input type="checkbox" name="category[]" value="entretien">Entretien<br>
                 <input type="submit" name="submit" value="Résultats">
             </form>
+
         </div>
 
     </div>
