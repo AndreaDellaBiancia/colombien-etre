@@ -20,7 +20,7 @@
     </a>
     
     {% if foundProducts is defined and searchTerm is defined %}
-    <p class="total-items_search">Votre recherche : <span>"{{ searchTerm }}"</span> - Produits trouvés :<span> {{ foundProducts }} </span></p>
+    <p class="total-items_search">Votre recherche : <span style="margin-right: 1.5rem;">"{{ searchTerm }}"</span> Produits trouvés :<span> {{ foundProducts }} </span></p>
     {% endif %}
 
     <p class="total-items_search">
@@ -28,7 +28,7 @@
         {% for category in searchCategories %}
             <span style="margin-right: 1.5rem;">"{{ category }}"</span>
         {% endfor %}
-        - Produits trouvés :<span> {{ foundProducts }}</span>
+         Produits trouvés :<span> {{ foundProducts }}</span>
     {% endif %}
     </p>
 </div>
@@ -76,7 +76,7 @@
         {% endfor %}
         {% else %}
         <div class="no-products">
-            <p>Aucun resultat </span></p>
+            <p>Aucun resultat</p>
             <a href="{{ path('shop') }}">
                 <p>Revenir à la liste des produits</p>
             </a>
