@@ -25,7 +25,7 @@ class MainController extends AbstractController
     */
     public function corpsEsprit(): Response
     {
-        return $this->render('front/main/corpsEsprit.html.twig');
+        return $this->render('front/corpsEsprit/corpsEsprit.html.twig');
     }
 
     /**
