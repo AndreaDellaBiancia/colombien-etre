@@ -45,7 +45,7 @@
         <h3>Filtrer :</h3>
 
         <div class="filter_checkbox">
-            <form method='POST' action='{{path('searchProduct')}}'>
+            <form method='GET' action='{{path('searchProduct')}}'>
 
                 <input type="checkbox" name="category[]" value="beauté">Beauté<br>
                 <input type="checkbox" name="category[]" value="hygiéne">Hygiène<br>
@@ -83,7 +83,10 @@
         </div>
         {% endif %}
     </div>
-
+  
 </section>
+<div class="navigation_page">
+    <p>{{ knp_pagination_render(products) }}</p>
+</div>
 
 {% endblock %}

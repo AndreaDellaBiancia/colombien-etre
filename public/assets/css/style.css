@@ -571,3 +571,9 @@ font-size: 1.5rem;
 .no-products a {
   text-decoration: underline;
 }
+
+.navigation_page{
+text-align: center;
+font-size: 1.5rem;
+margin-top: 3rem;
+}
