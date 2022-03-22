@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Phyto;
 use App\Repository\PhytoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,7 +17,20 @@ class PhytoController extends AbstractController
     {
         return $this->render('front/corpsEsprit/posts_list.html.twig', [
             'posts' => $phyto->findAll(),
-            'pageTitle' => 'Phytothérapie'
+            'pageTitle' => 'Phytothérapie',
+            'postPath' => 'phyto_read' 
+        ]);
+    }
+
+     /**
+     * @Route("/phytotherapie{id}", name="phyto_read")
+     */
+    public function read(Phyto $phyto): Response
+    {
+        return $this->render('front/corpsEsprit/post.html.twig', [
+            'post' => $phyto,
+            'pageTitle' => 'Phytothérapie',
+            'categoryPath' => 'phyto'
         ]);
     }
 }

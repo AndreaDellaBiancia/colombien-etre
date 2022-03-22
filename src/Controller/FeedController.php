@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Feed;
 use App\Repository\FeedRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,7 +17,21 @@ class FeedController extends AbstractController
     {
         return $this->render('front/corpsEsprit/posts_list.html.twig', [
             'posts' => $feed->findAll(),
-            'pageTitle' => 'Alimentation'
+            'pageTitle' => 'Alimentation',
+            'postPath' => 'feed_read'
+            
+        ]);
+    }
+
+     /**
+     * @Route("/alimentation{id}", name="feed_read")
+     */
+    public function read(Feed $feed): Response
+    {
+        return $this->render('front/corpsEsprit/post.html.twig', [
+            'post' => $feed,
+            'pageTitle' => 'Alimentation',
+            'categoryPath' => 'feed'
         ]);
     }
 }

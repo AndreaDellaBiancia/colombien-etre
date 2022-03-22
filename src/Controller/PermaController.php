@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Perma;
 use App\Repository\PermaRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,7 +17,21 @@ class PermaController extends AbstractController
     {
         return $this->render('front/corpsEsprit/posts_list.html.twig', [
             'posts' => $perma->findAll(),
-            'pageTitle' => 'Permathérapie'
+            'pageTitle' => 'Permathérapie',
+            'postPath' => 'perma_read'
+            
+        ]);
+    }
+
+     /**
+     * @Route("/permatherapie{id}", name="perma_read")
+     */
+    public function read(Perma $perma): Response
+    {
+        return $this->render('front/corpsEsprit/post.html.twig', [
+            'post' => $perma,
+            'pageTitle' => 'Permathérapie',
+            'categoryPath' => 'perma'
         ]);
     }
 }

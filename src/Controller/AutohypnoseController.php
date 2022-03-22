@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Autohypnose;
 use App\Repository\AutohypnoseRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,7 +17,21 @@ class AutohypnoseController extends AbstractController
     {
         return $this->render('front/corpsEsprit/posts_list.html.twig', [
             'posts' => $autohypnose->findAll(),
-            'pageTitle' => 'Autohypnose'
+            'pageTitle' => 'Autohypnose',
+            'postPath' => 'autohypnose_read'
+            
+        ]);
+    }
+
+     /**
+     * @Route("/autohypnose{id}", name="autohypnose_read")
+     */
+    public function read(Autohypnose $autohypnose): Response
+    {
+        return $this->render('front/corpsEsprit/post.html.twig', [
+            'post' => $autohypnose,
+            'pageTitle' => 'Autohypnose',
+            'categoryPath' => 'autohypnose'
         ]);
     }
 }

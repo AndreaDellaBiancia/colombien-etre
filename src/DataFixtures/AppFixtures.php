@@ -24,7 +24,7 @@ class AppFixtures extends Fixture
     {
         $faker = Factory::create('fr_FR');
 
-        for ($i = 0; $i < 25; $i++) {
+        for ($i = 0; $i < 30; $i++) {
 
             $product = new Product();
             $product->setTitle($faker->sentence($nbWords = 4, $variableNbWords = true));
@@ -38,7 +38,7 @@ class AppFixtures extends Fixture
 
             $auto = new Autohypnose();
             $auto->setTitle($faker->sentence($nbWords = 4, $variableNbWords = true));
-            $auto->setContent($faker->sentence($nbWords = 12, $variableNbWords = true));
+            $auto->setContent($faker->sentence($nbWords = 300, $variableNbWords = true));
             $auto->setThumbnailPicture($faker->imageUrl);
             $auto->setMainPicture($faker->imageUrl);
             $auto->setAuthor($faker->word);
@@ -48,7 +48,7 @@ class AppFixtures extends Fixture
 
             $bach = new BachFlower();
             $bach->setTitle($faker->sentence($nbWords = 4, $variableNbWords = true));
-            $bach->setContent($faker->sentence($nbWords = 12, $variableNbWords = true));
+            $bach->setContent($faker->sentence($nbWords = 300, $variableNbWords = true));
             $bach->setThumbnailPicture($faker->imageUrl);
             $bach->setMainPicture($faker->imageUrl);
             $bach->setAuthor($faker->word);
@@ -58,7 +58,7 @@ class AppFixtures extends Fixture
 
             $feed = new Feed();
             $feed->setTitle($faker->sentence($nbWords = 4, $variableNbWords = true));
-            $feed->setContent($faker->sentence($nbWords = 12, $variableNbWords = true));
+            $feed->setContent($faker->sentence($nbWords = 300, $variableNbWords = true));
             $feed->setThumbnailPicture($faker->imageUrl);
             $feed->setMainPicture($faker->imageUrl);
             $feed->setAuthor($faker->word);
@@ -68,7 +68,7 @@ class AppFixtures extends Fixture
 
             $massage = new Massage();
             $massage->setTitle($faker->sentence($nbWords = 4, $variableNbWords = true));
-            $massage->setContent($faker->sentence($nbWords = 12, $variableNbWords = true));
+            $massage->setContent($faker->sentence($nbWords = 300, $variableNbWords = true));
             $massage->setThumbnailPicture($faker->imageUrl);
             $massage->setMainPicture($faker->imageUrl);
             $massage->setAuthor($faker->word);
@@ -79,7 +79,7 @@ class AppFixtures extends Fixture
             $meditation = new Meditation();
           
             $meditation->setTitle($faker->sentence($nbWords = 4, $variableNbWords = true));
-            $meditation->setContent($faker->sentence($nbWords = 16, $variableNbWords = true));
+            $meditation->setContent($faker->sentence($nbWords = 300, $variableNbWords = true));
             $meditation->setThumbnailPicture($faker->imageUrl);
             $meditation->setMainPicture($faker->imageUrl);
             $meditation->setAuthor($faker->word);
@@ -89,7 +89,7 @@ class AppFixtures extends Fixture
 
             $perma = new Perma();
             $perma->setTitle($faker->sentence($nbWords = 4, $variableNbWords = true));
-            $perma->setContent($faker->sentence($nbWords = 16, $variableNbWords = true));
+            $perma->setContent($faker->sentence($nbWords = 300, $variableNbWords = true));
             $perma->setThumbnailPicture($faker->imageUrl);
             $perma->setMainPicture($faker->imageUrl);
             $perma->setAuthor($faker->word);
@@ -99,7 +99,7 @@ class AppFixtures extends Fixture
 
             $phyto = new Phyto();
             $phyto->setTitle($faker->sentence($nbWords = 4, $variableNbWords = true));
-            $phyto->setContent($faker->sentence($nbWords = 16, $variableNbWords = true));
+            $phyto->setContent($faker->sentence($nbWords = 300, $variableNbWords = true));
             $phyto->setThumbnailPicture($faker->imageUrl);
             $phyto->setMainPicture($faker->imageUrl);
             $phyto->setAuthor($faker->word);
@@ -109,7 +109,7 @@ class AppFixtures extends Fixture
 
             $reiki = new Reiki();
             $reiki->setTitle($faker->sentence($nbWords = 4, $variableNbWords = true));
-            $reiki->setContent($faker->sentence($nbWords = 16, $variableNbWords = true));
+            $reiki->setContent($faker->sentence($nbWords = 300, $variableNbWords = true));
             $reiki->setThumbnailPicture($faker->imageUrl);
             $reiki->setMainPicture($faker->imageUrl);
             $reiki->setAuthor($faker->word);
@@ -119,7 +119,7 @@ class AppFixtures extends Fixture
 
             $sport = new Sport();
             $sport->setTitle($faker->sentence($nbWords = 4, $variableNbWords = true));
-            $sport->setContent($faker->sentence($nbWords = 16, $variableNbWords = true));
+            $sport->setContent($faker->sentence($nbWords = 300, $variableNbWords = true));
             $sport->setThumbnailPicture($faker->imageUrl);
             $sport->setMainPicture($faker->imageUrl);
             $sport->setAuthor($faker->word);

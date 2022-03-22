@@ -34,12 +34,14 @@
             alt="">
         <div class="post_description">
             <h3>{{post.title}}</h3>
-            <p class="post_p">{{post.content}}</p>
-            <p class="post_show">Lire la suite</p>
+            <p class="post_p">{{ post.content | slice(0, 160) }}...</p>
+            <a href="{{ path( postPath , {id:post.id}) }}">
+                <p class="post_show">Lire la suite</p>
+            </a>
         </div>
     </article>
     {% endfor %}
 
 </section>
-
+   
 {% endblock %}
