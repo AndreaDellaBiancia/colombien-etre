@@ -10,46 +10,52 @@
     <li>></li>
     <li>Boutique</li>
 </ul>
-<a href="{{ path('shop') }}">
-    <p class="found-items">Produits totales : {{totalProducts}}</p>
-</a>
 
+<h2 class="shop-title">Produits conseillés</h2>
+
+<div class="found-products">
+    
+    <a href="{{ path('shop') }}">
+        <p class="total-items">Produits totales :<span> {{totalProducts}}</span></p>
+    </a>
+    
+    {% if foundProducts is defined and searchTerm is defined %}
+    <p class="total-items_search">Votre recherche : <span style="margin-right: 1.5rem;">"{{ searchTerm }}"</span> Produits trouvés :<span> {{ foundProducts }} </span></p>
+    {% endif %}
+
+    <p class="total-items_search">
+    {% if searchCategories is defined %} Votre recherche :
+        {% for category in searchCategories %}
+            <span style="margin-right: 1.5rem;">"{{ category }}"</span>
+        {% endfor %}
+         Produits trouvés :<span> {{ foundProducts }}</span>
+    {% endif %}
+    </p>
+</div>
+
+<div class="filter_search">
+    <form action="{{path('searchProduct')}}">
+        <input type="search" name="q" placeholder="Rechercher" required="required">
+        <button class="btn btn-outline-danger" type="submit"><i class="bi bi-search"></i></button>
+    </form>
+</div>
 <section class="shop">
-
-    {# <ul class="shop_filters">
-        <li>Filtres :</li>
-        <li>Beauté</li>
-        <li>Higiéne</li>
-        <li>Huiles essentielles</li>
-        <li>Santé</li>
-        <li>Alimentaire</li>
-        <li>Entretien</li>
-        <li>Tous les produits</li>
-    </ul>
-     #}
-
+    
     <div class="filters">
-        <div class="filter_search">
-            <form action="{{path('searchProduct')}}">
-                <input type="search" name="q" placeholder="Search" required="required">
-                <input type="submit" value="Go">
-            </form>
-            {% if foundProducts is defined %}
-            <p>Vous avez recherché : {{ searchTerm }}</p>
-            <p>Produits trouvés : {{ foundProducts }}</p>
-            {% endif %}
-        </div>
-        <div class="filter_checkbox" >
-            <form method='POST' action='{{path('searchProduct')}}'>
-                Merci de cocher vos 2 couleurs préférées:<br>
-                <input type="checkbox" name="couleur[]" value="beaute">Beauté<br>
-                <input type="checkbox" name="couleur[]" value="hygiene">Hygiene<br>
-                <input type="checkbox" name="couleur[]" value="huiles">Huiles essentielles<br>
-                <input type="checkbox" name="couleur[]" value="sante">Sante<br>
-                <input type="checkbox" name="couleur[]" value="alimentaire">Alimentaire<br>
-                <input type="checkbox" name="couleur[]" value="entretien">Entretien<br>
+        <h3>Filtrer :</h3>
+
+        <div class="filter_checkbox">
+            <form method='GET' action='{{path('searchProduct')}}'>
+
+                <input type="checkbox" name="category[]" value="beauté">Beauté<br>
+                <input type="checkbox" name="category[]" value="hygiéne">Hygiène<br>
+                <input type="checkbox" name="category[]" value="huiles-essentielles">Huiles essentielles<br>
+                <input type="checkbox" name="category[]" value="santé">Santé<br>
+                <input type="checkbox" name="category[]" value="alimentaire">Alimentaire<br>
+                <input type="checkbox" name="category[]" value="entretien">Entretien<br>
                 <input type="submit" name="submit" value="Résultats">
-                </form>
+            </form>
+
         </div>
 
     </div>
@@ -57,27 +63,30 @@
         {% if products == true %}
         {% for product in products %}
         <article class="shop_item shop_item--shop">
-            <img src="{{product.picture}}" alt="">
+            <div class="shop_item_img-conteiner"><img src="{{product.picture}}" alt=""></div>
             <div class="shop_item-detail">
                 <h4 class="shop_item-brand">{{product.brand}}</h4>
                 <h3 class="shop_item-title">{{product.title}}</h3>
                 <p class="shop_item-price">€ {{product.price}} </p>
                 <a class="shop_item-show" href="{{ product.source }}">
-                    <p>Voir le produit</p>
+                    <p>Voir le produit <i class="bi bi-box-arrow-up-right"></i></p>
                 </a>
             </div>
         </article>
         {% endfor %}
         {% else %}
         <div class="no-products">
-            <p>Aucun resultat pour :<span> {{ searchTerm }}</span></p>
+            <p>Aucun resultat</p>
             <a href="{{ path('shop') }}">
                 <p>Revenir à la liste des produits</p>
             </a>
         </div>
         {% endif %}
     </div>
-
+  
 </section>
+<div class="navigation_page">
+    <p>{{ knp_pagination_render(products) }}</p>
+</div>
 
 {% endblock %}
