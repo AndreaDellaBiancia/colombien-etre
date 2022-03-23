@@ -33,8 +33,13 @@ class MassageController extends AbstractController
 
         if ($massage->getSlug() === null) {
             $slugger->slugifyPost($massage);
-            $manager->flush();
         }
+
+        $massage = $massage->setViews($massage->getViews() + 1);
+        
+        $manager->persist($massage);
+        $manager->flush();
+
 
 
         return $this->redirectToRoute('massage_read_slug', [

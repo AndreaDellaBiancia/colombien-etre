@@ -33,8 +33,12 @@ class MeditationController extends AbstractController
 
         if ($meditation->getSlug() === null) {
             $slugger->slugifyPost($meditation);
-            $manager->flush();
         }
+
+        $meditation = $meditation->setViews($meditation->getViews() + 1);
+        
+        $manager->persist($meditation);
+        $manager->flush();
 
 
         return $this->redirectToRoute('meditation_read_slug', [

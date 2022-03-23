@@ -33,9 +33,12 @@ class FeedController extends AbstractController
 
         if ($feed->getSlug() === null) {
             $slugger->slugifyPost($feed);
-            $manager->flush();
         }
 
+        $feed = $feed->setViews($feed->getViews() + 1);
+        
+        $manager->persist($feed);
+        $manager->flush();
 
         return $this->redirectToRoute('feed_read_slug', [
             'slug' => $feed->getSlug(),

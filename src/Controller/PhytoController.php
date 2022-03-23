@@ -32,8 +32,12 @@ class PhytoController extends AbstractController
 
         if ($phyto->getSlug() === null) {
             $slugger->slugifyPost($phyto);
-            $manager->flush();
         }
+
+        $phyto = $phyto->setViews($phyto->getViews() + 1);
+        
+        $manager->persist($phyto);
+        $manager->flush();
 
 
         return $this->redirectToRoute('phyto_read_slug', [

@@ -33,8 +33,12 @@ class PermaController extends AbstractController
 
         if ($perma->getSlug() === null) {
             $slugger->slugifyPost($perma);
-            $manager->flush();
         }
+
+        $perma = $perma->setViews($perma->getViews() + 1);
+        
+        $manager->persist($perma);
+        $manager->flush();
 
 
         return $this->redirectToRoute('perma_read_slug', [

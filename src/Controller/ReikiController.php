@@ -32,8 +32,12 @@ class ReikiController extends AbstractController
 
         if ($reiki->getSlug() === null) {
             $slugger->slugifyPost($reiki);
-            $manager->flush();
         }
+
+        $reiki = $reiki->setViews($reiki->getViews() + 1);
+        
+        $manager->persist($reiki);
+        $manager->flush();
 
 
         return $this->redirectToRoute('reiki_read_slug', [

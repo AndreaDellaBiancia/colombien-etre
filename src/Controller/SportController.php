@@ -33,8 +33,12 @@ class SportController extends AbstractController
 
         if ($sport->getSlug() === null) {
             $slugger->slugifyPost($sport);
-            $manager->flush();
         }
+
+        $sport = $sport->setViews($sport->getViews() + 1);
+        
+        $manager->persist($sport);
+        $manager->flush();
 
 
         return $this->redirectToRoute('sport_read_slug', [

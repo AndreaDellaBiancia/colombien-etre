@@ -35,8 +35,12 @@ class AutohypnoseController extends AbstractController
 
         if ($autohypnose->getSlug() === null) {
             $slugger->slugifyPost($autohypnose);
-            $manager->flush();
         }
+
+        $autohypnose = $autohypnose->setViews($autohypnose->getViews() + 1);
+        
+        $manager->persist($autohypnose);
+        $manager->flush();
 
         return $this->redirectToRoute('autohypnose_read_slug', [
             'slug' => $autohypnose->getSlug(),

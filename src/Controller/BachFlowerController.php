@@ -32,9 +32,12 @@ class BachFlowerController extends AbstractController
 
         if ($bachFlower->getSlug() === null) {
             $slugger->slugifyPost($bachFlower);
-            $manager->flush();
         }
+
+        $bachFlower = $bachFlower->setViews($bachFlower->getViews() + 1);
         
+        $manager->persist($bachFlower);
+        $manager->flush();
        
         return $this->redirectToRoute('bachFlower_read_slug', [
             'slug' => $bachFlower->getSlug(),
