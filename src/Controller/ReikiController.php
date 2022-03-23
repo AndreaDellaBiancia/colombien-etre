@@ -19,8 +19,7 @@ class ReikiController extends AbstractController
     {
         return $this->render('front/corpsEsprit/posts_list.html.twig', [
             'posts' => $reiki->findAll(),
-            'pageTitle' => 'Reiki',
-            'postPath' => 'reiki_read'
+            'pageTitle' => 'Reiki'
         ]);
     }
 
@@ -54,8 +53,7 @@ class ReikiController extends AbstractController
     {
         return $this->render('front/corpsEsprit/post.html.twig', [
             'post' => $reiki,
-            'pageTitle' => 'Reiki',
-            'categoryPath' => 'reiki'
+            'pageTitle' => 'Reiki'
         ]);
     }
 }

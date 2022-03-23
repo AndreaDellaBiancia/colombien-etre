@@ -19,9 +19,7 @@ class PermaController extends AbstractController
     {
         return $this->render('front/corpsEsprit/posts_list.html.twig', [
             'posts' => $perma->findAll(),
-            'pageTitle' => 'Permathérapie',
-            'postPath' => 'perma_read'
-            
+            'pageTitle' => 'Permathérapie'
         ]);
     }
 
@@ -55,8 +53,7 @@ class PermaController extends AbstractController
     {
         return $this->render('front/corpsEsprit/post.html.twig', [
             'post' => $perma,
-            'pageTitle' => 'Permathérapie',
-            'categoryPath' => 'perma'
+            'pageTitle' => 'Permathérapie'
         ]);
     }
 }

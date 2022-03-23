@@ -19,9 +19,7 @@ class MeditationController extends AbstractController
     {
         return $this->render('front/corpsEsprit/posts_list.html.twig', [
             'posts' => $meditation->findAll(),
-            'pageTitle' => 'Méditation',
-            'postPath' => 'meditation_read'
-            
+            'pageTitle' => 'Méditation'
         ]);
     }
 
@@ -56,7 +54,6 @@ class MeditationController extends AbstractController
         return $this->render('front/corpsEsprit/post.html.twig', [
             'post' => $meditation,
             'pageTitle' => 'Mediatation',
-            'categoryPath' => 'meditation'
         ]);
     }
 }

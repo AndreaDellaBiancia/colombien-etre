@@ -19,9 +19,7 @@ class MassageController extends AbstractController
     {
         return $this->render('front/corpsEsprit/posts_list.html.twig', [
             'posts' => $massage->findAll(),
-            'pageTitle' => 'Massages',
-            'postPath' => 'massage_read'
-
+            'pageTitle' => 'Massages'
         ]);
     }
 
@@ -56,8 +54,7 @@ class MassageController extends AbstractController
     {
         return $this->render('front/corpsEsprit/post.html.twig', [
             'post' => $massage,
-            'pageTitle' => 'Massages',
-            'categoryPath' => 'massage'
+            'pageTitle' => 'Massages'
         ]);
     }
 }

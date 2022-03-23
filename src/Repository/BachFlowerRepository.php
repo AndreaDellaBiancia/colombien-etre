@@ -45,6 +45,24 @@ class BachFlowerRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * @return BachFlower[]
+     */
+    public function findAllBySearchTerm($searchTerm)
+    {
+        return
+            $this->createQueryBuilder('category')
+
+            // WHERE title LIKE searchTerm
+            ->andWhere('category.title LIKE :searchTerm')
+            ->orWhere('category.content LIKE :searchTerm')
+            ->orWhere('category.author LIKE :searchTerm')
+            ->setParameter(':searchTerm', "%$searchTerm%")
+
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return BachFlower[] Returns an array of BachFlower objects
     //  */

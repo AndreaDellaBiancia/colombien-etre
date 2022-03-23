@@ -9,15 +9,15 @@
     </li>
     <li>></li>
     <li><a href="{{ path('corpsEsprit') }}">Corps & Esprit</a></li>
-    <li>></li>
-    <li>{{pageTitle}}</li>
 </ul>
 
 <section class="posts">
 
     <div class="posts_menu">
 
-        <h2>{{pageTitle}}</h2>
+        <a href="{{ path('corpsEsprit') }}">
+            <h2>Corps & Esprit</h2>
+        </a>
 
         <div class="search-form">
             <form action="{{ path('searchPost') }}">

@@ -19,8 +19,7 @@ class BachFlowerController extends AbstractController
     {
         return $this->render('front/corpsEsprit/posts_list.html.twig', [
             'posts' => $bachFlower->findAll(),
-            'pageTitle' => 'Fleurs de Bach',
-            'postPath' => 'bachFlower_read'
+            'pageTitle' => 'Fleurs de Bach'
         ]);
     }
 
@@ -54,7 +53,6 @@ class BachFlowerController extends AbstractController
         return $this->render('front/corpsEsprit/post.html.twig', [
             'post' => $bachFlower,
             'pageTitle' => 'Fleurs de Bach',
-            'categoryPath' => 'bachFlower'
         ]);
     }
 }

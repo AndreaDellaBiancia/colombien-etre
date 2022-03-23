@@ -67,6 +67,15 @@ class Sport
      */
     private $slug;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $category;
+
+    public function __construct(){
+        $this->category = 'sport';
+    }
+
     
 
     public function getId(): ?int
@@ -190,6 +199,18 @@ class Sport
     public function setSlug(?string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getCategory(): ?string
+    {
+        return $this->category;
+    }
+
+    public function setCategory(string $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }

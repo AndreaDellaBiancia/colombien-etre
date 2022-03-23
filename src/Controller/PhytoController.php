@@ -20,7 +20,6 @@ class PhytoController extends AbstractController
         return $this->render('front/corpsEsprit/posts_list.html.twig', [
             'posts' => $phyto->findAll(),
             'pageTitle' => 'Phytothérapie',
-            'postPath' => 'phyto_read' 
         ]);
     }
 
@@ -55,7 +54,6 @@ class PhytoController extends AbstractController
         return $this->render('front/corpsEsprit/post.html.twig', [
             'post' => $phyto,
             'pageTitle' => 'Phytothérapie',
-            'categoryPath' => 'phyto'
         ]);
     }
 }

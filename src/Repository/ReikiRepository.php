@@ -45,6 +45,25 @@ class ReikiRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * @return Reiki[] 
+     */
+    public function findAllBySearchTerm($searchTerm)
+    {
+        return
+            $this->createQueryBuilder('category')
+
+            // WHERE title LIKE searchTerm
+            ->andWhere('category.title LIKE :searchTerm')
+            ->orWhere('category.content LIKE :searchTerm')
+            ->orWhere('category.author LIKE :searchTerm')
+            ->setParameter(':searchTerm', "%$searchTerm%")
+
+            ->getQuery()
+            ->getResult();
+    }
+
+
     // /**
     //  * @return Reiki[] Returns an array of Reiki objects
     //  */

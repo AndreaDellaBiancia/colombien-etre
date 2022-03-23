@@ -19,9 +19,7 @@ class AutohypnoseController extends AbstractController
     {
         return $this->render('front/corpsEsprit/posts_list.html.twig', [
             'posts' => $autohypnose->findAll(),
-            'pageTitle' => 'Autohypnose',
-            'postPath' => 'autohypnose_read'
-
+            'pageTitle' => 'Autohypnose'
         ]);
     }
     
@@ -57,7 +55,6 @@ class AutohypnoseController extends AbstractController
         return $this->render('front/corpsEsprit/post.html.twig', [
             'post' => $autohypnose,
             'pageTitle' => 'Autohypnose',
-            'categoryPath' => 'autohypnose'
         ]);
     }
 }

@@ -31,7 +31,7 @@ class SearchProductController extends AbstractController
             $items = [];
 
             //Je fais une double boucle pour recuperer tous les produits des sous-tableaux et je les stoke
-            //dans un nouveau tableau ($results)
+            //dans un nouveau tableau ($items)
             foreach ($listsProducts as $listProducts) {
                 foreach ($listProducts as $product) {
                     $items[] = $product;

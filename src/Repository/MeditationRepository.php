@@ -45,6 +45,24 @@ class MeditationRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * @return Meditation[] 
+     */
+    public function findAllBySearchTerm($searchTerm)
+    {
+        return
+            $this->createQueryBuilder('category')
+
+            // WHERE title LIKE searchTerm
+            ->andWhere('category.title LIKE :searchTerm')
+            ->orWhere('category.content LIKE :searchTerm')
+            ->orWhere('category.author LIKE :searchTerm')
+            ->setParameter(':searchTerm', "%$searchTerm%")
+
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Meditation[] Returns an array of Meditation objects
     //  */

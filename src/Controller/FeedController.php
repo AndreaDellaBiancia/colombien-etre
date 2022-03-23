@@ -19,9 +19,7 @@ class FeedController extends AbstractController
     {
         return $this->render('front/corpsEsprit/posts_list.html.twig', [
             'posts' => $feed->findAll(),
-            'pageTitle' => 'Alimentation',
-            'postPath' => 'feed_read'
-
+            'pageTitle' => 'Alimentation'
         ]);
     }
 
@@ -55,7 +53,6 @@ class FeedController extends AbstractController
         return $this->render('front/corpsEsprit/post.html.twig', [
             'post' => $feed,
             'pageTitle' => 'Alimentation',
-            'categoryPath' => 'feed'
         ]);
     }
 }

@@ -20,8 +20,6 @@ class SportController extends AbstractController
         return $this->render('front/corpsEsprit/posts_list.html.twig', [
             'posts' => $sport->findAll(),
             'pageTitle' => 'Sport',
-            'postPath' => 'sport_read'
-            
         ]);
     }
 
@@ -55,8 +53,7 @@ class SportController extends AbstractController
     {
         return $this->render('front/corpsEsprit/post.html.twig', [
             'post' => $sport,
-            'pageTitle' => 'Sport',
-            'categoryPath' => 'sport'
+            'pageTitle' => 'Sport'
         ]);
     }
 }
