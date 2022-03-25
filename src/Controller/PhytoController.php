@@ -6,7 +6,9 @@ use App\Entity\Phyto;
 use App\Repository\PhytoRepository;
 use App\Service\Slugger;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -15,10 +17,19 @@ class PhytoController extends AbstractController
     /**
      * @Route("/phytotherapie", name="phyto")
      */
-    public function index(PhytoRepository $phyto): Response
+    public function index(PhytoRepository $phyto, Request $request, PaginatorInterface $paginator): Response
     {
+
+        $allPosts = $phyto->findAll();
+
+        $posts = $paginator->paginate(
+            $allPosts,
+            $request->query->getInt('page', 1),
+            10
+        );
+
         return $this->render('front/corpsEsprit/posts_list.html.twig', [
-            'posts' => $phyto->findAll(),
+            'posts' => $posts,
             'pageTitle' => 'Phytothérapie',
         ]);
     }

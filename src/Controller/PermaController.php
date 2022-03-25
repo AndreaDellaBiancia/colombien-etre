@@ -6,7 +6,9 @@ use App\Entity\Perma;
 use App\Repository\PermaRepository;
 use App\Service\Slugger;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -15,10 +17,19 @@ class PermaController extends AbstractController
     /**
      * @Route("/permatherapie", name="perma")
      */
-    public function index(PermaRepository $perma): Response
+    public function index(PermaRepository $perma, Request $request, PaginatorInterface $paginator): Response
     {
+
+        $allPosts = $perma->findAll();
+
+        $posts = $paginator->paginate(
+            $allPosts,
+            $request->query->getInt('page', 1),
+            10
+        );
+
         return $this->render('front/corpsEsprit/posts_list.html.twig', [
-            'posts' => $perma->findAll(),
+            'posts' => $posts,
             'pageTitle' => 'Permathérapie'
         ]);
     }

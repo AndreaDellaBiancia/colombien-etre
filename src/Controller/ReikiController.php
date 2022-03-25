@@ -6,7 +6,9 @@ use App\Entity\Reiki;
 use App\Repository\ReikiRepository;
 use App\Service\Slugger;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -15,10 +17,18 @@ class ReikiController extends AbstractController
     /**
      * @Route("/reiki", name="reiki")
      */
-    public function index(ReikiRepository $reiki): Response
+    public function index(ReikiRepository $reiki, Request $request, PaginatorInterface $paginator): Response
     {
+        $allPosts = $reiki->findAll();
+
+        $posts = $paginator->paginate(
+            $allPosts,
+            $request->query->getInt('page', 1),
+            10
+        );
+
         return $this->render('front/corpsEsprit/posts_list.html.twig', [
-            'posts' => $reiki->findAll(),
+            'posts' => $posts,
             'pageTitle' => 'Reiki'
         ]);
     }

@@ -11,6 +11,7 @@ use App\Repository\PermaRepository;
 use App\Repository\PhytoRepository;
 use App\Repository\ReikiRepository;
 use App\Repository\SportRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -54,7 +55,7 @@ class SearchPostController extends AbstractController
     /**
      * @Route("/corps-esprit/search", name="searchPost")
      */
-    public function index(Request $request): Response
+    public function index(Request $request, PaginatorInterface $paginator): Response
     {
 
         $posts = [];
@@ -88,13 +89,13 @@ class SearchPostController extends AbstractController
         dump($postsNb); 
         dump($posts);
 
-        /*
-        $results = $paginator->paginate(
-            $items,
+        
+        $posts = $paginator->paginate(
+            $posts,
             $request->query->getInt('page', 1),
-            16
+            10
         );
-*/
+ 
 
 
         if (isset($_GET['q'])) {

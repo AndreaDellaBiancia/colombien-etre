@@ -6,7 +6,9 @@ use App\Entity\Feed;
 use App\Repository\FeedRepository;
 use App\Service\Slugger;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -15,10 +17,19 @@ class FeedController extends AbstractController
     /**
      * @Route("/alimentation", name="feed")
      */
-    public function index(FeedRepository $feed): Response
+    public function index(FeedRepository $feed, Request $request, PaginatorInterface $paginator): Response
     {
+
+        $allPosts = $feed->findAll();
+
+        $posts = $paginator->paginate(
+            $allPosts,
+            $request->query->getInt('page', 1),
+            10
+        );
+
         return $this->render('front/corpsEsprit/posts_list.html.twig', [
-            'posts' => $feed->findAll(),
+            'posts' => $posts,
             'pageTitle' => 'Alimentation'
         ]);
     }

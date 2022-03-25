@@ -6,7 +6,9 @@ use App\Entity\Sport;
 use App\Repository\SportRepository;
 use App\Service\Slugger;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -15,10 +17,18 @@ class SportController extends AbstractController
     /**
      * @Route("/sport", name="sport")
      */
-    public function index(SportRepository $sport): Response
+    public function index(SportRepository $sport, Request $request, PaginatorInterface $paginator): Response
     {
+        
+        $allPosts = $sport->findAll();
+
+        $posts = $paginator->paginate(
+            $allPosts,
+            $request->query->getInt('page', 1),
+            10
+        );
         return $this->render('front/corpsEsprit/posts_list.html.twig', [
-            'posts' => $sport->findAll(),
+            'posts' => $posts,
             'pageTitle' => 'Sport',
         ]);
     }

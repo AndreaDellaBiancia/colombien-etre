@@ -6,7 +6,9 @@ use App\Entity\Massage;
 use App\Repository\MassageRepository;
 use App\Service\Slugger;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -15,10 +17,19 @@ class MassageController extends AbstractController
     /**
      * @Route("/massages", name="massage")
      */
-    public function index(MassageRepository $massage): Response
+    public function index(MassageRepository $massage, Request $request, PaginatorInterface $paginator): Response
     {
+
+        $allPosts = $massage->findAll();
+
+        $posts = $paginator->paginate(
+            $allPosts,
+            $request->query->getInt('page', 1),
+            10
+        );
+
         return $this->render('front/corpsEsprit/posts_list.html.twig', [
-            'posts' => $massage->findAll(),
+            'posts' => $posts,
             'pageTitle' => 'Massages'
         ]);
     }

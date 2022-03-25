@@ -6,7 +6,9 @@ use App\Entity\Autohypnose;
 use App\Repository\AutohypnoseRepository;
 use App\Service\Slugger;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -15,10 +17,19 @@ class AutohypnoseController extends AbstractController
     /**
      * @Route("/autohypnose", name="autohypnose")
      */
-    public function index(AutohypnoseRepository $autohypnose): Response
+    public function index(AutohypnoseRepository $autohypnose, PaginatorInterface $paginator, Request $request): Response
     {
+
+       $allPosts = $autohypnose->findAll();
+
+        $posts = $paginator->paginate(
+            $allPosts,
+            $request->query->getInt('page', 1),
+            10
+        );
+
         return $this->render('front/corpsEsprit/posts_list.html.twig', [
-            'posts' => $autohypnose->findAll(),
+            'posts' => $posts,
             'pageTitle' => 'Autohypnose'
         ]);
     }
