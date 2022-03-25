@@ -493,7 +493,6 @@ p {
   text-align: center;
   font-family: 'Caveat', cursive;
   color: cadetblue;
-  
 }
 
 .filters {
@@ -541,35 +540,19 @@ font-size: 1.5rem;
   align-items: center;
 }
 
-.found-products{
+.found-products, .found-posts{
   font-family: 'Caveat', cursive;
   color: cadetblue;
   text-transform: uppercase;
   margin-left: 1.5rem;
   font-size: 1.1rem;
+  width: fit-content;
 }
 
-.found-products span, .total-items_search span{
+.found-products span, .total-items_search span, .total-posts_search span{
   font-size: 1.6rem;
   font-family: 'Caveat', cursive;
   font-weight: bold;
-}
-
-.no-products {
-  position: absolute;
-  margin-left: 27rem;
-  margin-top: 3rem;
-  font-size: 2rem;
-  
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.no-products a {
-  text-decoration: underline;
 }
 
 .navigation_page{

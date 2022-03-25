@@ -44,6 +44,24 @@ class FeedRepository extends ServiceEntityRepository
             $this->_em->flush();
         }
     }
+    
+    /**
+     * @return Feed[] 
+     */
+    public function findAllBySearchTerm($searchTerm)
+    {
+        return
+            $this->createQueryBuilder('category')
+
+            // WHERE title LIKE searchTerm
+            ->andWhere('category.title LIKE :searchTerm')
+            ->orWhere('category.content LIKE :searchTerm')
+            ->orWhere('category.author LIKE :searchTerm')
+            ->setParameter(':searchTerm', "%$searchTerm%")
+
+            ->getQuery()
+            ->getResult();
+    }
 
     // /**
     //  * @return Feed[] Returns an array of Feed objects

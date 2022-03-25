@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<ul class="fil-ariane">
+    <li>
+        <a href="{{ path('home') }}">Accueil</a>
+    </li>
+    <li>></li>
+    <li><a href="{{ path('corpsEsprit') }}">Corps & Esprit</a></li>
+</ul>
+
+<section class="posts">
+
+    <div class="posts_menu">
+
+        <a href="{{ path('corpsEsprit') }}">
+            <h2>Corps & Esprit</h2>
+        </a>
+
+        <div class="search-form">
+            <form action="{{ path('searchPost') }}">
+                <input class="" name="q" type="search" placeholder="Rechercher...">
+                <button class="btn btn-outline-danger" type="submit"><i class="bi bi-search"></i></button>
+
+            </form>
+        </div>
+    </div>
+    <div class="found-posts">
+        {% if foundPosts is defined and searchTerm is defined %}
+        <p class="total-posts_search">Votre recherche : <span style="margin-right: 1.5rem;">"{{ searchTerm }}"</span> Articles trouvés :<span> {{ foundPosts }} </span></p>
+        {% endif %}
+    </div>
+
+    {% for post in posts %}
+
+    <article class="post">
+        <img src="{{post.thumbnailPicture}}"
+            alt="">
+        <div class="post_description">
+            <h3>{{post.title}}</h3>
+            <p class="post_p">{{ post.content | slice(0, 160) }}...</p>
+            <a href="{{ path( post.category ~ '_read' , {id:post.id}) }}">
+                <p class="post_show">Lire la suite</p>
+            </a>
+        </div>
+    </article>
+    {% endfor %}
+
+</section>
+<div class="navigation_page">
+    <p>{{ knp_pagination_render(posts) }}</p>
+</div>
+   
+{% endblock %}

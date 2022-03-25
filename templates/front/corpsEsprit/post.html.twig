@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<ul class="fil-ariane">
+    <li>
+        <a href="{{ path('home') }}">Accueil</a>
+    </li>
+    <li>></li>
+    <li><a href="{{ path('corpsEsprit') }}">Corps & Esprit</a></li>
+    <li>></li>
+    <li> <a href="{{ path( post.category ) }}">{{pageTitle}}</a></li>
+    <li>></li>
+    <li>{{post.title}}</li>
+</ul>
+
+<section class="">
+<h1>Title post {{post.title}}</h1>
+<img src="{{post.mainPicture}}">
+<p>Content {{post.content}}</p>
+<p>Author {{post.author}}</p>
+<a href="{{post.source}}">
+    <p>voir source</p>
+</a>
+  
+</section>
+
+{% endblock %}

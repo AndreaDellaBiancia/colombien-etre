@@ -34,6 +34,25 @@ class PhytoRepository extends ServiceEntityRepository
     }
 
     /**
+     * @return Phyto[] 
+     */
+    public function findAllBySearchTerm($searchTerm)
+    {
+        return
+            $this->createQueryBuilder('category')
+
+            // WHERE title LIKE searchTerm
+            ->andWhere('category.title LIKE :searchTerm')
+            ->orWhere('category.content LIKE :searchTerm')
+            ->orWhere('category.author LIKE :searchTerm')
+            ->setParameter(':searchTerm', "%$searchTerm%")
+
+            ->getQuery()
+            ->getResult();
+    }
+
+
+    /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
