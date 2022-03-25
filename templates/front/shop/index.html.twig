@@ -11,7 +11,9 @@
     <li>Boutique</li>
 </ul>
 
-<h2 class="shop-title">Produits conseillés</h2>
+<a href="{{ path('shop') }}">
+    <h2 class="shop-title">Produits conseillés</h2>
+</a>
 
 <div class="found-products">
     
@@ -61,26 +63,19 @@
     </div>
     <div class="shop_item-list">
         {% if products == true %}
-        {% for product in products %}
-        <article class="shop_item shop_item--shop">
-            <div class="shop_item_img-conteiner"><img src="{{product.picture}}" alt=""></div>
-            <div class="shop_item-detail">
-                <h4 class="shop_item-brand">{{product.brand}}</h4>
-                <h3 class="shop_item-title">{{product.title}}</h3>
-                <p class="shop_item-price">€ {{product.price}} </p>
-                <a class="shop_item-show" href="{{ product.source }}">
-                    <p>Voir le produit <i class="bi bi-box-arrow-up-right"></i></p>
-                </a>
-            </div>
-        </article>
-        {% endfor %}
-        {% else %}
-        <div class="no-products">
-            <p>Aucun resultat</p>
-            <a href="{{ path('shop') }}">
-                <p>Revenir à la liste des produits</p>
-            </a>
-        </div>
+            {% for product in products %}
+            <article class="shop_item shop_item--shop">
+                <div class="shop_item_img-conteiner"><img src="{{product.picture}}" alt=""></div>
+                <div class="shop_item-detail">
+                    <h4 class="shop_item-brand">{{product.brand}}</h4>
+                    <h3 class="shop_item-title">{{product.title}}</h3>
+                    <p class="shop_item-price">€ {{product.price}} </p>
+                    <a class="shop_item-show" href="{{ product.source }}">
+                        <p>Voir le produit <i class="bi bi-box-arrow-up-right"></i></p>
+                    </a>
+                </div>
+            </article>
+            {% endfor %}
         {% endif %}
     </div>
   

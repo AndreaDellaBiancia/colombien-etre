@@ -82,26 +82,19 @@ class SearchPostController extends AbstractController
         }
 
 
+        $foundPosts = count($posts);
 
-
-        $postsNb = count($posts);
-       
-        dump($postsNb); 
-        dump($posts);
-
-        
         $posts = $paginator->paginate(
             $posts,
             $request->query->getInt('page', 1),
             10
         );
- 
 
 
         if (isset($_GET['q'])) {
             return $this->render('front/corpsEsprit/list_found_posts.html.twig', [
                 'posts' =>  $posts,
-                'postsNb' => $postsNb,
+                'foundPosts' => $foundPosts,
                 'searchTerm' => $searchTerm,
             ]);
         } else {
