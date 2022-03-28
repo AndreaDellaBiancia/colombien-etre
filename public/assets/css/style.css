@@ -569,6 +569,39 @@ margin-top: 3rem;
   width: 20%;
 }
 
+.menu_form{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin: 3.5rem auto;
+}
 
+.menu_form h1{
+width: 100%;
+text-align: center;
+}  
+
+.menu_form_buttons{
+width: 100%;
+text-align: right;
+margin-right: 3rem;
+}
+
+.menu_form_buttons a{
+  margin-left: 1rem;
+  box-shadow: 5px 3px 6px gray;
+  border: 2px solid black;
+  color: black;
+  text-decoration: none;
+  padding: 0.3rem;
+  font-weight: 700;
+
+  }
+
+  .menu_form_buttons a:hover{
+    box-shadow: none;
+    background-color: grey;
+    color: white;
+    }
 
 

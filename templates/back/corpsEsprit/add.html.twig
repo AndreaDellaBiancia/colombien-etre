@@ -3,10 +3,13 @@
 {% block title %}Ajouter Article{% endblock %}
 
 {% block body %}
+<div class="menu_form">
+    <div class="menu_form_buttons"><a href="{{ path('back_' ~ post.category ~ '_browse') }}">Liste article</a></div>
     <h1 class="title_form">Ajouter un Article</h1>
+</div>
 
-    {{ include('back/corpsEsprit/_form.html.twig', {"button_label": "AJOUTER"}) }}
-    
+{{ include('back/corpsEsprit/_form.html.twig', {"button_label": "AJOUTER"}) }}
 
-    <a class="back_list_form" href="{{ path('back_' ~ post.category ~ '_browse') }}">back to list</a>
+
+
 {% endblock %}

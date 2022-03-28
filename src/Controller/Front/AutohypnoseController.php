@@ -20,7 +20,7 @@ class AutohypnoseController extends AbstractController
     public function index(AutohypnoseRepository $autohypnose, PaginatorInterface $paginator, Request $request): Response
     {
 
-       $allPosts = $autohypnose->findAll();
+       $allPosts = $autohypnose->findBy([], ['id' => 'DESC']);
 
         $posts = $paginator->paginate(
             $allPosts,

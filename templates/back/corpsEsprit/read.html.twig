@@ -3,8 +3,15 @@
 {% block title %}Template{% endblock %}
 
 {% block body %}
-    <h1>Article : {{ post.title }}</h1>
 
+<div class="menu_form">
+    <div class="menu_form_buttons">
+        <a href="{{ path('back_' ~ post.category ~ '_edit', {'id': post.id}) }}">Modifier article</a>
+        <a href="{{ path('back_' ~ post.category ~ '_browse') }}">Liste article</a>
+    </div>
+    <h1>Article : {{ post.title }}</h1>
+</div>
+    
     <table class="table">
         <tbody>
             <tr>
@@ -49,11 +56,5 @@
             </tr>
         </tbody>
     </table>
-
-    <a href="{# {{ path('template_edit', {'id': template.id}) }} #}">edit</a>
-    <a href="{{ path('back_autohypnose_browse') }}">back to list</a>
-
-
-
 
 {% endblock %}

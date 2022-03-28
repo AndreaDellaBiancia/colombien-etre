@@ -3,10 +3,11 @@
 {% block title %}Modifier Article{% endblock %}
 
 {% block body %}
-    <h1 class="title_form">Modifier un Article</h1>
+    <div class="menu_form">
+        <div class="menu_form_buttons"><a href="{{ path('back_' ~ post.category ~ '_browse') }}">Liste articles</a></div>
+        <h1 class="title_form">Modifier un Article</h1>
+    </div>
 
     {{ include('back/corpsEsprit/_form.html.twig', {"button_label": "MODIFIER"}) }}
-    
 
-    <a class="back_list_form" href="{{ path('back_' ~ post.category ~ '_browse') }}">back to list</a>
 {% endblock %}
