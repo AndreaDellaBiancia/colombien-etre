@@ -1,0 +1,43 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Template{% endblock %}
+
+{% block body %}
+    <h1>Articles Autohypnose</h1>
+
+    <table class="table">
+    <a href="">Create new</a>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Vues</th>
+                <th>Date de creation</th>
+                <th>Mis à jour le</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for post in posts %}
+      
+            <tr>
+                <td>{{post.id}}</td>
+                <td>{{post.title}}</td>
+                <td>{{post.views}}</td>
+                <td>{{post.createdAt | date('d-m-Y')}}</td>
+                <td>{{post.updatedAt ?  post.updatedAt | date('d-m-Y') : ''}}</td>
+                <td>
+                    <a href="{{ path('back_autohypnose_read', {'id': post.id}) }}">show</a>
+                    <a href="{# {{ path('template_edit', {'id': template.id}) }} #}">edit</a>
+                    <a href="{# {{ path('template_delete', {'id': template.id}) }} #}">delete</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

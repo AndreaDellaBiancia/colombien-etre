@@ -1,0 +1,59 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Template{% endblock %}
+
+{% block body %}
+    <h1>Article : {{ post.title }}</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ post.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ post.title }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ post.content }}</td>
+            </tr>
+            <tr>
+                <th>Auteur </th>
+                <td>{{ post.author }}</td>
+            </tr>
+            <tr>
+                <th>Source</th>
+                <td>{{post.source}}</td>
+            </tr>
+            <tr>
+                <th>Vues</th>
+                <td>{{post.views}}</td>
+            </tr>
+            <tr>
+                <th>Date de création </th>
+                <td>{{ post.createdAt ? post.createdAt|date('d-m-Y H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Mis à jour le</th>
+                <td>{{ post.updatedAt ? post.updatedAt|date('d-m-Y H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Image diapo </th>
+                <td><img src="{{ post.thumbnailPicture }}" alt=""></td>
+            </tr>
+            <tr>
+                <th>Image principale</th>
+                <td><img src="{{ post.mainPicture }}" alt=""></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{# {{ path('template_edit', {'id': template.id}) }} #}">edit</a>
+    <a href="{{ path('back_autohypnose_index') }}">back to list</a>
+
+
+
+
+{% endblock %}

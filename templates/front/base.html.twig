@@ -26,11 +26,11 @@
 </head>
 
 <body>
-    {% include "_nav.html.twig" %}
+    {% include "front/_nav.html.twig" %}
 
     {% block body %}{% endblock %}
 
-    {% include "_footer.html.twig" %}
+    {% include "front/_footer.html.twig" %}
 
     {% block javascripts %}
     <script src="{{ asset('assets/js/navbar.js') }}"></script>
