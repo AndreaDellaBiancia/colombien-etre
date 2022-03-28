@@ -16,13 +16,23 @@ use Symfony\Component\Routing\Annotation\Route;
      */
 class AutohypnoseController extends AbstractController
 {
+
+    private $manager;
+
+   
+    public function __construct(EntityManagerInterface $manager)
+    {
+        $this->manager = $manager;
+    }
+
     /**
      * @Route("/", name="browse")
      */
     public function browse(AutohypnoseRepository $autohypnoseRepository): Response
     {
-        return $this->render('back/corpsEsprit/index.html.twig', [
-            'posts' => $autohypnoseRepository->findAll()
+        return $this->render('back/corpsEsprit/browse.html.twig', [
+            'posts' => $autohypnoseRepository->findBy([], ['id' => 'DESC']),
+            'category' => 'autohypnose'
         ]);
     }
 
@@ -32,7 +42,7 @@ class AutohypnoseController extends AbstractController
     public function read(Autohypnose $autohypnose): Response
     {
         return $this->render('back/corpsEsprit/read.html.twig', [
-            'post' => $autohypnose
+            'post' => $autohypnose 
         ]);
     }
 
@@ -40,14 +50,14 @@ class AutohypnoseController extends AbstractController
      * 
      * @Route("/{id}/edit", name="edit")
      */
-    public function edit(Request $request,  Autohypnose $autohypnose, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request,  Autohypnose $autohypnose): Response
     {
         $form = $this->createForm(PostType::class, $autohypnose);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $autohypnose->setUpdatedAt(new \DateTimeImmutable());
-            $entityManager->flush();
+            $this->manager->flush();
 
             return $this->redirectToRoute('back_autohypnose_browse', [], Response::HTTP_SEE_OTHER);
         }
@@ -56,5 +66,40 @@ class AutohypnoseController extends AbstractController
             'post' => $autohypnose,
             'form' => $form,
         ]);
+    }
+
+     /**
+     * 
+     * @Route("/add/post", name="add")
+     */
+    public function add(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $autohypnose = New Autohypnose();
+        $form = $this->createForm(PostType::class, $autohypnose);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            
+            $this->manager->persist($autohypnose);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('back_autohypnose_browse', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('back/corpsEsprit/add.html.twig', [
+            'post' => $autohypnose,
+            'form' => $form,
+        ]);
+    }
+
+    /**
+     * @Route("/delete/{id}", name="delete")
+     */
+    public function delete(Autohypnose $autohypnose)
+    {       
+        $this->manager->remove($autohypnose);
+        $this->manager->flush();
+
+        return $this->redirectToRoute('back_autohypnose_browse');
     }
 }

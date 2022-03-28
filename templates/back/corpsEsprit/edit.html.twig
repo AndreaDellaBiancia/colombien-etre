@@ -5,8 +5,8 @@
 {% block body %}
     <h1 class="title_form">Modifier un Article</h1>
 
-    {{ include('back/corpsEsprit/_form.html.twig', {"button_label": "UPDATE"}) }}
+    {{ include('back/corpsEsprit/_form.html.twig', {"button_label": "MODIFIER"}) }}
     
 
-    <a class="back_list_form" href="{{ path('back_autohypnose_browse') }}">back to list</a>
+    <a class="back_list_form" href="{{ path('back_' ~ post.category ~ '_browse') }}">back to list</a>
 {% endblock %}
