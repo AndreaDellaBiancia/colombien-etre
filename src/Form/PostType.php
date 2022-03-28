@@ -19,9 +19,8 @@ class PostType extends AbstractType
                 'constraints' => [new NotBlank()]
             ])
             ->add('content', TextareaType::class, [
-                'label' => 'Description*',
-                'constraints' => [new NotBlank()]
-            ])
+                'attr' => ['class' => 'ckeditor']
+                ])
             ->add('thumbnailPicture', null, [
                 'label' => 'Photo diapo*',
                 'constraints' => [new NotBlank()]

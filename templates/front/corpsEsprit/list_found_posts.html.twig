@@ -40,7 +40,7 @@
             alt="">
         <div class="post_description">
             <h3>{{post.title}}</h3>
-            <p class="post_p">{{ post.content | slice(0, 160) }}...</p>
+            <p class="post_p">{{ post.content  | striptags |  slice(0, 160) | raw }}...</p>
             <a href="{{ path( post.category ~ '_read' , {id:post.id}) }}">
                 <p class="post_show">Lire la suite</p>
             </a>
