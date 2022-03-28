@@ -4,25 +4,34 @@ namespace App\Form;
 
 use App\Entity\Autohypnose;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class PostType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('title')
-            ->add('content')
-            ->add('thumbnailPicture')
-            ->add('mainPicture')
+            ->add('title', null, [
+                'label' => 'Titre*',
+                'constraints' => [new NotBlank()]
+            ])
+            ->add('content', TextareaType::class, [
+                'label' => 'Description*',
+                'constraints' => [new NotBlank()]
+            ])
+            ->add('thumbnailPicture', null, [
+                'label' => 'Photo diapo*',
+                'constraints' => [new NotBlank()]
+            ])
+            ->add('mainPicture', null, [
+                'label' => 'Photo principale*',
+                'constraints' => [new NotBlank()]
+            ])
             ->add('author')
-            ->add('views')
             ->add('source')
-            ->add('createdAt')
-            ->add('updatedAt')
-            ->add('slug')
-            ->add('category')
         ;
     }
 

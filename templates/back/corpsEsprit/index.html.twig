@@ -1,6 +1,6 @@
 {% extends 'back/base.html.twig' %}
 
-{% block title %}Template{% endblock %}
+{% block title %}Articles{% endblock %}
 
 {% block body %}
     <h1>Articles Autohypnose</h1>
@@ -27,7 +27,7 @@
                 <td>{{post.updatedAt ?  post.updatedAt | date('d-m-Y') : ''}}</td>
                 <td>
                     <a href="{{ path('back_autohypnose_read', {'id': post.id}) }}">show</a>
-                    <a href="{# {{ path('template_edit', {'id': template.id}) }} #}">edit</a>
+                    <a href="{{ path('back_autohypnose_edit', {'id': post.id}) }}">edit</a>
                     <a href="{# {{ path('template_delete', {'id': template.id}) }} #}">delete</a>
                 </td>
             </tr>

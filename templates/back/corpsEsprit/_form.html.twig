@@ -1,0 +1,39 @@
+
+{{ form_start(form) }}
+    
+        <div class="my-custom-class-for-errors">
+            {{ form_errors(form) }}
+        </div>
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.title) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.content) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.thumbnailPicture) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.mainPicture) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.author) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.source) }}
+            </div>
+        </div>
+        <div class="row row--btn"><button >{{ button_label|default('SAVE') }}</button></div>
+    
+{{ form_end(form) }}
