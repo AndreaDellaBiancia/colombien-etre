@@ -1,0 +1,15 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Ajouter Produit{% endblock %}
+
+{% block body %}
+<div class="menu_form">
+    <div class="menu_form_buttons"><a href="{{ path('back_shop_browse') }}">Liste produits</a></div>
+    <h1 class="title_form">Ajouter un Produit</h1>
+</div>
+
+{{ include('back/shop/_form.html.twig', {"button_label": "AJOUTER"}) }}
+
+
+
+{% endblock %}

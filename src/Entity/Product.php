@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ProductRepository;
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -52,12 +53,15 @@ class Product
      */
     private $updatedAt;
 
-    
-
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $category;
+
+    public function __construct(){
+    
+        $this->createdAt = New DateTimeImmutable();
+    }
 
     public function getId(): ?int
     {

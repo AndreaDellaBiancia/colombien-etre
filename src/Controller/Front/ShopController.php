@@ -18,7 +18,7 @@ class ShopController extends AbstractController
     public function index(ProductRepository $productRepository, Request $request, PaginatorInterface $paginator): Response
     {
         
-        $items = $productRepository->findAll();
+        $items = $productRepository->findBy([], ['id' => 'DESC']);
         $allProductsNb = count($items);
 
         $allProducts = $paginator->paginate(
