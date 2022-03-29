@@ -19,7 +19,7 @@ class ReikiController extends AbstractController
      */
     public function index(ReikiRepository $reiki, Request $request, PaginatorInterface $paginator): Response
     {
-        $allPosts = $reiki->findAll();
+        $allPosts = $reiki->findBy([], ['id' => 'DESC']);
 
         $posts = $paginator->paginate(
             $allPosts,

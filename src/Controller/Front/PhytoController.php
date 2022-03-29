@@ -20,7 +20,7 @@ class PhytoController extends AbstractController
     public function index(PhytoRepository $phyto, Request $request, PaginatorInterface $paginator): Response
     {
 
-        $allPosts = $phyto->findAll();
+        $allPosts = $phyto->findBy([], ['id' => 'DESC']);
 
         $posts = $paginator->paginate(
             $allPosts,

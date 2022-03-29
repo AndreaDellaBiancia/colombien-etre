@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\SportRepository;
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -74,6 +75,7 @@ class Sport
 
     public function __construct(){
         $this->category = 'sport';
+        $this->createdAt = New DateTimeImmutable();
     }
 
     

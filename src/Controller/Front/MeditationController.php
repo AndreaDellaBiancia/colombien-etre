@@ -20,7 +20,7 @@ class MeditationController extends AbstractController
     public function index(MeditationRepository $meditation, Request $request, PaginatorInterface $paginator): Response
     {
 
-        $allPosts = $meditation->findAll();
+        $allPosts = $meditation->findBy([], ['id' => 'DESC']);
 
         $posts = $paginator->paginate(
             $allPosts,

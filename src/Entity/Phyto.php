@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\PhytoRepository;
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -74,6 +75,7 @@ class Phyto
 
     public function __construct(){
         $this->category = 'phyto';
+        $this->createdAt = New DateTimeImmutable();
     }
 
 

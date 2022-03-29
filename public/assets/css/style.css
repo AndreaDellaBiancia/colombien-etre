@@ -31,6 +31,7 @@
   text-align: center;
   font-size: 1.5rem;
   padding: 2.2rem;
+  text-decoration: none;
 }
 
 .nav_links_children {
@@ -55,6 +56,7 @@
   font-family: 'Caveat', cursive;
   color: #5eaabd;
   font-size: 1.5rem;
+  text-decoration: none;
 }
 
 .main-img {
@@ -173,15 +175,15 @@ p {
 }
 
 .home-shop-right {
-  width:60%;
+  width: 60%;
   display: flex;
- 
+
 
 }
 
 .shop_item--home {
-  width: calc(100%  / 3);
-  
+  width: calc(100% / 3);
+
 }
 
 .shop_item {
@@ -198,17 +200,17 @@ p {
   box-shadow: 3px 3px 4px #afb2b3;
 }
 
-.shop_item_img-conteiner{
-  max-width:260px;
-  height:260px;
+.shop_item_img-conteiner {
+  max-width: 260px;
+  height: 260px;
   margin: 0;
   display: flex;
   align-items: center;
- 
+
 }
 
 .shop_item img {
- 
+
   margin: 0 auto;
   max-width: 100%;
   max-height: 100%;
@@ -216,7 +218,7 @@ p {
 
 .shop_item-detail {
   text-transform: uppercase;
-  width:100%;
+  width: 100%;
   max-height: 40%;
   display: flex;
   flex-direction: column;
@@ -485,7 +487,7 @@ p {
   justify-content: center;
 }
 
-.shop-title{
+.shop-title {
   margin-top: 2rem;
   margin-bottom: 2rem;
   font-size: 3.5rem;
@@ -500,14 +502,14 @@ p {
   max-width: 15%;
 }
 
-.filter_search{
+.filter_search {
   width: 100%;
   text-align: center;
   margin-top: 3rem;
 }
 
 
-.filters h3{
+.filters h3 {
   margin-bottom: 1rem;
   text-transform: uppercase;
   font-family: 'Caveat', cursive;
@@ -516,10 +518,10 @@ p {
 }
 
 .filter_checkbox {
-font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
-.filter_checkbox input{
+.filter_checkbox input {
   margin-bottom: 1rem;
 }
 
@@ -539,7 +541,8 @@ font-size: 1.5rem;
   align-items: center;
 }
 
-.found-products, .found-posts{
+.found-products,
+.found-posts {
   font-family: 'Caveat', cursive;
   color: cadetblue;
   text-transform: uppercase;
@@ -548,46 +551,49 @@ font-size: 1.5rem;
   width: fit-content;
 }
 
-.found-products span, .total-items_search span, .total-posts_search span{
+.found-products span,
+.total-items_search span,
+.total-posts_search span {
   font-size: 1.6rem;
   font-family: 'Caveat', cursive;
   font-weight: bold;
 }
 
-.navigation_page{
-text-align: center;
-font-size: 1.5rem;
-margin-top: 3rem;
+.navigation_page {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 3rem;
 }
 
-.row, .title_form{
-  width:85%;
+.row,
+.title_form {
+  width: 85%;
   margin: 0 auto;
 }
 
-.row--btn{
+.row--btn {
   width: 20%;
 }
 
-.menu_form{
+.menu_form {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
   margin: 3.5rem auto;
 }
 
-.menu_form h1{
-width: 100%;
-text-align: center;
-}  
-
-.menu_form_buttons{
-width: 100%;
-text-align: right;
-margin-right: 3rem;
+.menu_form h1 {
+  width: 100%;
+  text-align: center;
 }
 
-.menu_form_buttons a{
+.menu_form_buttons {
+  width: 100%;
+  text-align: right;
+  margin-right: 3rem;
+}
+
+.menu_form_buttons a {
   margin-left: 1rem;
   box-shadow: 5px 3px 6px gray;
   border: 2px solid black;
@@ -596,12 +602,10 @@ margin-right: 3rem;
   padding: 0.3rem;
   font-weight: 700;
 
-  }
+}
 
-  .menu_form_buttons a:hover{
-    box-shadow: none;
-    background-color: grey;
-    color: white;
-    }
-
-
+.menu_form_buttons a:hover {
+  box-shadow: none;
+  background-color: grey;
+  color: white;
+}

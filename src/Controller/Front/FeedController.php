@@ -20,7 +20,7 @@ class FeedController extends AbstractController
     public function index(FeedRepository $feed, Request $request, PaginatorInterface $paginator): Response
     {
 
-        $allPosts = $feed->findAll();
+        $allPosts = $feed->findBy([], ['id' => 'DESC']);
 
         $posts = $paginator->paginate(
             $allPosts,

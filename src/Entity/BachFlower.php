@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\BachFlowerRepository;
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -74,6 +75,7 @@ class BachFlower
 
     public function __construct(){
         $this->category = 'bachFlower';
+        $this->createdAt = New DateTimeImmutable();
     }
 
 

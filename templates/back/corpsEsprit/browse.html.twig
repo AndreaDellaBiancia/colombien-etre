@@ -5,8 +5,8 @@
 {% block body %}
 
 <div class="menu_form">
-    <div class="menu_form_buttons"><a href="{{ path('back_autohypnose_add') }}">Ajouter article</a></div>
-    <h1 class="title_form">Articles Autohypnose</h1>
+    <div class="menu_form_buttons"><a href="{{ path('back_'~ category ~'_add') }}">Ajouter article</a></div>
+    <h1 class="title_form">Articles {{pageTitle}}</h1>
 </div>
     <table class="table">
         <thead>
@@ -28,9 +28,9 @@
                 <td>{{post.createdAt | date('d-m-Y')}}</td>
                 <td>{{post.updatedAt ?  post.updatedAt | date('d-m-Y') : ''}}</td>
                 <td>
-                    <a href="{{ path('back_autohypnose_read', {'id': post.id}) }}">show</a>
-                    <a href="{{ path('back_autohypnose_edit', {'id': post.id}) }}">edit</a>
-                    <a href="{{ path('back_autohypnose_delete', {'id': post.id}) }}">delete</a>
+                    <a href="{{ path('back_'~ category ~'_read', {'id': post.id}) }}">show</a>
+                    <a href="{{ path('back_'~ category ~'_edit', {'id': post.id}) }}">edit</a>
+                    <a href="{{ path('back_'~ category ~'_delete', {'id': post.id}) }}">delete</a>
                 </td>
             </tr>
         {% else %}

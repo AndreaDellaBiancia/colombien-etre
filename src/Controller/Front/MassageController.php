@@ -20,7 +20,7 @@ class MassageController extends AbstractController
     public function index(MassageRepository $massage, Request $request, PaginatorInterface $paginator): Response
     {
 
-        $allPosts = $massage->findAll();
+        $allPosts = $massage->findBy([], ['id' => 'DESC']);
 
         $posts = $paginator->paginate(
             $allPosts,

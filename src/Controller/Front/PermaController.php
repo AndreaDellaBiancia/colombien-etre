@@ -20,7 +20,7 @@ class PermaController extends AbstractController
     public function index(PermaRepository $perma, Request $request, PaginatorInterface $paginator): Response
     {
 
-        $allPosts = $perma->findAll();
+        $allPosts = $perma->findBy([], ['id' => 'DESC']);
 
         $posts = $paginator->paginate(
             $allPosts,

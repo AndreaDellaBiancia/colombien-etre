@@ -20,7 +20,7 @@ class SportController extends AbstractController
     public function index(SportRepository $sport, Request $request, PaginatorInterface $paginator): Response
     {
         
-        $allPosts = $sport->findAll();
+        $allPosts = $sport->findBy([], ['id' => 'DESC']);
 
         $posts = $paginator->paginate(
             $allPosts,

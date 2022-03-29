@@ -20,7 +20,7 @@ class BachFlowerController extends AbstractController
     public function index(BachFlowerRepository $bachFlower, Request $request, PaginatorInterface $paginator): Response
     {
 
-        $allPosts = $bachFlower->findAll();
+        $allPosts = $bachFlower->findBy([], ['id' => 'DESC']);
 
         $posts = $paginator->paginate(
             $allPosts,

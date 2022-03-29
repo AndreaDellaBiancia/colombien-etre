@@ -2,9 +2,9 @@
 
 namespace App\Controller\Back;
 
-use App\Entity\Autohypnose;
+use App\Entity\Feed;
 use App\Form\PostType;
-use App\Repository\AutohypnoseRepository;
+use App\Repository\FeedRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,9 +14,9 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * 
- * @Route("/backoffice/autohypnose", name="back_autohypnose_")
+ * @Route("/backoffice/alimentation", name="back_feed_")
  */
-class AutohypnoseController extends AbstractController
+class FeedController extends AbstractController
 {
 
     private $manager;
@@ -30,22 +30,22 @@ class AutohypnoseController extends AbstractController
     /**
      * @Route("", name="browse")
      */
-    public function browse(AutohypnoseRepository $autohypnoseRepository): Response
+    public function browse(FeedRepository $feedRepository): Response
     {
         return $this->render('back/corpsEsprit/browse.html.twig', [
-            'posts' => $autohypnoseRepository->findBy([], ['id' => 'DESC']),
-            'category' => 'autohypnose',
-            'pageTitle' => 'Autohypnose'
+            'posts' => $feedRepository->findBy([], ['id' => 'DESC']),
+            'category' => 'feed',
+            'pageTitle' => 'Alimentation' 
         ]);
     }
 
     /**
      * @Route("/{id}", name="read")
      */
-    public function read(Autohypnose $autohypnose): Response
+    public function read(Feed $feed): Response
     {
         return $this->render('back/corpsEsprit/read.html.twig', [
-            'post' => $autohypnose
+            'post' => $feed
         ]);
     }
 
@@ -53,22 +53,22 @@ class AutohypnoseController extends AbstractController
      * 
      * @Route("/{id}/edit", name="edit")
      */
-    public function edit(Request $request,  Autohypnose $autohypnose): Response
+    public function edit(Request $request,  Feed $feed): Response
     {
-        $form = $this->createForm(PostType::class, $autohypnose);
+        $form = $this->createForm(PostType::class, $feed);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $autohypnose->setUpdatedAt(new \DateTimeImmutable());
-            $autohypnose->setSlug(null);
+            $feed->setUpdatedAt(new \DateTimeImmutable());
+            $feed->setSlug(null);
             $this->manager->flush();
 
-            return $this->redirectToRoute('back_autohypnose_browse', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('back_feed_browse', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('back/corpsEsprit/edit.html.twig', [
-            'post' => $autohypnose,
+            'post' => $feed,
             'form' => $form,
         ]);
     }
@@ -79,20 +79,20 @@ class AutohypnoseController extends AbstractController
      */
     public function add(Request $request, EntityManagerInterface $entityManager): Response
     {
-        $autohypnose = new Autohypnose();
-        $form = $this->createForm(PostType::class, $autohypnose);
+        $feed = new Feed();
+        $form = $this->createForm(PostType::class, $feed);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $this->manager->persist($autohypnose);
+            $this->manager->persist($feed);
             $entityManager->flush();
 
-            return $this->redirectToRoute('back_autohypnose_browse', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('back_feed_browse', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('back/corpsEsprit/add.html.twig', [
-            'post' => $autohypnose,
+            'post' => $feed,
             'form' => $form,
         ]);
     }
@@ -100,11 +100,11 @@ class AutohypnoseController extends AbstractController
     /**
      * @Route("/delete/{id}", name="delete")
      */
-    public function delete(Autohypnose $autohypnose)
+    public function delete(Feed $feed)
     {
-        $this->manager->remove($autohypnose);
+        $this->manager->remove($feed);
         $this->manager->flush();
 
-        return $this->redirectToRoute('back_autohypnose_browse');
+        return $this->redirectToRoute('back_feed_browse');
     }
 }

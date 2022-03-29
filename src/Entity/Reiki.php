@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ReikiRepository;
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -74,6 +75,7 @@ class Reiki
 
     public function __construct(){
         $this->category = 'reiki';
+        $this->createdAt = New DateTimeImmutable();
     }
 
   

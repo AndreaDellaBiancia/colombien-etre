@@ -2,9 +2,9 @@
 
 namespace App\Controller\Back;
 
-use App\Entity\Autohypnose;
+use App\Entity\Phyto;
 use App\Form\PostType;
-use App\Repository\AutohypnoseRepository;
+use App\Repository\PhytoRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,13 +14,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * 
- * @Route("/backoffice/autohypnose", name="back_autohypnose_")
+ * @Route("/backoffice/phytotherapie", name="back_phyto_")
  */
-class AutohypnoseController extends AbstractController
+class PhytoController extends AbstractController
 {
 
     private $manager;
-
 
     public function __construct(EntityManagerInterface $manager)
     {
@@ -30,22 +29,22 @@ class AutohypnoseController extends AbstractController
     /**
      * @Route("", name="browse")
      */
-    public function browse(AutohypnoseRepository $autohypnoseRepository): Response
+    public function browse(PhytoRepository $phytoRepository): Response
     {
         return $this->render('back/corpsEsprit/browse.html.twig', [
-            'posts' => $autohypnoseRepository->findBy([], ['id' => 'DESC']),
-            'category' => 'autohypnose',
-            'pageTitle' => 'Autohypnose'
+            'posts' => $phytoRepository->findBy([], ['id' => 'DESC']),
+            'category' => 'phyto',
+            'pageTitle' => 'Phytotérapie' 
         ]);
     }
 
     /**
      * @Route("/{id}", name="read")
      */
-    public function read(Autohypnose $autohypnose): Response
+    public function read(Phyto $phyto): Response
     {
         return $this->render('back/corpsEsprit/read.html.twig', [
-            'post' => $autohypnose
+            'post' => $phyto
         ]);
     }
 
@@ -53,22 +52,22 @@ class AutohypnoseController extends AbstractController
      * 
      * @Route("/{id}/edit", name="edit")
      */
-    public function edit(Request $request,  Autohypnose $autohypnose): Response
+    public function edit(Request $request,  Phyto $phyto): Response
     {
-        $form = $this->createForm(PostType::class, $autohypnose);
+        $form = $this->createForm(PostType::class, $phyto);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $autohypnose->setUpdatedAt(new \DateTimeImmutable());
-            $autohypnose->setSlug(null);
+            $phyto->setUpdatedAt(new \DateTimeImmutable());
+            $phyto->setSlug(null);
             $this->manager->flush();
 
-            return $this->redirectToRoute('back_autohypnose_browse', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('back_phyto_browse', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('back/corpsEsprit/edit.html.twig', [
-            'post' => $autohypnose,
+            'post' => $phyto,
             'form' => $form,
         ]);
     }
@@ -79,20 +78,20 @@ class AutohypnoseController extends AbstractController
      */
     public function add(Request $request, EntityManagerInterface $entityManager): Response
     {
-        $autohypnose = new Autohypnose();
-        $form = $this->createForm(PostType::class, $autohypnose);
+        $phyto = new Phyto();
+        $form = $this->createForm(PostType::class, $phyto);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $this->manager->persist($autohypnose);
+            $this->manager->persist($phyto);
             $entityManager->flush();
 
-            return $this->redirectToRoute('back_autohypnose_browse', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('back_phyto_browse', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('back/corpsEsprit/add.html.twig', [
-            'post' => $autohypnose,
+            'post' => $phyto,
             'form' => $form,
         ]);
     }
@@ -100,11 +99,11 @@ class AutohypnoseController extends AbstractController
     /**
      * @Route("/delete/{id}", name="delete")
      */
-    public function delete(Autohypnose $autohypnose)
+    public function delete(Phyto $phyto)
     {
-        $this->manager->remove($autohypnose);
+        $this->manager->remove($phyto);
         $this->manager->flush();
 
-        return $this->redirectToRoute('back_autohypnose_browse');
+        return $this->redirectToRoute('back_phyto_browse');
     }
 }
