@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'front/base.html.twig' %}
 
 {% block title %}{% endblock %}
 
@@ -18,7 +18,7 @@
 <section class="">
 <h1>Title post {{post.title}}</h1>
 <img src="{{post.mainPicture}}">
-<p>Content {{post.content}}</p>
+<p>Content {{post.content | raw}}</p>
 <p>Author {{post.author}}</p>
 <a href="{{post.source}}">
     <p>voir source</p>

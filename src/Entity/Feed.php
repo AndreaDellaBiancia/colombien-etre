@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\FeedRepository;
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -74,6 +75,7 @@ class Feed
 
     public function __construct(){
         $this->category = 'feed';
+        $this->createdAt = New DateTimeImmutable();
     }
 
     

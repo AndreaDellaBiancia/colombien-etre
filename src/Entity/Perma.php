@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\PermaRepository;
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -74,6 +75,7 @@ class Perma
 
     public function __construct(){
         $this->category = 'perma';
+        $this->createdAt = New DateTimeImmutable();
     }
 
    

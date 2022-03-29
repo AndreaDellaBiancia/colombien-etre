@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\MeditationRepository;
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -74,6 +75,7 @@ class Meditation
 
     public function __construct(){
         $this->category = 'meditation';
+        $this->createdAt = New DateTimeImmutable();
     }
 
 

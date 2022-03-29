@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\AutohypnoseRepository;
+use DateTime;
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -74,6 +76,7 @@ class Autohypnose
 
     public function __construct(){
         $this->category = 'autohypnose';
+        $this->createdAt = New DateTimeImmutable();
     }
 
     public function getId(): ?int
