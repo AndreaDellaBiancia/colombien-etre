@@ -6,53 +6,41 @@
 
 <div class="menu_form">
     <div class="menu_form_buttons">
-        <a href="{{ path('back_' ~ post.category ~ '_edit', {'id': post.id}) }}">Modifier article</a>
-        <a href="{{ path('back_' ~ post.category ~ '_browse') }}">Liste article</a>
+        <a href="{{ path('user_edit', {'id': user.id}) }}">Modifier Admin</a>
+        <a href="{{ path('user_browse') }}">Liste Admins</a>
     </div>
-    <h1>Article : {{ post.title }}</h1>
+    <h1>Admin</h1>
 </div>
     
     <table class="table">
         <tbody>
             <tr>
                 <th class="th-read">Id</th>
-                <td>{{ post.id }}</td>
+                <td>{{ user.id }}</td>
             </tr>
             <tr>
-                <th class="th-read">Titre</th>
-                <td>{{ post.title }}</td>
+                <th class="th-read">Nom</th>
+                <td>{{ user.name }}</td>
             </tr>
             <tr>
-                <th class="th-read">Contenu</th>
-                <td>{{ post.content | raw }}</td>
+                <th class="th-read">Email</th>
+                <td>{{ user.email }}</td>
             </tr>
             <tr>
-                <th class="th-read">Auteur </th>
-                <td>{{ post.author }}</td>
+                <th class="th-read">Rôle</th>
+                <td>{{ user.roles | json_encode }}</td>
             </tr>
             <tr>
-                <th class="th-read">Source</th>
-                <td>{{post.source}}</td>
-            </tr>
-            <tr>
-                <th class="th-read">Vues</th>
-                <td>{{post.views}}</td>
+                <th class="th-read">Password</th>
+                <td>{{ user.password }}</td>
             </tr>
             <tr>
                 <th class="th-read">Date de création </th>
-                <td>{{ post.createdAt ? post.createdAt|date('d-m-Y H:i:s') : '' }}</td>
+                <td>{{ user.createdAt ? user.createdAt|date('d-m-Y H:i:s') : '' }}</td>
             </tr>
             <tr>
                 <th class="th-read">Mis à jour le</th>
-                <td>{{ post.updatedAt ? post.updatedAt|date('d-m-Y H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th class="th-read">Image diapo </th>
-                <td><img class="img-read" src="{{ post.thumbnailPicture }}" alt=""></td>
-            </tr>
-            <tr>
-                <th class="th-read">Image principale</th>
-                <td><img class="img-read" src="{{ post.mainPicture }}" alt=""></td>
+                <td>{{ user.updatedAt ? user.updatedAt|date('d-m-Y H:i:s') : '' }}</td>
             </tr>
         </tbody>
     </table>

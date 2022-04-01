@@ -11,8 +11,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
+ * @IsGranted("ROLE_ADMIN")
  * @Route("/backoffice/user", name="user_")
  */
 class UserController extends AbstractController
@@ -34,6 +36,7 @@ class UserController extends AbstractController
     {
         //Creation of a form to register a new user using the UserType and the User entity 
         $user = new User();
+
         $form = $this->createForm(UserType::class, $user, ['csrf_protection' => false]);
         $form->handleRequest($request);
 
@@ -100,10 +103,10 @@ class UserController extends AbstractController
             $password = $form->get('password')->getData();
             // $password vaut null si rien n'a été tapé
             if ($password != null) {
-                $user->setUpdatedAt(new \DateTimeImmutable());
                 $hashedPassword = $userPasswordHasher->hashPassword($user, $password);
                 $user->setPassword($hashedPassword);
             }
+            $user->setUpdatedAt(new \DateTimeImmutable());
 
             $entityManager->persist($user);
             $entityManager->flush();

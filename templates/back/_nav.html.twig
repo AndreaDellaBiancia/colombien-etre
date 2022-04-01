@@ -34,7 +34,11 @@
       <li class="nav_list_item">
          <a class="nav_link" href="{{ path('back_shop_browse') }}">Boutique</a>
       </li>
-
+      {% if is_granted('ROLE_SUPERADMIN') %}
+      <li class="nav_list_item">
+         <a class="nav_link" href="{{ path('user_browse') }}">Admin</a>
+      </li>
+      {% endif %}
       <li><a href="{{ path('app_logout') }}">DECONNEXION</a></li>
 
    </ul>
