@@ -1,42 +1,42 @@
 <header class="nav_back">
-   
-      <ul class="nav_list">
+   {% if is_granted('ROLE_ADMIN') %}
+   <ul class="nav_list">
 
-         <li class="nav_list_item">
-            <img class="logo" src="{{ asset('assets/images/colombe.png') }}" alt="Logo" >
-         </li>
+      <li class="nav_list_item">
+         <img class="logo" src="{{ asset('assets/images/colombe.png') }}" alt="Logo">
+      </li>
 
-         <li class="nav_list_item">
-            <a class="nav_link" href="">Corps & esprit</a>
-            <div class="nav_links_children">
-               <a href="{{ path('back_feed_browse') }}" class="nav_link_child">Alimentation</a>
-               <a href="{{ path('back_sport_browse') }}" class="nav_link_child">Sport</a>
-               <a href="{{ path('back_massage_browse') }}" class="nav_link_child">Massages</a>
-               <a href="{{ path('back_perma_browse') }}" class="nav_link_child">Permathérapie</a>
-               <a href="{{ path('back_bachFlower_browse') }}" class="nav_link_child">Fleurs de Bach</a>
-               <a href="{{ path('back_autohypnose_browse') }}" class="nav_link_child">Autohypnose</a>
-               <a href="{{ path('back_reiki_browse') }}" class="nav_link_child">Reiki</a>
-               <a href="{{ path('back_phyto_browse') }}" class="nav_link_child">Phytothérapie</a>
-               <a href="{{ path('back_meditation_browse') }}" class="nav_link_child">Méditation</a>
-            </div>
-         </li>
-            
-         <li class="nav_list_item">
-            <a class="nav_link" href="">Spiritualité</a>
-            <div class="nav_links_children">
-               <a href="" class="nav_link_child">A</a>
-               <a href="" class="nav_link_child">B</a>
-               <a href="" class="nav_link_child">C</a>
-               <a href="" class="nav_link_child">D</a>
-            </div>
-         </li>
+      <li class="nav_list_item">
+         <a class="nav_link" href="">Corps & esprit</a>
+         <div class="nav_links_children">
+            <a href="{{ path('back_feed_browse') }}" class="nav_link_child">Alimentation</a>
+            <a href="{{ path('back_sport_browse') }}" class="nav_link_child">Sport</a>
+            <a href="{{ path('back_massage_browse') }}" class="nav_link_child">Massages</a>
+            <a href="{{ path('back_perma_browse') }}" class="nav_link_child">Permathérapie</a>
+            <a href="{{ path('back_bachFlower_browse') }}" class="nav_link_child">Fleurs de Bach</a>
+            <a href="{{ path('back_autohypnose_browse') }}" class="nav_link_child">Autohypnose</a>
+            <a href="{{ path('back_reiki_browse') }}" class="nav_link_child">Reiki</a>
+            <a href="{{ path('back_phyto_browse') }}" class="nav_link_child">Phytothérapie</a>
+            <a href="{{ path('back_meditation_browse') }}" class="nav_link_child">Méditation</a>
+         </div>
+      </li>
 
-         <li class="nav_list_item">
-            <a class="nav_link" href="{{ path('back_shop_browse') }}">Boutique</a>
-         </li>
+      <li class="nav_list_item">
+         <a class="nav_link" href="">Spiritualité</a>
+         <div class="nav_links_children">
+            <a href="" class="nav_link_child">A</a>
+            <a href="" class="nav_link_child">B</a>
+            <a href="" class="nav_link_child">C</a>
+            <a href="" class="nav_link_child">D</a>
+         </div>
+      </li>
 
-         <li>Deconnexion</li>
-         
-      </ul>      
+      <li class="nav_list_item">
+         <a class="nav_link" href="{{ path('back_shop_browse') }}">Boutique</a>
+      </li>
 
+      <li><a href="{{ path('app_logout') }}">DECONNEXION</a></li>
+
+   </ul>
+   {% endif %}
 </header>
