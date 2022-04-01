@@ -23,7 +23,7 @@ class ProductType extends AbstractType
                 'label' => 'Marque*',
                 'constraints' => [new NotBlank()]
             ])
-            ->add('price', NumberType::class,[
+            ->add('price', null,[
                 'label' => 'Prix €*',
                 'constraints' => [new NotBlank()]
             ])
