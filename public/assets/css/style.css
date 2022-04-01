@@ -575,7 +575,8 @@ p {
   width: 20%;
 }
 
-.row--btn, .table{
+.row--btn,
+.table {
   margin-bottom: 6rem;
 }
 
@@ -583,7 +584,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  margin: 3rem 0 ;
+  margin: 3rem 0;
 }
 
 .menu_form h1 {
@@ -615,17 +616,77 @@ p {
   color: white;
 }
 
-td, th{
+td,
+th {
   text-align: left;
 }
-.th-read{
+
+.th-read {
   width: 200px;
 }
-td i{
- font-size: 1.5rem;
- padding: 1rem;
+
+td i {
+  font-size: 1.5rem;
+  padding: 1rem;
 }
 
-.img-read{
+.img-read {
   max-width: 500px;
 }
+
+.post-page {
+  background-color: #ddfeff;
+  display: flex;
+  justify-content: center;
+}
+
+.post-page_post {
+  max-width: 65%;
+  background-color: #fffaec;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
+  border-radius: 15px;
+  margin: 3rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.post-page_post h1{
+  font-size: 3rem;
+  padding: 1.5rem 1rem;
+  font-family: 'Caveat', cursive;
+  color: cadetblue;
+}
+
+.post-page_post img{
+  width: 100%;
+}
+
+.post-page_post p{
+  width: 95%;
+  line-height: 2rem;
+  margin: 1rem ;
+  font-size: 1.7rem;
+  font-family: 'Indie Flower', cursive;
+  
+}
+
+.post-author-informations{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 3rem;
+  font-size: 1.5rem;
+}
+
+.post-author-informations a{
+  text-decoration: underline;
+}
+
+.post-author-informations span{
+  font-weight: bold;
+}
+
+
+
+
