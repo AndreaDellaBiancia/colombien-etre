@@ -575,16 +575,21 @@ p {
   width: 20%;
 }
 
+.row--btn, .table{
+  margin-bottom: 6rem;
+}
+
 .menu_form {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  margin: 3.5rem auto;
+  margin: 3rem 0 ;
 }
 
 .menu_form h1 {
   width: 100%;
   text-align: center;
+  margin-top: 2rem;
 }
 
 .menu_form_buttons {
@@ -608,4 +613,19 @@ p {
   box-shadow: none;
   background-color: grey;
   color: white;
+}
+
+td, th{
+  text-align: left;
+}
+.th-read{
+  width: 200px;
+}
+td i{
+ font-size: 1.5rem;
+ padding: 1rem;
+}
+
+.img-read{
+  max-width: 500px;
 }

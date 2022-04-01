@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ProductRepository;
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -28,7 +29,7 @@ class Product
     private $brand;
 
     /**
-     * @ORM\Column(type="smallint")
+     * @ORM\Column(type="string", length=255)
      */
     private $price;
 
@@ -52,12 +53,15 @@ class Product
      */
     private $updatedAt;
 
-    
-
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $category;
+
+    public function __construct(){
+    
+        $this->createdAt = New DateTimeImmutable();
+    }
 
     public function getId(): ?int
     {
@@ -88,12 +92,12 @@ class Product
         return $this;
     }
 
-    public function getPrice(): ?int
+    public function getPrice(): ?string
     {
         return $this->price;
     }
 
-    public function setPrice(int $price): self
+    public function setPrice(string $price): self
     {
         $this->price = $price;
 

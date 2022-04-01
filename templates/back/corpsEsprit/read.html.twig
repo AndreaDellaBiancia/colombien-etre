@@ -1,6 +1,6 @@
 {% extends 'back/base.html.twig' %}
 
-{% block title %}Template{% endblock %}
+{% block title %}Articles{% endblock %}
 
 {% block body %}
 
@@ -15,44 +15,44 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th class="th-read">Id</th>
                 <td>{{ post.id }}</td>
             </tr>
             <tr>
-                <th>Titre</th>
+                <th class="th-read">Titre</th>
                 <td>{{ post.title }}</td>
             </tr>
             <tr>
-                <th>Contenu</th>
+                <th class="th-read">Contenu</th>
                 <td>{{ post.content | raw }}</td>
             </tr>
             <tr>
-                <th>Auteur </th>
+                <th class="th-read">Auteur </th>
                 <td>{{ post.author }}</td>
             </tr>
             <tr>
-                <th>Source</th>
+                <th class="th-read">Source</th>
                 <td>{{post.source}}</td>
             </tr>
             <tr>
-                <th>Vues</th>
+                <th class="th-read">Vues</th>
                 <td>{{post.views}}</td>
             </tr>
             <tr>
-                <th>Date de création </th>
+                <th class="th-read">Date de création </th>
                 <td>{{ post.createdAt ? post.createdAt|date('d-m-Y H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>Mis à jour le</th>
+                <th class="th-read">Mis à jour le</th>
                 <td>{{ post.updatedAt ? post.updatedAt|date('d-m-Y H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>Image diapo </th>
-                <td><img src="{{ post.thumbnailPicture }}" alt=""></td>
+                <th class="th-read">Image diapo </th>
+                <td><img class="img-read" src="{{ post.thumbnailPicture }}" alt=""></td>
             </tr>
             <tr>
-                <th>Image principale</th>
-                <td><img src="{{ post.mainPicture }}" alt=""></td>
+                <th class="th-read">Image principale</th>
+                <td><img class="img-read" src="{{ post.mainPicture }}" alt=""></td>
             </tr>
         </tbody>
     </table>

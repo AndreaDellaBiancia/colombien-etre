@@ -1,0 +1,56 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Produits{% endblock %}
+
+{% block body %}
+
+<div class="menu_form">
+    <div class="menu_form_buttons">
+        <a href="{{ path('back_shop_edit', {'id': product.id}) }}">Modifier produit</a>
+        <a href="{{ path('back_shop_browse') }}">Liste produits</a>
+    </div>
+    <h1>Produit</h1>
+</div>
+    
+    <table class="table">
+        <tbody>
+            <tr>
+                <th class="th-read">Id</th>
+                <td>{{ product.id }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Titre</th>
+                <td>{{ product.title }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Marque</th>
+                <td>{{ product.brand }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Prix €</th>
+                <td>{{ product.price }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Source</th>
+                <td>{{product.source}}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Categorie</th>
+                <td>{{product.category}}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Date de création </th>
+                <td>{{ product.createdAt ? product.createdAt|date('d-m-Y H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Mis à jour le</th>
+                <td>{{ product.updatedAt ? product.updatedAt|date('d-m-Y H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Image</th>
+                <td><img class="img-read" src="{{ product.Picture }}" alt=""></td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

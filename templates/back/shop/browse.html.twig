@@ -1,0 +1,49 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Produits{% endblock %}
+
+{% block body %}
+
+<div class="menu_form">
+    <div class="menu_form_buttons"><a href="{{ path('back_shop_add') }}">Ajouter produit</a></div>
+    <h1 class="title_form">Produits Boutique</h1>
+</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Marque</th>
+                <th>Prix</th>
+                <th>Image</th>
+                <th>Date de creation</th>
+                <th>Mis à jour le</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+      
+            <tr>
+                <td>{{product.id}}</td>
+                <td>{{product.title}}</td>
+                <td>{{product.brand}}</td>
+                <td>{{product.price}} €</td>
+                <td ><img style="width:80px;" src="{{product.picture}}" alt=""></td>
+                <td>{{product.createdAt | date('d-m-Y')}}</td>
+                <td>{{product.updatedAt ?  product.updatedAt | date('d-m-Y') : ''}}</td>
+                <td>
+                    <a href="{{ path('back_shop_read', {'id': product.id}) }}"><i class="fa-solid fa-glasses"></i></a>
+                    <a href="{{ path('back_shop_edit', {'id': product.id}) }}"><i class="fa-solid fa-pen"></i></a>
+                    <a href="{{ path('back_shop_delete', {'id': product.id}) }}"><i class="fa-solid fa-trash-can"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}
