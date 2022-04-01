@@ -15,15 +15,21 @@
     <li>{{post.title}}</li>
 </ul>
 
-<section class="">
-<h1>Title post {{post.title}}</h1>
-<img src="{{post.mainPicture}}">
-<p>Content {{post.content | raw}}</p>
-<p>Author {{post.author}}</p>
-<a href="{{post.source}}">
-    <p>voir source</p>
-</a>
-  
+<section class="post-page">
+
+    <article class="post-page_post">
+        <h1>{{post.title}}</h1>
+        <img src="{{post.mainPicture}}">
+        <p>{{post.content | raw}}</p>
+        
+        {% if post.author  %}
+        <ul class="post-author-informations">
+            <li class="author-name">Author : <span>{{post.author}}</span></li>
+            <li><a href="{{post.source}}">Voir la source <i class="bi bi-box-arrow-up-right"></i></a></li>
+        </ul>
+        {% endif %}
+    </article>
+
 </section>
 
 {% endblock %}
