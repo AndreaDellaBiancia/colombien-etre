@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
- * @IsGranted("ROLE_ADMIN")
+ * @IsGranted("ROLE_SUPERADMIN")
  * @Route("/backoffice/user", name="user_")
  */
 class UserController extends AbstractController
