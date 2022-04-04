@@ -725,3 +725,48 @@ td i {
   width: 100%;
   text-align: center;
 }
+
+.spirituality-intro{
+  max-width: 90% ;
+  display: flex;
+  flex-direction: column;
+  margin: 3rem auto;
+  align-items: center;
+}
+
+.spirituality-intro img{
+  max-width: 75%;
+  margin: 0 auto;
+  border-radius:  30%;
+  z-index: 1;
+}
+
+.spirituality-intro img:hover{
+ opacity: 0.2;
+ transition: 3s;
+}
+
+.spirituality-intro p{
+  z-index: -1;
+  max-width: 50%;
+  position: absolute;
+  margin-top: 10rem;
+  font-size: 1.7rem;
+  font-family: 'Indie Flower', cursive;
+  line-height: 2rem;
+ color: #0037ff;
+}
+
+.spirituality-cards{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.spirituality-cards div{
+   width: calc((100% - 8rem) / 3);
+   text-align: center;
+  
+}
+
+
