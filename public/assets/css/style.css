@@ -5,6 +5,10 @@
   border-bottom: 1px solid #5eaabd59;
 }
 
+.nav_back{
+  border-bottom: 1px solid #5eaabd59;
+}
+
 .nav_list {
   background-color: white;
   display: flex;
@@ -687,6 +691,37 @@ td i {
   font-weight: bold;
 }
 
+.title_login_page{
+  text-align: center;
+  margin: 3rem auto;
+}
 
+.title_login_page .span-2{
+  color: chartreuse;
+}
 
+.title_login_page .span-1{
+  color: cornflowerblue;
+}
 
+.login-form{
+  max-width: 30%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.login-form label{
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.login-form button{
+  margin-top: 2rem;
+}
+
+.go-top{
+  width: 100%;
+  text-align: center;
+}
