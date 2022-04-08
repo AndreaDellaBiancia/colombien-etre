@@ -1,0 +1,47 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title %}Colombienetre{% endblock %}
+
+{% block body %}
+<ul class="fil-ariane">
+    <li>
+        <a href="{{ path('home') }}">Accueil</a>
+    </li>
+    <li>></li>
+    <li><a href="{{ path('spirituality') }}">Spiritualité</a></li>
+    <li>></li>
+    <li>Ressources vidéos</li>
+</ul>
+
+<section class="posts">
+
+    <div class="posts_menu">
+
+        <h2>Ressources vidéos</h2>
+    </div>
+
+ 
+
+    <article class="video-article_container">
+
+        <h3 class="video-article_title">Titre</h3>
+        <div class="video-article_video"><iframe width="560" height="315" src="https://www.youtube.com/embed/NJWIbIe0N90" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+        <p class="video-article_description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil quam,
+            pariatur rerum commodi rem facere inventore. Explicabo, soluta minima eos porro maiores cupiditate ad
+            aliquam nesciunt aspernatur, quasi amet laudantium.
+            Quia eum perferendis optio consequatur in pariatur tempore facere? Ipsum mollitia enim architecto error
+            voluptas, dolor veritatis, magni quam debitis provident quod quia. Porro, ex! Ipsam quasi laborum
+            consequatur accusamus?</p>
+        <a href="">
+            <p class="video-article_author">Page Author</p>
+        </a>
+        </div>
+
+    </article>
+
+
+</section>
+
+
+{% endblock %}
