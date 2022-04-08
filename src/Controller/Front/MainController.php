@@ -28,6 +28,14 @@ class MainController extends AbstractController
         return $this->render('front/corpsEsprit/corpsEsprit.html.twig');
     }
 
+     /**
+    * @Route("/spiritualite", name="spirituality")
+    */
+    public function spirituality(): Response
+    {
+        return $this->render('front/spirituality/spirituality.html.twig');
+    }
+
     /**
     * @Route("/qui-suis-je", name="quiSuisJe")
     */

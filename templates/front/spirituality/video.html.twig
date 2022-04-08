@@ -1,0 +1,40 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title %}Colombienetre{% endblock %}
+
+{% block body %}
+<ul class="fil-ariane">
+    <li>
+        <a href="{{ path('home') }}">Accueil</a>
+    </li>
+    <li>></li>
+    <li><a href="{{ path('spirituality') }}">Spiritualité</a></li>
+    <li>></li>
+    <li>Ressources vidéos</li>
+</ul>
+
+<section class="videos">
+
+    <div class="videos_menu">
+
+        <h2>Ressources vidéos</h2>
+    </div>
+
+
+    {% for video in videos %}
+    <article class="video-article_container">
+
+        <h3 class="video-article_title">{{video.title}}</h3>
+        <div class="video-article_video">{{video.videoLink | raw}}</div>
+        <p class="video-article_description">{{video.description}}</p>
+        <a href="{{video.authorLink}}" target="_blank">
+            <p class="video-article_author">Page Author <i class="bi bi-box-arrow-up-right"></i></p>
+        </a>
+
+    </article>
+    {% endfor %}
+
+</section>
+
+
+{% endblock %}
