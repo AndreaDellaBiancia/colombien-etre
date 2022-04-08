@@ -394,7 +394,7 @@ p {
   font-size: 1.1rem;
 }
 
-.posts_menu {
+.posts_menu{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -402,7 +402,7 @@ p {
 
 }
 
-.posts_menu h2 {
+.posts_menu h2, .readings_menu h2, .videos_menu h2 {
   display: block;
   font-family: 'Caveat', cursive;
   color: #42a4bde5;
@@ -808,3 +808,53 @@ iframe{
  height: 100%;
   box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
 }
+
+.readings{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.readings_menu, .videos_menu{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.reading-article_container{
+  width:45%;
+  min-height:550px;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
+  display: flex;
+  margin: 2rem 0;
+  background-color: #e2e2e258;
+}
+
+.reading-article_img{
+  width: 45%;
+}
+
+.reading-article_informations{
+  width: 55%;
+  font-family: 'Source Code Pro', monospace;
+  display: flex;
+  flex-direction: column;
+}
+
+.reading-article_title{
+  font-size: 2rem;
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.reading-article_description{
+  font-size: 1rem;
+  margin: 1rem;
+  line-height: 1.2rem;
+}
+
+.reading-article_buy, .video-article_author{
+text-decoration: underline;
+}
+
+

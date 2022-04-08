@@ -13,27 +13,31 @@
     <li>Idées de lecture</li>
 </ul>
 
-<section class="posts">
+<section class="readings">
 
-    <div class="posts_menu">
+    <div class="readings_menu">
 
         <h2>Idées de lecture</h2>
     </div>
 
 
+{% for reading in readings %}
+    
 
     <article class="reading-article_container">
-        <img src="" alt="" class="reading-article_video">
-        <h3 class="reading-article_title"></h3>
-        <p class="reading-article_description"></p>
-        <p>Author :</p>
-        <a href="" target="_blank">
-            <p class="reading-article_author">Page Author</p>
-        </a>
+        <img class="reading-article_img" src="{{reading.picture}}" alt="" class="reading-article_video">
+        <div class="reading-article_informations">
+            <h3 class="reading-article_title">{{reading.title}}</h3>
+            <p class="reading-article_description">{{reading.description}}</p>
+            <p>Author : {{reading.author}}</p>
+            <a href="{{ reading.link}}" target="_blank">
+                <p class="reading-article_buy">Acheter ce livre <i class="bi bi-box-arrow-up-right"></i></p>
+            </a>
+        </div>
 
     </article>
 
-
+    {% endfor %}
 </section>
 
 
