@@ -1,0 +1,45 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Videos{% endblock %}
+
+{% block body %}
+
+<div class="menu_form">
+    <div class="menu_form_buttons"><a href="{{ path('back_video_add') }}">Ajouter vidéo</a></div>
+    <h1 class="title_form">Vidéos</h1>
+</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Date de creation</th>
+                <th>Mis à jour le</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for video in videos %}
+      
+            <tr>
+                <td>{{video.id}}</td>
+                <td>{{video.title}}</td>
+                <td>{{video.createdAt | date('d-m-Y')}}</td>
+                <td>{{video.updatedAt ?  video.updatedAt | date('d-m-Y') : ''}}</td>
+                <td>
+                    <a href="{{ path('back_video_read', {'id': video.id}) }}"><i class="fa-solid fa-glasses"></i></a>
+                    <a href="{{ path('back_video_edit', {'id': video.id}) }}"><i class="fa-solid fa-pen"></i></a>
+                    <a href="{{ path('back_video_delete', {'id': video.id}) }}"><i class="fa-solid fa-trash-can"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <p class="go-top"><a href="">Retour en haut <i class="fa-solid fa-arrow-turn-up"></i></a></i></p>
+
+    
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Vidéos{% endblock %}
+
+{% block body %}
+
+<div class="menu_form">
+    <div class="menu_form_buttons">
+        <a href="{{ path('back_video_edit', {'id': video.id}) }}">Modifier vidéo</a>
+        <a href="{{ path('back_video_browse') }}">Liste vidéos</a>
+    </div>
+    <h1>Vidéo</h1>
+</div>
+    
+    <table class="table">
+        <tbody>
+            <tr>
+                <th class="th-read">Id</th>
+                <td>{{ video.id }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Titre</th>
+                <td>{{ video.title }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Description</th>
+                <td>{{ video.description | raw }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Page Auteur</th>
+                <td>{{ video.authorLink }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Date de création</th>
+                <td>{{ video.createdAt ? video.createdAt|date('d-m-Y H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Mis à jour le</th>
+                <td>{{ video.updatedAt ? video.updatedAt|date('d-m-Y H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Vidéo</th>
+                <td><div class="video-back">{{video.videoLink | raw}}</div></td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

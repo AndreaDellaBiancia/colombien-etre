@@ -1,0 +1,13 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Vidéos{% endblock %}
+
+{% block body %}
+    <div class="menu_form">
+        <div class="menu_form_buttons"><a href="{{ path('back_video_browse') }}">Liste vidéos</a></div>
+        <h1 class="title_form">Modifier une Vidéo</h1>
+    </div>
+
+    {{ include('back/video/_form.html.twig', {"button_label": "MODIFIER"}) }}
+
+{% endblock %}
