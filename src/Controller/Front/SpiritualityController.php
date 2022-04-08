@@ -2,7 +2,8 @@
 
 namespace App\Controller\Front;
 
-use App\Entity\VideoSpirituality;
+
+use App\Repository\ReadingSpiritualityRepository;
 use App\Repository\VideoSpiritualityRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,6 +19,17 @@ class SpiritualityController extends AbstractController
 
         return $this->render('front/spirituality/video.html.twig', [
             'videos' => $videoSpirituality->findBy([], ['id' => 'DESC'])
+        ]);
+    }
+
+     /**
+     * @Route("/spiritualite/idées-de-lecture", name="spirit-readings")
+     */
+    public function readings(ReadingSpiritualityRepository $readingSpirituality): Response
+    {
+
+        return $this->render('front/spirituality/reading.html.twig', [
+            'readings' => $readingSpirituality->findBy([], ['id' => 'DESC'])
         ]);
     }
 
