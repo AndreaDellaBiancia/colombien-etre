@@ -5,7 +5,7 @@
   border-bottom: 1px solid #5eaabd59;
 }
 
-.nav_back{
+.nav_back {
   border-bottom: 1px solid #5eaabd59;
 }
 
@@ -394,7 +394,7 @@ p {
   font-size: 1.1rem;
 }
 
-.posts_menu{
+.posts_menu {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -402,7 +402,9 @@ p {
 
 }
 
-.posts_menu h2, .readings_menu h2, .videos_menu h2 {
+.posts_menu h2,
+.readings_menu h2,
+.videos_menu h2 {
   display: block;
   font-family: 'Caveat', cursive;
   color: #42a4bde5;
@@ -655,27 +657,27 @@ td i {
   justify-content: center;
 }
 
-.post-page_post h1{
+.post-page_post h1 {
   font-size: 3rem;
   padding: 1.5rem 1rem;
   font-family: 'Caveat', cursive;
   color: cadetblue;
 }
 
-.post-page_post img{
+.post-page_post img {
   width: 100%;
 }
 
-.post-page_post p{
+.post-page_post p {
   width: 95%;
   line-height: 2rem;
-  margin: 1rem ;
+  margin: 1rem;
   font-size: 1.7rem;
   font-family: 'Indie Flower', cursive;
-  
+
 }
 
-.post-author-informations{
+.post-author-informations {
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -683,28 +685,28 @@ td i {
   font-size: 1.5rem;
 }
 
-.post-author-informations a{
+.post-author-informations a {
   text-decoration: underline;
 }
 
-.post-author-informations span{
+.post-author-informations span {
   font-weight: bold;
 }
 
-.title_login_page{
+.title_login_page {
   text-align: center;
   margin: 3rem auto;
 }
 
-.title_login_page .span-2{
+.title_login_page .span-2 {
   color: chartreuse;
 }
 
-.title_login_page .span-1{
+.title_login_page .span-1 {
   color: cornflowerblue;
 }
 
-.login-form{
+.login-form {
   max-width: 30%;
   margin: 0 auto;
   display: flex;
@@ -712,40 +714,40 @@ td i {
   justify-content: center;
 }
 
-.login-form label{
+.login-form label {
   margin-top: 2rem;
   margin-bottom: 0.5rem;
 }
 
-.login-form button{
+.login-form button {
   margin-top: 2rem;
 }
 
-.go-top{
+.go-top {
   width: 100%;
   text-align: center;
 }
 
-.spirituality-intro{
-  max-width: 90% ;
+.spirituality-intro {
+  max-width: 90%;
   display: flex;
   flex-direction: column;
   margin: 3rem auto;
   align-items: center;
 }
 
-.spirituality-intro img{
+.spirituality-intro img {
   max-width: 60%;
   margin: 0 auto;
   z-index: 1;
 }
 
-.spirituality-intro img:hover{
- opacity: 0.2;
- transition: 3s;
+.spirituality-intro img:hover {
+  opacity: 0.2;
+  transition: 3s;
 }
 
-.spirituality-intro p{
+.spirituality-intro p {
   z-index: -1;
   max-width: 50%;
   position: absolute;
@@ -753,10 +755,10 @@ td i {
   font-size: 1.7rem;
   font-family: 'Indie Flower', cursive;
   line-height: 2rem;
- color: #0037ff;
+  color: #0037ff;
 }
 
-.spirituality-cards{
+.spirituality-cards {
   max-width: 90%;
   margin: 5rem auto;
   display: flex;
@@ -764,17 +766,18 @@ td i {
 
 }
 
-.spirituality-cards li{
-   width: calc((100% - 8rem) / 3);
-   text-align: center;
-   font-family: 'Indie Flower', cursive;
-   font-size: 2rem;
-   padding: 2rem;
-   background-image: linear-gradient(to top right, #ffeded 0%, #4b7eed 50%, #AACFEF 100%);;
-   color: white;
+.spirituality-cards li {
+  width: calc((100% - 8rem) / 3);
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+  font-size: 2rem;
+  padding: 2rem;
+  background-image: linear-gradient(to top right, #ffeded 0%, #4b7eed 50%, #AACFEF 100%);
+  ;
+  color: white;
 }
 
-.video-article_container{
+.video-article_container {
   margin: 3rem auto;
   background-color: #e6dfff;
   max-width: 50%;
@@ -787,7 +790,7 @@ td i {
   line-height: 1.8rem;
 }
 
-.video-article_title{
+.video-article_title {
   font-family: 'Indie Flower', cursive;
   font-size: 2.5rem;
   font-weight: bold;
@@ -797,70 +800,72 @@ td i {
   margin-bottom: 3rem;
 }
 
-.video-article_video{
-  width:100%;
+.video-article_video {
+  width: 100%;
   height: 400px;
 }
 
-iframe{
- width: 100%;
- height: 100%;
+iframe {
+  width: 100%;
+  height: 100%;
   box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
 }
 
-.video-article_author{
-text-align: center;
+.video-article_author {
+  text-align: center;
 }
 
-.readings{
+.readings {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.readings_menu, .videos_menu{
+.readings_menu,
+.videos_menu {
   width: 100%;
   text-align: center;
   margin-bottom: 3rem;
 }
 
-.reading-article_container{
-  width:45%;
-  min-height:550px;
+.reading-article_container {
+  width: 45%;
+  min-height: 550px;
   box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
   display: flex;
   margin: 2rem 0;
   background-color: #e2e2e258;
 }
 
-.reading-article_img{
+.reading-article_img {
   width: 45%;
 }
 
-.reading-article_informations{
+.reading-article_informations {
   width: 55%;
   font-family: 'Source Code Pro', monospace;
   display: flex;
   flex-direction: column;
 }
 
-.reading-article_title{
+.reading-article_title {
   font-size: 2rem;
   text-align: center;
-  margin: 1rem auto;
+  margin: 1rem;
 }
 
-.reading-article_description{
+.reading-article_description {
   font-size: 1rem;
-  margin: 1rem;
+  margin: 0 1rem 1rem;
   line-height: 1.2rem;
 }
 
-.reading-article_buy, .video-article_author{
-text-decoration: underline;
+.reading-article_buy,
+.video-article_author {
+  text-decoration: underline;
 }
 
-.video-back{
-  width:560px;
-  height: 415px ;
+.video-back {
+  width: 560px;
+  height: 415px;
 }

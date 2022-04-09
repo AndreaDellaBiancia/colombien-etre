@@ -1,0 +1,49 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Lectures{% endblock %}
+
+{% block body %}
+
+<div class="menu_form">
+    <div class="menu_form_buttons"><a href="{{ path('back_reading_add') }}">Ajouter Lecture</a></div>
+    <h1 class="title_form">Lectures</h1>
+</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Author</th>
+                <th>Couverture</th>
+                <th>Date de creation</th>
+                <th>Mis à jour le</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reading in readings %}
+      
+            <tr>
+                <td>{{reading.id}}</td>
+                <td>{{reading.title}}</td>
+                <td>{{reading.author}}</td>
+                <td><img style="width:80px;" src="{{reading.picture}}" alt=""></td>
+                <td>{{reading.createdAt | date('d-m-Y')}}</td>
+                <td>{{reading.updatedAt ?  reading.updatedAt | date('d-m-Y') : ''}}</td>
+                <td>
+                    <a href="{{ path('back_reading_read', {'id': reading.id}) }}"><i class="fa-solid fa-glasses"></i></a>
+                    <a href="{{ path('back_reading_edit', {'id': reading.id}) }}"><i class="fa-solid fa-pen"></i></a>
+                    <a href="{{ path('back_reading_delete', {'id': reading.id}) }}"><i class="fa-solid fa-trash-can"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <p class="go-top"><a href="">Retour en haut <i class="fa-solid fa-arrow-turn-up"></i></a></i></p>
+
+    
+{% endblock %}

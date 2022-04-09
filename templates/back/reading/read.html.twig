@@ -1,0 +1,52 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Lectures{% endblock %}
+
+{% block body %}
+
+<div class="menu_form">
+    <div class="menu_form_buttons">
+        <a href="{{ path('back_reading_edit', {'id': reading.id}) }}">Modifier lecture</a>
+        <a href="{{ path('back_reading_browse') }}">Liste lectures</a>
+    </div>
+    <h1>Lecture</h1>
+</div>
+    
+    <table class="table">
+        <tbody>
+            <tr>
+                <th class="th-read">Id</th>
+                <td>{{ reading.id }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Titre</th>
+                <td>{{ reading.title }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Description</th>
+                <td>{{ reading.description | raw }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Auteur</th>
+                <td>{{ reading.author }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Link achat livre</th>
+                <td>{{ reading.link }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Date de création</th>
+                <td>{{ reading.createdAt ? reading.createdAt|date('d-m-Y H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Mis à jour le</th>
+                <td>{{ reading.updatedAt ? reading.updatedAt|date('d-m-Y H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Couverture</th>
+                <td><img  style="width:350px;" src="{{reading.picture}}" alt=""></td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -28,7 +28,7 @@
         <img class="reading-article_img" src="{{reading.picture}}" alt="" class="reading-article_video">
         <div class="reading-article_informations">
             <h3 class="reading-article_title">{{reading.title}}</h3>
-            <p class="reading-article_description">{{reading.description}}</p>
+            <p class="reading-article_description">{{reading.description | raw}}</p>
             <p>Author : {{reading.author}}</p>
             <a href="{{ reading.link}}" target="_blank">
                 <p class="reading-article_buy">Acheter ce livre <i class="bi bi-box-arrow-up-right"></i></p>

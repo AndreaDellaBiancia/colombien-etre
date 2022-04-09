@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ReadingSpiritualityRepository;
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -51,6 +52,10 @@ class ReadingSpirituality
      * @ORM\Column(type="string", length=255)
      */
     private $picture;
+
+    public function __construct(){
+        $this->createdAt = New DateTimeImmutable();
+    }
 
     public function getId(): ?int
     {
