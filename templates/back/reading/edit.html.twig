@@ -1,0 +1,13 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Lectures{% endblock %}
+
+{% block body %}
+    <div class="menu_form">
+        <div class="menu_form_buttons"><a href="{{ path('back_reading_browse') }}">Liste lectures</a></div>
+        <h1 class="title_form">Modifier une Lecture</h1>
+    </div>
+
+    {{ include('back/reading/_form.html.twig', {"button_label": "MODIFIER"}) }}
+
+{% endblock %}

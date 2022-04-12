@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\VideoSpiritualityRepository;
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -46,6 +47,10 @@ class VideoSpirituality
      * @ORM\Column(type="datetime_immutable", nullable=true)
      */
     private $updatedAt;
+
+    public function __construct(){
+        $this->createdAt = New DateTimeImmutable();
+    }
 
     public function getId(): ?int
     {
