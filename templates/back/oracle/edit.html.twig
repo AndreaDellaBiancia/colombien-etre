@@ -1,0 +1,13 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Oracles{% endblock %}
+
+{% block body %}
+    <div class="menu_form">
+        <div class="menu_form_buttons"><a href="{{ path('back_oracle_browse') }}">Liste oracles</a></div>
+        <h1 class="title_form">Modifier un Oracle</h1>
+    </div>
+
+    {{ include('back/oracle/_form.html.twig', {"button_label": "MODIFIER"}) }}
+
+{% endblock %}

@@ -7,6 +7,7 @@ use App\Entity\BachFlower;
 use App\Entity\Feed;
 use App\Entity\Massage;
 use App\Entity\Meditation;
+use App\Entity\Oracle;
 use App\Entity\Perma;
 use App\Entity\Phyto;
 use App\Entity\Product;
@@ -118,6 +119,13 @@ class AppFixtures extends Fixture
             $sport->setSource($faker->url);
             $sport->setCreatedAt((new \DateTimeImmutable()));
 
+            $oracle = new Oracle();
+            $oracle->setTitle($faker->sentence($nbWords = 4, $variableNbWords = true));
+            $oracle->setDescription($faker->sentence($nbWords = 300, $variableNbWords = true));
+            $oracle->setPicture($faker->imageUrl);
+            $oracle->setLink($faker->url);
+            $oracle->setCreatedAt((new \DateTimeImmutable()));
+
 
 
 
@@ -131,6 +139,7 @@ class AppFixtures extends Fixture
             $manager->persist($reiki);
             $manager->persist($sport);
             $manager->persist($phyto);
+            $manager->persist($oracle);
         }
         $manager->flush();
     }
