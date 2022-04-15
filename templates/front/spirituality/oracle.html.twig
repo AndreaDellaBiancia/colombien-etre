@@ -1,0 +1,38 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title %}Colombienetre{% endblock %}
+
+{% block body %}
+<ul class="fil-ariane">
+    <li>
+        <a href="{{ path('home') }}">Accueil</a>
+    </li>
+    <li>></li>
+    <li><a href="{{ path('spirituality') }}">Spiritualité</a></li>
+    <li>></li>
+    <li>Oracles</li>
+</ul>
+
+<div class="menu">
+
+    <h2>Oracles</h2>
+</div>
+
+<section class="oracles">
+
+    {% for oracle in oracles %}
+
+    <article class="oracle-article_container">
+        <h3 class="oracle-article_title">{{oracle.title}}</h3>
+        <img class="oracle-article_img" src="{{oracle.picture}}" alt="" class="oracle-article_video">
+        <p class="oracle-article_description">{{oracle.description | raw}}</p>
+        <a href="{{ oracle.link}}" target="_blank">
+            <p class="oracle-article_buy">Acheter cet oracle <i class="bi bi-box-arrow-up-right"></i></p>
+        </a>
+    </article>
+
+    {% endfor %}
+</section>
+
+
+{% endblock %}

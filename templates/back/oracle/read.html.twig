@@ -1,0 +1,48 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Oracles{% endblock %}
+
+{% block body %}
+
+<div class="menu_form">
+    <div class="menu_form_buttons">
+        <a href="{{ path('back_oracle_edit', {'id': oracle.id}) }}">Modifier oracle</a>
+        <a href="{{ path('back_oracle_browse') }}">Liste oracles</a>
+    </div>
+    <h1>Oracle</h1>
+</div>
+    
+    <table class="table">
+        <tbody>
+            <tr>
+                <th class="th-read">Id</th>
+                <td>{{ oracle.id }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Titre</th>
+                <td>{{ oracle.title }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Description</th>
+                <td>{{ oracle.description | raw }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Link achat oracle</th>
+                <td>{{ oracle.link }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Date de création</th>
+                <td>{{ oracle.createdAt ? oracle.createdAt|date('d-m-Y H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Mis à jour le</th>
+                <td>{{ oracle.updatedAt ? oracle.updatedAt|date('d-m-Y H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th class="th-read">Image</th>
+                <td><img  style="width:350px;" src="{{oracle.picture}}" alt=""></td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

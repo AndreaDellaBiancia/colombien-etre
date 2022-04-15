@@ -2,7 +2,7 @@
 
 namespace App\Controller\Front;
 
-
+use App\Repository\OracleRepository;
 use App\Repository\ReadingSpiritualityRepository;
 use App\Repository\VideoSpiritualityRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -30,6 +30,17 @@ class SpiritualityController extends AbstractController
 
         return $this->render('front/spirituality/reading.html.twig', [
             'readings' => $readingSpirituality->findBy([], ['id' => 'DESC'])
+        ]);
+    }
+
+     /**
+     * @Route("/spiritualite/oracles", name="oracles")
+     */
+    public function oracles(OracleRepository $oracles): Response
+    {
+
+        return $this->render('front/spirituality/oracle.html.twig', [
+            'oracles' => $oracles->findBy([], ['id' => 'DESC'])
         ]);
     }
 

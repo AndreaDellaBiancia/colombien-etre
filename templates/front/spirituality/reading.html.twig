@@ -13,19 +13,19 @@
     <li>Idées de lecture</li>
 </ul>
 
+<div class="menu">
+
+    <h2>Idées de lecture</h2>
+</div>
+
+
 <section class="readings">
-
-    <div class="readings_menu">
-
-        <h2>Idées de lecture</h2>
-    </div>
-
 
 {% for reading in readings %}
     
 
     <article class="reading-article_container">
-        <img class="reading-article_img" src="{{reading.picture}}" alt="" class="reading-article_video">
+        <img class="reading-article_img" src="{{reading.picture}}" alt="">
         <div class="reading-article_informations">
             <h3 class="reading-article_title">{{reading.title}}</h3>
             <p class="reading-article_description">{{reading.description | raw}}</p>
