@@ -7,7 +7,6 @@
 
     {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
     {% block stylesheets %}
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +20,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
@@ -30,6 +28,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Indie+Flower&display=swap"
         rel="stylesheet">
 
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     {% endblock %}
@@ -37,12 +37,14 @@
 
 <body>
     {% include "front/_nav.html.twig" %}
+    {% include "front/_navBurger.html.twig" %}
 
     {% block body %}{% endblock %}
 
     {% include "front/_footer.html.twig" %}
 
     {% block javascripts %}
+    <script src="{{ asset('assets/js/menuBurger.js') }}"></script>
     <script src="{{ asset('assets/js/navbar.js') }}"></script>
     <script src="{{ asset('assets/js/app.js') }}"></script>
     {% endblock %}

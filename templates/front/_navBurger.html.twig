@@ -1,0 +1,44 @@
+
+<header class="burger-nav">
+  <ul class="burger-menu">
+    <li class="burger-menu_item">
+      <div class="burger-button">
+        <div class="button-line"></div>
+        <div class="button-line"></div>
+        <div class="button-line"></div>
+      </div>
+      <p>menu</p>
+    </li>
+    <li class="burger-menu_item">
+      <img class="burger-logo" src="{{ asset('assets/images/colombe.png') }}" alt="Logo" >
+      <h1>colombienétre</h1>
+    </li>
+    
+  </ul>
+  
+  <ul class="burger-nav_list">
+
+     <li  class="burger-nav_list_item">
+        <a class="burger-nav_link"  href="{{ path('home') }}" >Accueil</a>
+     </li>
+
+     <li class="burger-nav_list_item">
+        <a class="burger-nav_link" href="{{ path('corpsEsprit') }}">Corps & esprit</a>
+     </li>
+        
+     <li class="burger-nav_list_item">
+        <a class="burger-nav_link" href="{{ path('spirituality') }}">Spiritualité</a>
+     </li>
+
+     <li class="burger-nav_list_item">
+        <a class="burger-nav_link" href="{{ path('shop') }}">Boutique</a>
+     </li>
+
+     <li class="burger-nav_list_item">
+        <a class="burger-nav_link" href="{{ path('quiSuisJe') }}">Qui suis-je ?</a>
+     </li>
+     
+  </ul>   
+
+
+</header>
