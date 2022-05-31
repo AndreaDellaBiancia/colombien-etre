@@ -6,7 +6,7 @@
     position: fixed;
     z-index: 10;
     width: 100%;
-    height: 7rem;
+    height: 5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,16 +18,19 @@
 
   .burger-menu_item {
     display: flex;
+    flex-direction: column-reverse;
     align-items: center;
   }
 
   .burger-menu_item:last-child {
-    margin-right: 5rem;
+    display: flex;
+    flex-direction: row-reverse;
   }
 
   .burger-menu_item p {
     text-transform: uppercase;
-    font-size: 1.2rem;
+    font-size: 0.7rem;
+    margin: 0;
   }
 
   .burger-menu_item h1 {
@@ -35,6 +38,7 @@
     font-size: 1.4rem;
     font-family: 'Caveat', cursive;
     color: #5eaabd;
+    margin: 0;
   }
 
   .burger-button {
@@ -53,10 +57,6 @@
     background-color: black;
   }
 
-  .nav_back {
-    border-bottom: 1px solid #5eaabd59;
-  }
-
   .burger-nav_list {
     position: fixed;
     transform: translateX(-150%);
@@ -69,7 +69,7 @@
     background: white;
     color: #5eaabd;
     list-style: none;
-    margin-top: 7rem;
+    margin-top: 5rem;
     height: 17.5rem;;
   }
 
@@ -92,48 +92,17 @@
   }
 
   .burger-logo {
-    height: 80px;
-    margin: 0.3rem 0;
+    height: 30px;
+    margin: 0;
     margin-left: 3rem;
   }
 
-  .nav_link {
-    font-family: 'Caveat', cursive;
-    color: #5eaabd;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 1.2rem;
-    padding: 2.2rem;
-    text-decoration: none;
-  }
-
-  .nav_links_children {
-    display: none;
-  }
-
-  .nav_links_children--show {
-    width: calc(100% / 6);
-    background-color: white;
-    position: fixed;
-    margin-top: 5.4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-bottom: 1px solid black;
-    border-radius: 0 0 10px 10px;
-  }
-
-  .nav_link_child {
-    margin: 0.8rem 0;
-    padding: 0 1rem;
-    font-family: 'Caveat', cursive;
-    color: #5eaabd;
-    font-size: 1.5rem;
-    text-decoration: none;
-    text-align: center;
+  .nav_back {
+    border-bottom: 1px solid #5eaabd59;
   }
 
   .main-img {
+    margin-top: 5rem;
     max-width: 100%;
   }
 
@@ -201,7 +170,7 @@
   .home-shop_title {
     font-family: 'Dancing Script', cursive;
     color: #5eaabd;
-    margin: 7rem 0 1rem;
+    margin: 6.5rem 4rem;
     font-size: 2.5rem;
     text-align: center;
   }
@@ -213,7 +182,7 @@
   }
 
   .home-shop {
-    width: 90%;
+    width: 70%;
     margin: 0 auto;
   }
 
@@ -223,12 +192,17 @@
 
   .home-shop-right {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 0 auto;
   }
 
   .shop_item--home {
-    width: calc(100% / 3);
-
+    background-color: #eafcfc;
+    width: 100%;
+  border: 1px solid black;
+  margin-top: 2rem;
+  
   }
 
   .shop_item {
@@ -238,12 +212,7 @@
     font-family: 'Nunito', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
 
-  .shop_item:hover {
-    z-index: 10;
-    transition: 1.1s;
-    transform: scale(1.1);
-    box-shadow: 3px 3px 4px #afb2b3;
-  }
+ 
 
   .shop_item_img-conteiner {
     max-width: 260px;
