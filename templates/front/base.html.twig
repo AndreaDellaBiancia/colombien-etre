@@ -37,14 +37,13 @@
 
 <body>
     {% include "front/_nav.html.twig" %}
-    {% include "front/_navBurger.html.twig" %}
+
 
     {% block body %}{% endblock %}
 
     {% include "front/_footer.html.twig" %}
 
     {% block javascripts %}
-    <script src="{{ asset('assets/js/menuBurger.js') }}"></script>
     <script src="{{ asset('assets/js/navbar.js') }}"></script>
     <script src="{{ asset('assets/js/app.js') }}"></script>
     {% endblock %}
