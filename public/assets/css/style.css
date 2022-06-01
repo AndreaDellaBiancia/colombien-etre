@@ -6,11 +6,11 @@
     position: fixed;
     z-index: 10;
     width: 100%;
-    height: 5rem;
+    height: 3.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 3rem auto;
+    margin-bottom: 1.5rem auto;
     border: 2px solid #5eaabd;
     padding: 1rem;
     background-color: white;
@@ -29,7 +29,7 @@
 
   .burger-menu_item p {
     text-transform: uppercase;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     margin: 0;
   }
 
@@ -42,8 +42,8 @@
   }
 
   .burger-button {
-    width: 3rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 1.8rem;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -69,8 +69,8 @@
     background: white;
     color: #5eaabd;
     list-style: none;
-    margin-top: 5rem;
-    height: 17.5rem;
+    margin-top: 3.5rem;
+    height: 14.5rem;
     ;
   }
 
@@ -83,7 +83,7 @@
     border-left: 2px solid #5eaabd;
     border-right: 2px solid #5eaabd;
     border-bottom: 2px solid #5eaabd;
-    font-size: 2rem;
+    font-size: 1.4rem;
     padding: 0.7rem;
     font-family: 'Caveat', cursive;
     color: #5eaabd;
@@ -103,7 +103,7 @@
   }
 
   .main-img {
-    margin-top: 5rem;
+    margin-top: 3.5rem;
     max-width: 100%;
   }
 
