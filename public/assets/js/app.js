@@ -4,7 +4,7 @@ const app = {
 
         //On initialise la navbar
         navbar.init();
-      
+        filterButton.init();
     },
     
     
