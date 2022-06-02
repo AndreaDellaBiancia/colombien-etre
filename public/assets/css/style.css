@@ -1219,7 +1219,6 @@
     padding-bottom: 0.5rem;
     margin: 0 6rem;
     display: flex;
-
     border-bottom: 1px solid rgba(0, 0, 0, 0.281);
   }
 
@@ -1848,6 +1847,14 @@
     font-size: 1.7rem;
   }
 
+  .fil-ariane {
+    padding-top: 9.5rem;
+    padding-bottom: 0.5rem;
+    margin: 0 6rem;
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.281);
+  }
+
   .home-shop {
     width: 90%;
     margin-top: 3.5rem;
@@ -1951,6 +1958,41 @@
     font-size: 1.5rem;
   }
 
+  .shop {
+    display: flex;
+    justify-content: center;
+  }
+
+  .shop-title {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 3.5rem;
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    color: cadetblue;
+  }
+
+
+  .filter_search {
+    width: 100%;
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .filters h3 {
+    display: none;
+  }
+
+  .filter_form {
+    display: block;
+  }
+
+
+  .filter_checkbox input {
+    margin-bottom: 1rem;
+  }
+
+  
   .filters {
     margin-top: 5rem;
     margin-left: 2rem;
@@ -1958,7 +2000,14 @@
   }
 
   .filter_checkbox {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background: white;
+    color: #5eaabd;
+    margin-top: 1rem;
+    padding: 1rem;
   }
 
   .shop_item-list {
@@ -1975,7 +2024,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+  } 
 
   .menu_form {
     display: flex;
