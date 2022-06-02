@@ -4,9 +4,13 @@ const navbar = {
     init: function () {
 
         let navListItems = document.querySelectorAll('.nav_list_item');
+        
         let burgerButton = document.querySelector('.burger-button');
-
-        burgerButton.addEventListener('click', navbar.toggleMenu);
+        
+        if(burgerButton != null){
+            burgerButton.addEventListener('click', navbar.toggleMenu);
+        }
+      
 
         for (let index = 0; index < navListItems.length; index++) {
             let item = navListItems[index];
