@@ -1,9 +1,10 @@
 const app = {
 
     init: function () {
-        
+
         //On initialise la navbar
         navbar.init();
+        filterButton.init();
     },
     
     
