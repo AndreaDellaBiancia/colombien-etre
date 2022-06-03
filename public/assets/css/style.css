@@ -191,7 +191,7 @@
   }
 
   .shop_item--home {
-    background-color: #eaffff;
+    box-shadow: -3px 5px 3px rgba(72, 72, 72, 0.278) ;
     width: 100%;
     margin-top: 2rem;
 
@@ -1241,10 +1241,6 @@
     margin: 6rem auto;
   }
 
-  /* .corps-esprit-cards article:first-child {
-    margin-top: 3rem;
-  } */
-
   .corps-esprit-cards h2 {
     background-color: white;
     font-family: 'Dancing Script', cursive;
@@ -1891,7 +1887,7 @@
   }
 
   .home-shop-right {
-    width: 60%;
+    width: 100%;
     display: flex;
   }
 
@@ -1917,10 +1913,6 @@
   .corps-esprit-cards article {
     margin: 6rem auto;
   }
-
-/*   .corps-esprit-cards article{
-    margin-top: 6rem;
-  } */
 
   .corps-esprit-cards h2 {
     background-color: white;
@@ -2038,7 +2030,6 @@
     margin-bottom: 1rem;
   }
 
-  
   .filters {
     margin-top: 5rem;
     margin-left: 2rem;

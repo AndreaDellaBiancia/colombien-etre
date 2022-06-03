@@ -21,25 +21,33 @@
     <article class="home-card">
         <img src="{{ asset('assets/images/bien-etrecorps.jpeg') }}" alt="">
         <div>
-            <h3>Bien-être dans son corps</h3>
+            <a href="{{ path('sport') }}">
+                <h3>Bien-être dans son corps</h3>
+            </a>
         </div>
     </article>
     <article class="home-card">
         <img src="{{ asset('assets/images/bien-etretete.jpeg') }}" alt="">
         <div>
-            <h3>Bien-être dans sa tête</h3>
+            <a href="{{ path('meditation') }}">
+                <h3>Méditation</h3>
+            </a>
         </div>
     </article>
     <article class="home-card">
         <img src="{{ asset('assets/images/bien-etresoi.jpeg') }}" alt="">
         <div>
-            <h3>Bien-être chez soi</h3>
+            <a href="{{path('reiki') }}">
+                <h3>L'Énergie</h3>
+            </a>
         </div>
     </article>
     <article class="home-card">
         <img src="{{ asset('assets/images/spiritualite.jpeg') }}" alt="">
         <div>
-            <h3>Spiritualité</h3>
+            <a href="{{path('spirituality') }}">
+                <h3>Spiritualité</h3>
+            </a>
         </div>
     </article>
 </section>
