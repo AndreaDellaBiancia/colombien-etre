@@ -1241,9 +1241,9 @@
     margin: 6rem auto;
   }
 
-  .corps-esprit-cards article:first-child {
+  /* .corps-esprit-cards article:first-child {
     margin-top: 3rem;
-  }
+  } */
 
   .corps-esprit-cards h2 {
     background-color: white;
@@ -1905,6 +1905,52 @@
   .show-products {
     display: none;
   }
+
+  .corps-esprit-cards {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+  }
+
+  .corps-esprit-cards article {
+    margin: 6rem auto;
+  }
+
+/*   .corps-esprit-cards article{
+    margin-top: 6rem;
+  } */
+
+  .corps-esprit-cards h2 {
+    background-color: white;
+    font-family: 'Dancing Script', cursive;
+    padding: 1rem 0;
+    border-radius: 30px;
+    font-size: 2.7rem;
+
+  }
+
+  .corps-esprit-cards div {
+    width: 500px;
+    height: 500px;
+  }
+
+  .corps-esprit-cards article {
+    margin-bottom: 2rem;
+  }
+
+  .corps-esprit-cards img {
+    max-width: 100%;
+    border-radius: 350px;
+    opacity: 0.5;
+  }
+
+  .corps-esprit-cards img:hover {
+    transition: 1.3s;
+    opacity: 1;
+  }
+
 
   .me-section {
     display: flex;
