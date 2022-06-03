@@ -788,7 +788,7 @@
 
   .video-article_container {
     margin: 3rem auto;
-    background-color: #e6dfff;
+    background-color: #42a4bd2b;
     width: 99%;
     padding: 0.5rem;
     display: flex;
@@ -803,7 +803,7 @@
     font-family: 'Indie Flower', cursive;
     font-size: 2rem;
     font-weight: bold;
-    color: #7651bb;
+    color: black;
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 1.5rem;
@@ -1710,7 +1710,7 @@
 
   .video-article_container {
     margin: 3rem auto;
-    background-color: #e6dfff;
+    background-color: #42a4bd2b;
     width: 85%;
     padding: 1rem;
     display: flex;
@@ -1725,7 +1725,7 @@
     font-family: 'Indie Flower', cursive;
     font-size: 2.5rem;
     font-weight: bold;
-    color: #7651bb;
+    color: #000000;
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 3rem;
