@@ -1,4 +1,8 @@
 @media screen and (max-width: 859px) {
+  
+  body{
+    background-color: white;
+  }
   .nav {
     display: none;
   }
@@ -283,7 +287,7 @@
   }
 
   .footer {
-    background-color: #5eaabd;
+    background-color: #f13c0039;
   }
 
   .footer ul {
@@ -918,6 +922,10 @@
 
 @media screen and (min-width: 860px) {
 
+  body{
+    background-color: white;
+  }
+
   .burger-nav {
     display: none;
   }
@@ -950,17 +958,18 @@
   }
 
   .logo {
-    height: 70px;
+    height: 60px;
     margin: 0.3rem 0;
   }
 
   .nav_link {
-    font-family: 'Caveat', cursive;
+    font-family: poppins, raleway;
+    font-weight: 600;
     color: #5eaabd;
     text-transform: uppercase;
     text-align: center;
-    font-size: 1.2rem;
-    padding: 2.2rem;
+    font-size: 1.1rem;
+    padding: 2rem;
     text-decoration: none;
   }
 
@@ -972,7 +981,7 @@
     width: calc(100% / 6);
     background-color: white;
     position: fixed;
-    margin-top: 5.4rem;
+    margin-top: 5.1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -980,44 +989,77 @@
     border-radius: 0 0 10px 10px;
   }
 
+  .nav_link_child:first-child {
+   padding-top: 1.5rem;
+  }
+
+
   .nav_link_child {
     margin: 0.8rem 0;
-    padding: 0 1rem;
-    font-family: 'Caveat', cursive;
+    padding: 0 1.2rem;
+    font-family: poppins, raleway;
     color: #5eaabd;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-decoration: none;
     text-align: center;
   }
 
-  .main-img {
-    max-width: 100%;
+  .home-intro {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   .home-description {
-    background-color: #5eaabd;
+    width: 900px;
+    align-self: center;
+    background-color: #ffffff82;
     text-align: center;
-    padding: 1rem 5rem;
-    margin-top: 3.5rem;
-    font-family: 'Caveat', cursive;
-    color: white;
-    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 1.2rem;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    line-height: 2rem;
   }
 
-  .home-description h2,
-  p {
-    margin: 1rem;
+  .home-description img {
+    width: 3.5rem;
   }
 
-  .home-description h2 {
+  .home-description span {
+    font-weight: 700;
+  }
+
+  .home-description p,
+  img {
+    margin-bottom: 1rem;
+  }
+
+  .home-description p:first-child {
+    font-family: Miniver;
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+
+  .home-intro h1 {
+    position: absolute;
+    margin-top: 13rem;
+    padding-left: 4rem;
+    font-family: Miniver;
     font-size: 2.5rem;
+    color: rgb(255, 255, 255);
+    width: 100%;
   }
 
   .home-cards {
-    margin-top: 6rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
   }
 
   .home-cards img {
@@ -1028,70 +1070,89 @@
   .home-card {
     display: flex;
     justify-content: center;
+    align-items: center;
   }
 
   .home-card div {
     display: flex;
-    align-items: center;
     position: absolute;
-    margin-top: 7rem;
     padding: 1rem;
   }
 
   .home-card h3 {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Quicksand', sans-serif;
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.5);
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 800;
-    color: rgb(245, 10, 10);
+    color: #2077AA;
   }
 
   .home-card h3:hover {
-    font-family: 'Dancing Script', cursive;
     transform: scale(1.2);
-    color: #5eaabd;
     background-color: rgba(255, 255, 255);
     transition: 1.4s;
   }
 
+  .home-shop-title-list{
+    margin: 0 auto;
+    margin-top: 6rem;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-shop-title-list img{
+    width: 55px;
+    height: 54px;
+  }
+  
+
   .home-shop_title {
-    font-family: 'Dancing Script', cursive;
+    font-family: Miniver;
     color: #5eaabd;
-    margin: 7rem 0 1rem;
+    margin:0 2rem;
     font-size: 2.5rem;
     text-align: center;
   }
 
   .home-shop_title span {
-    font-family: Helvetica, sans-serif;
-    font-size: 1.5rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.7rem;
     font-weight: 700;
   }
 
-  .home-shop {
-    width: 100%;
+  .home-shop{
+    margin-top: 0rem;
     margin: 0 auto;
-  }
-
-  .home-shop-left {
-    display: none;
-  }
-
-  .home-shop-right {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .home-shop-items{
+    width: 80%;
     margin: 0 auto;
-    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 
   .shop_item--home {
-    width: calc(100% / 4);
-
+    width: calc((100% - 16rem ) / 2);
+    min-width: 300px;
+    height: 654px;
+    border: 2px solid #5EAABD;
+    border-radius: 20px;
+    padding: 1rem;
+    
+    border-radius: 20px;
   }
 
   .shop_item {
     margin: 0 1rem;
+    margin-top: 3rem;
     padding: 1rem;
     align-self: center;
     font-family: 'Nunito', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -1099,14 +1160,14 @@
 
   .shop_item:hover {
     z-index: 10;
-    transition: 1.1s;
+    transition: 1s;
     transform: scale(1.1);
-    box-shadow: 3px 3px 4px #afb2b3;
+    border: 5px solid #5EAABD;
   }
 
   .shop_item_img-conteiner {
-    max-width: 260px;
-    height: 240px;
+    max-width: 304px;
+    height: 362px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -1119,7 +1180,7 @@
   }
 
   .shop_item-detail {
-    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
     width: 100%;
     max-height: 40%;
     display: flex;
@@ -1131,18 +1192,18 @@
   .shop_item-title {
     margin-top: 0.5rem;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 500;
     height: 8rem;
     line-height: 1.2rem;
   }
 
   .shop_item-brand {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
   }
 
   .shop_item-description {
     font-size: 1rem;
-    text-transform: capitalize;
     margin: 0;
   }
 
@@ -1154,17 +1215,21 @@
   .shop_item-show {
     font-size: 1rem;
     text-align: center;
-    width: 105%;
+    width: 75%;
     background-color: #5eaabd;
     padding: 0.7rem 2rem;
     border-radius: 10px;
     align-self: center;
     box-sizing: border-box;
+    margin-bottom: 1rem;
   }
 
   .shop_item-show p {
     margin: 0;
     color: white;
+    display:flex ;
+    justify-content: center;
+    align-items: flex-end;
   }
 
   .shop_item-show i {
@@ -1183,35 +1248,49 @@
   }
 
   .footer {
-    margin-top: 4rem;
-    background-color: #5eaabd;
+    margin-top: 6rem;
+    background-color: #5EAABD80;
+    
   }
 
-  .footer ul {
+  .footer div{
+    width: 85%;
+    margin: 0 auto;
     display: flex;
+    justify-content: space-around;
+  }
+  
+  .footer ul {
+    width: calc(100% / 3);
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;  
+  }
+
+  .footer ul:nth-child(2) {
     align-items: center;
+    justify-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .footer ul:nth-child(2) img {
+    width: 5.5rem;
+    height: 4rem;
+  }
+   
+  .footer ul:last-child img {
+   float: right;
   }
 
   .footer li {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 1rem 0;
-    font-size: 1.3rem;
-    text-align: center;
+    font-family: Poppins;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 18px;
+    text-align: left;
     color: white;
-  }
-
-  .footer .logo {
-    height: 40px;
-    margin-right: 1rem;
-  }
-
-  .footer p {
-    text-align: center;
-    margin: 0;
-    padding: 0.5rem 0;
-    max-width: 100%;
-    background-color: #66b4c7;
+    margin: 0.5rem 0;   
   }
 
   .fil-ariane {
@@ -1587,15 +1666,15 @@
   }
 
   .post-page {
-    background-color: #ddfeff;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
   }
 
   .post-page_post {
     max-width: 90%;
-    background-color: #fffaec;
-    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
+    background-color: #ffffff;
+    border: 2px solid #5EAABD;
     border-radius: 15px;
     margin: 3rem auto;
     display: flex;
@@ -1606,7 +1685,8 @@
   .post-page_post h1 {
     font-size: 3rem;
     padding: 1.5rem 1rem;
-    font-family: 'Caveat', cursive;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
     color: cadetblue;
   }
 
@@ -1619,7 +1699,7 @@
     line-height: 2rem;
     margin: 1rem;
     font-size: 1.7rem;
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Montserrat';
   }
 
   .post-author-informations {
@@ -1843,8 +1923,13 @@
 }
 
 @media screen and (min-width: 1286px) {
+
   .nav_link {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+  }
+
+  .nav_link_child {
+    font-size: 1.5rem;
   }
 
   .fil-ariane {
@@ -1855,51 +1940,30 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.281);
   }
 
-  .home-shop {
-    width: 90%;
-    margin-top: 3.5rem;
-    display: flex;
+  .home-intro {
+    background-image: none; 
   }
+  
 
-  .home-shop-left {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .home-shop-left img {
-    max-width: 75%;
-
-  }
-
-  .home-shop-left h3 {
-    font-family: 'Dancing Script', cursive;
-    position: absolute;
-    font-size: 2rem;
-    color: red;
-    padding: 1.5rem 2rem;
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-
-  .home-shop-left h3:hover {
-    font-family: 'Dancing Script', cursive;
-    color: #5eaabd;
-    transform: scale(1.3);
-    background-color: rgba(255, 255, 255);
-    transition: 1.4s;
-  }
-
-  .home-shop-right {
-    width: 60%;
-    display: flex;
-  }
-
-  .shop_item {
-    margin: 3rem 1rem;
-    padding: 1rem;
+  .home-description {
     align-self: center;
-    font-family: 'Nunito', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    position: absolute;
+    top: 27.5rem;
+    right: 5rem;
+    font-size: 1.5rem;
+  }
+
+  .home-description img {
+    width: 5rem;
+  }
+
+  .home-description p:first-child {
+    font-size: 2.2rem;
+  }
+
+  .shop_item--home {
+    width: calc((100% - 16rem ) / 3);
+    width: 366px;
   }
 
   .show-products {
@@ -1992,7 +2056,7 @@
     margin-bottom: 1rem;
   }
 
-  
+
   .filters {
     margin-top: 5rem;
     margin-left: 2rem;
@@ -2024,7 +2088,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  } 
+  }
 
   .menu_form {
     display: flex;
