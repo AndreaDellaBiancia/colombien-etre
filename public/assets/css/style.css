@@ -1,8 +1,9 @@
 @media screen and (max-width: 859px) {
-  
-  body{
+
+  body {
     background-color: white;
   }
+
   .nav {
     display: none;
   }
@@ -38,14 +39,6 @@
     margin: 0;
   }
 
-  .burger-menu_item h1 {
-    text-transform: uppercase;
-    font-size: 1.4rem;
-    font-family: 'Caveat', cursive;
-    color: #5eaabd;
-    margin: 0;
-  }
-
   .burger-button {
     width: 2rem;
     height: 1.8rem;
@@ -60,6 +53,11 @@
     width: 100%;
     height: 3px;
     background-color: black;
+  }
+
+  .logo-burger {
+    width: 70px;
+    margin: 0;
   }
 
   .burger-nav_list {
@@ -89,7 +87,7 @@
     border-bottom: 2px solid #5eaabd;
     font-size: 1.4rem;
     padding: 0.7rem;
-    font-family: 'Caveat', cursive;
+    font-family: poppins, raleway;
     color: #5eaabd;
     text-transform: uppercase;
     text-align: center;
@@ -111,24 +109,59 @@
     max-width: 100%;
   }
 
+  .home-intro {
+    padding-top: 3.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
   .home-description {
-    background-color: #5eaabd;
+    width: 100%;
+    align-self: center;
+    background-color: #ffffff82;
     text-align: center;
-    padding: 0.6rem;
-    margin-top: 2rem;
-    font-family: 'Caveat', cursive;
-    color: white;
-    font-size: 1.3rem;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 1.2rem;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    line-height: 2rem;
   }
 
-  .home-description h2,
-  p {
-    margin: 1rem;
+  .home-description img {
+    width: 3.5rem;
   }
 
-  .home-description h2 {
-    font-size: 1.8rem;
+  .home-description span {
+    font-weight: 700;
   }
+
+  .home-description p,
+  img {
+    margin-bottom: 1rem;
+  }
+
+  .home-description p:first-child {
+    font-family: Miniver;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .home-intro h1 {
+    position: absolute;
+    margin-top: 11.5rem;
+    padding-left: 1.2rem;
+    font-family: Miniver;
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    width: 100%;
+  }
+
 
   .home-cards {
     margin-top: 3rem;
@@ -138,68 +171,89 @@
   }
 
   .home-cards img {
-    width: 400px;
+    width: 350px;
     margin: 1rem;
   }
 
   .home-card {
     display: flex;
     justify-content: center;
+    align-items: center;
   }
 
   .home-card div {
     display: flex;
-    align-items: center;
     position: absolute;
-    margin-top: 7rem;
     padding: 1rem;
   }
 
   .home-card h3 {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Quicksand', sans-serif;
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.5);
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 800;
-    color: rgb(245, 10, 10);
+    color: #2077AA;
+  }
+
+  .home-shop-title-list {
+    margin: 0 auto;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-shop-title-list img {
+    width: 55px;
+    height: 54px;
+  }
+
+  .home-shop-title-list img {
+    display: none;
   }
 
   .home-shop_title {
-    font-family: 'Dancing Script', cursive;
+    font-family: Miniver;
     color: #5eaabd;
-    margin: 3.5rem 0.5rem 2rem;
+    margin: 0 2rem;
     font-size: 1.8rem;
     text-align: center;
   }
 
   .home-shop_title span {
-    font-family: Helvetica, sans-serif;
-    font-size: 1.3rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
     font-weight: 700;
   }
 
   .home-shop {
-    width: 100%;
-  }
-
-  .home-shop-left {
-    display: none;
-  }
-
-  .home-shop-right {
+    margin-top: 0rem;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-content: space-between;
+  }
+
+  .home-shop-items {
+    width: 80%;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 
   .shop_item--home {
-    background-color: #eaffff;
-    width: 100%;
-    margin-top: 2rem;
-
+    width: 350px;
+    height: 550px;
+    border: 2px solid #5EAABD;
+    border-radius: 20px;
+    padding: 1rem;
+    border-radius: 20px;
   }
+
 
   .shop_item {
     margin: 1rem 1rem;
@@ -259,10 +313,13 @@
     font-size: 1rem;
     text-align: center;
     width: 105%;
-    background-color: #5eaabd;
+    background: #5EAABD;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
     padding: 0.7rem 2rem;
-    border-radius: 10px;
     align-self: center;
+    position: relative;
+    top: 2rem;
     box-sizing: border-box;
   }
 
@@ -276,45 +333,79 @@
     margin-left: 0.5rem;
   }
 
-  .show-products {
-    width: 100%;
-    font-family: 'Dancing Script', cursive;
-    font-size: 2rem;
-    color: red;
-    padding: 1.5rem 2rem;
-    margin: 2rem auto;
+  .home-allProducts {
+    width: 250px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    color: white;
+    margin: 0rem auto;
+    margin-top: 4rem ;
     text-align: center;
+    background-color: #074571;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+  }
+
+  .home-allProducts:hover {
+    background-color: #ffffff;
+    color: #074571;
+    border: 2px solid #074571;
+    box-shadow: none;
   }
 
   .footer {
-    background-color: #f13c0039;
+    margin-top: 6rem;
+    background-color: #5EAABD80;
+    padding-top: 1rem;
+  }
+
+  .footer div {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer img {
+    margin: 0;
+    width: 40px;
   }
 
   .footer ul {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
+  .footer ul:first-child {
+    margin-bottom: 2rem;
+  }
+
+  .footer ul:nth-child(2) {
+    order: 3;
+  }
+
+  .footer ul:nth-child(2) img {
+    width: 5.5rem;
+    height: 4rem;
+  }
+
+  .footer ul:last-child img {
+    float: right;
+  }
+
   .footer li {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 1rem 0;
-    font-size: 1rem;
-    text-align: center;
+    font-family: Poppins;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 18px;
+    text-align: left;
     color: white;
-  }
-
-  .footer .logo {
-    height: 30px;
-    margin-right: 1rem;
-  }
-
-  .footer p {
-    text-align: center;
-    margin: 0;
-    padding: 0.5rem 0;
-    max-width: 100%;
-    background-color: #66b4c7;
+    margin: 0.5rem 0;
   }
 
   .fil-ariane {
@@ -922,7 +1013,7 @@
 
 @media screen and (min-width: 860px) {
 
-  body{
+  body {
     background-color: white;
   }
 
@@ -990,7 +1081,7 @@
   }
 
   .nav_link_child:first-child {
-   padding-top: 1.5rem;
+    padding-top: 1.5rem;
   }
 
 
@@ -1063,7 +1154,7 @@
   }
 
   .home-cards img {
-    width: 400px;
+    width: 350px;
     margin: 1rem;
   }
 
@@ -1089,12 +1180,13 @@
   }
 
   .home-card h3:hover {
-    transform: scale(1.2);
+    transform: scale(1.15);
     background-color: rgba(255, 255, 255);
     transition: 1.4s;
+    color: #074571;
   }
 
-  .home-shop-title-list{
+  .home-shop-title-list {
     margin: 0 auto;
     margin-top: 6rem;
     height: auto;
@@ -1104,16 +1196,16 @@
     align-items: center;
   }
 
-  .home-shop-title-list img{
+  .home-shop-title-list img {
     width: 55px;
     height: 54px;
   }
-  
+
 
   .home-shop_title {
     font-family: Miniver;
     color: #5eaabd;
-    margin:0 2rem;
+    margin: 0 2rem;
     font-size: 2.5rem;
     text-align: center;
   }
@@ -1124,14 +1216,14 @@
     font-weight: 700;
   }
 
-  .home-shop{
+  .home-shop {
     margin-top: 0rem;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
   }
 
-  .home-shop-items{
+  .home-shop-items {
     width: 80%;
     margin: 0 auto;
     display: flex;
@@ -1140,13 +1232,13 @@
   }
 
   .shop_item--home {
-    width: calc((100% - 16rem ) / 2);
+    width: calc((100% - 16rem) / 2);
     min-width: 300px;
     height: 654px;
     border: 2px solid #5EAABD;
     border-radius: 20px;
     padding: 1rem;
-    
+
     border-radius: 20px;
   }
 
@@ -1208,6 +1300,8 @@
   }
 
   .shop_item-price {
+    color: #5EAABD;
+    font-weight: 600;
     margin: 1.5rem 0;
     font-size: 1.5rem;
   }
@@ -1216,9 +1310,10 @@
     font-size: 1rem;
     text-align: center;
     width: 75%;
-    background-color: #5eaabd;
+    background-color: #5EAABD;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
     padding: 0.7rem 2rem;
-    border-radius: 10px;
     align-self: center;
     box-sizing: border-box;
     margin-bottom: 1rem;
@@ -1227,7 +1322,7 @@
   .shop_item-show p {
     margin: 0;
     color: white;
-    display:flex ;
+    display: flex;
     justify-content: center;
     align-items: flex-end;
   }
@@ -1237,35 +1332,46 @@
     margin-left: 0.5rem;
   }
 
-  .show-products {
-    width: 100%;
-    font-family: 'Dancing Script', cursive;
-    font-size: 2rem;
-    color: red;
-    padding: 1.5rem 2rem;
-    margin: 2rem auto;
+  .home-allProducts {
+    width: 250px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    color: white;
+    margin: 0rem auto;
+    margin-top: 4rem ;
     text-align: center;
+    background-color: #074571;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+  }
+
+  .home-allProducts:hover {
+    background-color: #ffffff;
+    color: #074571;
+    border: 2px solid #074571;
+    box-shadow: none;
   }
 
   .footer {
     margin-top: 6rem;
     background-color: #5EAABD80;
-    
   }
 
-  .footer div{
+  .footer div {
     width: 85%;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
   }
-  
+
   .footer ul {
     width: calc(100% / 3);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
   }
 
   .footer ul:nth-child(2) {
@@ -1278,9 +1384,9 @@
     width: 5.5rem;
     height: 4rem;
   }
-   
+
   .footer ul:last-child img {
-   float: right;
+    float: right;
   }
 
   .footer li {
@@ -1290,7 +1396,7 @@
     line-height: 18px;
     text-align: left;
     color: white;
-    margin: 0.5rem 0;   
+    margin: 0.5rem 0;
   }
 
   .fil-ariane {
@@ -1941,9 +2047,9 @@
   }
 
   .home-intro {
-    background-image: none; 
+    background-image: none;
   }
-  
+
 
   .home-description {
     align-self: center;
@@ -1962,7 +2068,7 @@
   }
 
   .shop_item--home {
-    width: calc((100% - 16rem ) / 3);
+    width: calc((100% - 16rem) / 3);
     width: 366px;
   }
 

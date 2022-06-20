@@ -1,90 +1,86 @@
 <header>
-   <div  class="nav">
-      
-         <ul class="nav_list">
-            <li class="nav_list_item">
-               <a href="{{ path('home') }}"><img class="logo" src="{{ asset('assets/images/logo.png') }}" alt="Logo" ></a>
-            </li>
-            <li  class="nav_list_item">
-               <a class="nav_link"  href="{{ path('home') }}" >Accueil</a>
-            </li>
-            <li class="nav_list_item">
-               <a class="nav_link" href="{{ path('corpsEsprit') }}">Corps & esprit</a>
-               <div class="nav_links_children">
-                  <a href="{{ path('feed') }}" class="nav_link_child">Alimentation</a>
-                  <a href="{{ path('sport') }}" class="nav_link_child">Sport</a>
-                  <a href="{{ path('massage') }}" class="nav_link_child">Massages</a>
-                  <a href="{{ path('perma') }}" class="nav_link_child">Permathérapie</a>
-                  <a href="{{ path('bachFlower') }}" class="nav_link_child">Fleurs de Bach</a>
-                  <a href="{{ path('autohypnose') }}" class="nav_link_child">Autohypnose</a>
-                  <a href="{{ path('reiki') }}" class="nav_link_child">Reiki</a>
-                  <a href="{{ path('phyto') }}" class="nav_link_child">Phytothérapie</a>
-                  <a href="{{ path('meditation') }}" class="nav_link_child">Méditation</a>
-               </div>
-            </li>
-      
-            <li class="nav_list_item">
-               <a class="nav_link" href="{{ path('spirituality') }}">Spiritualité</a>
-               <div class="nav_links_children">
-                  <a href="{{ path('spirit-video') }}" class="nav_link_child">Ressources vidéos</a>
-                  <a href="{{ path('spirit-readings')}}" class="nav_link_child">Idées de lecture</a>
-                  <a href="{{ path('oracles')}}" class="nav_link_child">Oracles</a>
-               </div>
-            </li>
-            <li class="nav_list_item">
-               <a class="nav_link" href="{{ path('shop') }}">Boutique</a>
-            </li>
-            <li class="nav_list_item">
-               <a class="nav_link" href="{{ path('quiSuisJe') }}">Qui suis-je ?</a>
-            </li>
-      
-         </ul>
+   <div class="nav">
+
+      <ul class="nav_list">
+         <li class="nav_list_item">
+            <a href="{{ path('home') }}"><img class="logo" src="{{ asset('assets/images/logo.png') }}" alt="Logo"></a>
+         </li>
+         <li class="nav_list_item">
+            <a class="nav_link" href="{{ path('home') }}">Accueil</a>
+         </li>
+         <li class="nav_list_item">
+            <a class="nav_link" href="{{ path('corpsEsprit') }}">Corps & esprit</a>
+            <div class="nav_links_children">
+               <a href="{{ path('feed') }}" class="nav_link_child">Alimentation</a>
+               <a href="{{ path('sport') }}" class="nav_link_child">Sport</a>
+               <a href="{{ path('massage') }}" class="nav_link_child">Massages</a>
+               <a href="{{ path('perma') }}" class="nav_link_child">Permathérapie</a>
+               <a href="{{ path('bachFlower') }}" class="nav_link_child">Fleurs de Bach</a>
+               <a href="{{ path('autohypnose') }}" class="nav_link_child">Autohypnose</a>
+               <a href="{{ path('reiki') }}" class="nav_link_child">Reiki</a>
+               <a href="{{ path('phyto') }}" class="nav_link_child">Phytothérapie</a>
+               <a href="{{ path('meditation') }}" class="nav_link_child">Méditation</a>
+            </div>
+         </li>
+
+         <li class="nav_list_item">
+            <a class="nav_link" href="{{ path('spirituality') }}">Spiritualité</a>
+            <div class="nav_links_children">
+               <a href="{{ path('spirit-video') }}" class="nav_link_child">Ressources vidéos</a>
+               <a href="{{ path('spirit-readings')}}" class="nav_link_child">Idées de lecture</a>
+               <a href="{{ path('oracles')}}" class="nav_link_child">Oracles</a>
+            </div>
+         </li>
+         <li class="nav_list_item">
+            <a class="nav_link" href="{{ path('shop') }}">Boutique</a>
+         </li>
+         <li class="nav_list_item">
+            <a class="nav_link" href="{{ path('quiSuisJe') }}">Qui suis-je ?</a>
+         </li>
+
+      </ul>
    </div>
 
-   
+
    <div class="burger-nav">
+
       <ul class="burger-menu">
-        <li class="burger-menu_item">
-          <div class="burger-button">
-            <div class="button-line"></div>
-            <div class="button-line"></div>
-            <div class="button-line"></div>
-          </div>
-          <p>menu</p>
-        </li>
-        <li class="burger-menu_item">
-          
-         <a  href="{{ path('home') }}" ><h1>colombienétre</h1></a> 
-          <img class="burger-logo" src="{{ asset('assets/images/colombe.png') }}" alt="Logo" >
-        </li>
-        
-      </ul>
-      
-      <ul class="burger-nav_list">
-    
-         <li  class="burger-nav_list_item">
-            <a class="burger-nav_link"  href="{{ path('home') }}" >Accueil</a>
+         <li class="burger-menu_item">
+            <div class="burger-button">
+               <div class="button-line"></div>
+               <div class="button-line"></div>
+               <div class="button-line"></div>
+            </div>
+            <p>menu</p>
          </li>
-    
+         <li class="burger-menu_item">
+            <a href="{{ path('home') }}"><img class="logo-burger" src="{{ asset('assets/images/logo.png') }}" alt="Logo"></a>
+         </li>
+      </ul>
+
+      <ul class="burger-nav_list">
+         <li class="burger-nav_list_item">
+            <a class="burger-nav_link" href="{{ path('home') }}">Accueil</a>
+         </li>
+
          <li class="burger-nav_list_item">
             <a class="burger-nav_link" href="{{ path('corpsEsprit') }}">Corps & esprit</a>
          </li>
-            
+
          <li class="burger-nav_list_item">
             <a class="burger-nav_link" href="{{ path('spirituality') }}">Spiritualité</a>
          </li>
-    
+
          <li class="burger-nav_list_item">
             <a class="burger-nav_link" href="{{ path('shop') }}">Boutique</a>
          </li>
-    
+
          <li class="burger-nav_list_item">
             <a class="burger-nav_link" href="{{ path('quiSuisJe') }}">Qui suis-je ?</a>
          </li>
-         
-      </ul>   
-    
-    
+      </ul>
+
+
    </div>
-   
+
 </header>
