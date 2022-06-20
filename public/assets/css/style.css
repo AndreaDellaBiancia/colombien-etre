@@ -154,7 +154,7 @@
 
   .home-intro h1 {
     position: absolute;
-    margin-top: 11.5rem;
+    margin-top: 13.5rem;
     padding-left: 1.2rem;
     font-family: Miniver;
     font-size: 1rem;
@@ -245,21 +245,16 @@
     justify-content: space-around;
   }
 
-  .shop_item--home {
+  .shop_item {
+    margin: 1rem 1rem;
+    padding: 1rem;
     width: 350px;
     height: 550px;
     border: 2px solid #5EAABD;
     border-radius: 20px;
     padding: 1rem;
     border-radius: 20px;
-  }
-
-
-  .shop_item {
-    margin: 1rem 1rem;
-    padding: 1rem;
-    align-self: center;
-    font-family: 'Nunito', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  
   }
 
   .shop_item_img-conteiner {
@@ -344,6 +339,7 @@
     margin-top: 4rem ;
     text-align: center;
     background-color: #074571;
+    border: 2px solid #074571;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 7px;
   }
@@ -485,7 +481,7 @@
 
   .menu h2 {
     display: block;
-    font-family: 'Caveat', cursive;
+    font-family: 'poppins';
     color: #42a4bde5;
     font-size: 3rem;
     margin-top: 6rem;
@@ -564,7 +560,6 @@
     font-weight: bold;
     color: #5eaabd;
     font-size: 1rem;
-
     padding: 0.5rem 1rem;
   }
 
@@ -584,7 +579,7 @@
     margin-bottom: 2rem;
     font-size: 3rem;
     text-align: center;
-    font-family: 'Caveat', cursive;
+    font-family: poppins, raleway;
     color: cadetblue;
   }
 
@@ -600,17 +595,17 @@
   }
 
   .filters h3 {
+    font-family: poppins, raleway;
     margin-bottom: 1.3rem;
-    margin: 0 auto;
     padding: 0.3rem;
+    margin: 0 auto;
     border: 1px solid grey;
     box-shadow: 2px 2px 2px;
     text-transform: uppercase;
-    font-family: 'Caveat', cursive;
     color: cadetblue;
     background-color: white;
-    width: 85px;
-    font-size: 1.2rem;
+    width: 110px;
+    font-size: 1.1rem;
     text-align: center;
   }
 
@@ -640,27 +635,19 @@
     margin: 1rem auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
   }
 
-  .shop_item--shop {
-    width: 100%;
-    margin: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #5eaabd;
-    background-color: #e3eaff;
-  }
 
   .found-products,
   .found-posts {
-    font-family: 'Caveat', cursive;
+    font-family: poppins, raleway;
     color: cadetblue;
     text-transform: uppercase;
     margin-left: 1.5rem;
     font-size: 1rem;
     width: fit-content;
+    line-height: 1.5rem;
   }
 
   .found-products span,
@@ -668,7 +655,7 @@
   .total-posts_search span {
     display: flex;
     font-size: 1rem;
-    font-family: 'Caveat', cursive;
+    font-family: poppins, raleway;
     font-weight: bold;
   }
 
@@ -1201,7 +1188,6 @@
     height: 54px;
   }
 
-
   .home-shop_title {
     font-family: Miniver;
     color: #5eaabd;
@@ -1233,21 +1219,16 @@
 
   .shop_item--home {
     width: calc((100% - 16rem) / 2);
+  }
+
+  .shop_item {
+    margin-top: 3rem;
     min-width: 300px;
     height: 654px;
     border: 2px solid #5EAABD;
     border-radius: 20px;
     padding: 1rem;
-
     border-radius: 20px;
-  }
-
-  .shop_item {
-    margin: 0 1rem;
-    margin-top: 3rem;
-    padding: 1rem;
-    align-self: center;
-    font-family: 'Nunito', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
 
   .shop_item:hover {
@@ -1345,6 +1326,7 @@
     background-color: #074571;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 7px;
+    border: 2px solid #074571;
   }
 
   .home-allProducts:hover {
@@ -1426,13 +1408,9 @@
     margin: 6rem auto;
   }
 
-  .corps-esprit-cards article:first-child {
-    margin-top: 3rem;
-  }
-
   .corps-esprit-cards h2 {
     background-color: white;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Dancing Script', 'Miniver', cursive;
     padding: 1rem 0;
     border-radius: 30px;
     font-size: 2.7rem;
@@ -1502,7 +1480,7 @@
 
   .menu h2 {
     display: block;
-    font-family: 'Caveat', cursive;
+    font-family: 'poppins';
     color: #42a4bde5;
     font-size: 3.5rem;
     margin-top: 3rem;
@@ -1602,13 +1580,17 @@
     margin-bottom: 2rem;
     font-size: 3.5rem;
     text-align: center;
-    font-family: 'Caveat', cursive;
+    font-family: poppins, raleway;
     color: cadetblue;
   }
 
   .filters {
     margin-top: 2rem;
     width: 100%;
+  }
+
+  .submit-filter{
+    width: 100px;
   }
 
   .filter_search {
@@ -1619,16 +1601,15 @@
 
   .filters h3 {
     margin-bottom: 1.3rem;
-    margin: 0 auto;
     padding: 0.3rem;
+    margin: 0 auto;
     border: 1px solid grey;
     box-shadow: 2px 2px 2px;
     text-transform: uppercase;
-    font-family: 'Caveat', cursive;
     color: cadetblue;
     background-color: white;
-    width: 85px;
-    font-size: 1.2rem;
+    width: 110px;
+    font-size: 1.1rem;
     text-align: center;
   }
 
@@ -1664,35 +1645,33 @@
 
   .shop_item-list {
     width: 100%;
-    margin: 1rem auto;
+    margin: 2.5rem auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
   }
 
   .shop_item--shop {
-    width: calc((100% - 6rem) / 3);
-    margin: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: calc((100% - 6rem) / 4);
+    margin: 2rem;
   }
 
   .found-products,
   .found-posts {
-    font-family: 'Caveat', cursive;
+    font-family: poppins, raleway;
     color: cadetblue;
     text-transform: uppercase;
     margin-left: 1.5rem;
     font-size: 1.1rem;
     width: fit-content;
+    line-height: 2rem;
   }
 
   .found-products span,
   .total-items_search span,
   .total-posts_search span {
     font-size: 1.6rem;
-    font-family: 'Caveat', cursive;
+    font-family: poppins, raleway;
     font-weight: bold;
   }
 
@@ -2138,7 +2117,7 @@
     margin-bottom: 2rem;
     font-size: 3.5rem;
     text-align: center;
-    font-family: 'Caveat', cursive;
+    font-family: poppins, raleway;
     color: cadetblue;
   }
 
@@ -2162,6 +2141,10 @@
     margin-bottom: 1rem;
   }
 
+  .submit-filter{
+    width: 100px;
+  }
+
 
   .filters {
     margin-top: 5rem;
@@ -2182,7 +2165,7 @@
 
   .shop_item-list {
     width: 80%;
-    margin: 1rem auto;
+    margin: 2rem auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -2190,7 +2173,7 @@
 
   .shop_item--shop {
     width: calc((100% - 8rem) / 4);
-    margin: 1rem;
+    margin: 2rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
