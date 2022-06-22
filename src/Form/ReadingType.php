@@ -22,7 +22,7 @@ class ReadingType extends AbstractType
             'attr' => ['class' => 'ckeditor']
             ])
         ->add('link', null, [
-            'label' => 'Lien achat livre*',
+            'label' => 'Lien détails livre*',
             'constraints' => [new NotBlank()]
         ])
         ->add('author', null, [
