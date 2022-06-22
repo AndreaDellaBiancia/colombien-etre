@@ -12,22 +12,65 @@
     <li>Spiritualité</li>
 </ul>
 
-<div class="menu">
+<section class="spirituality-intro">
+    <h1>“La spiritualité est la force motrice du développement de l'être et non la religion.”</h1>
+    <img class="spirit-main-picture" src="{{ asset('assets/images/spirituality.jpg') }}" alt="">
 
-    <h2>Spiritualité</h2>
+    <aside class="spirituality-description">
+        <p>Spiritualité</p>
+        <p>Pour celles et ceux qui s’intéressent à la spiritualité ou qui veulent découvrir ce qui se cache derrière
+            cette notion, vous trouverez des pistes, inspirations sur ce large sujet.</p>
+        <p> Les 3 supports choisis sont les vidéos, les livres et les oracles.</p>
+        <img src="{{ asset('assets/images/fleur-lotus.png') }}" alt="">
+    </aside>
+</section>
 
-</div>
+<section class="spirituality-cards">
 
-<div class="spirituality-intro">
-    <img src="{{ asset('assets/images/spirituality.jpg') }}" alt="">
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum error, nisi vitae, repellendus modi sit vero porro aspernatur aut neque dolores ipsum omnis illo architecto aperiam rerum. Dolor, doloribus recusandae.</p>
-</div>
+    <div class="spirituality-card">
+        <div class="spirituality-card_picture"><img  src="{{ asset('assets/images/videos.png') }}" alt=""></div>
+        <div class="spirituality-card_description">
+            <div>
+                <p>Afin de découvrir ou d’approfondir les connaissances sur le sujet de la spiritaulité, un des supports
+                    facilement et rapidement accessible sont les vidéos. </p>
+                <p>Elles sont plus ou moins longues et traitent de thèmes variés. </p>
+                <a href="{{ path('spirit-video') }}">
+                    <p>VOIR LES VIDÉOS</p>
+                </a>
+            </div>
+        </div>
+    </div>
 
-<ul class="spirituality-cards">
-    <li><a href="{{ path('spirit-video') }}">Ressources vidéos</a></li>
-    <li><a href="{{ path('spirit-readings') }}">Idées de lecture</a></li>
-   <li> <a href="{{ path('oracles') }}">Oracles</a></li>
-</ul>
+    <div class="spirituality-card">
+        <div class="spirituality-card_picture"><img src="{{ asset('assets/images/livres.png') }}" alt=""></div>
+        <div class="spirituality-card_description">
+            <div>
+                <p>Si vous préférez la lecture, il exsite un nombre important de livres qui pourront vous inspirer et vous
+                    faire découvrir l’univers de l’invisible.</p>
+                <p>Voici quelques idées lectures non exhaustives qui peuvent vous intéresser</p>
+                <a href="{{ path('spirit-readings') }}">
+                    <p>VOIR LES LIVRES</p>
+                </a>
+            </div>
+        </div>
+    </div>
 
+    <div class="spirituality-card">
+        <div class="spirituality-card_picture"><img src="{{ asset('assets/images/oracles.png') }}" alt=""></div>
+        <div class="spirituality-card_description">
+            <div>
+                <p>Envie d’aller plus loin?</p>
+                <p>Les oracles sont un des outils utilisés pour vous guider sur le chemin spirituel mais sans parler de
+                    spiritualité, ils peuvent vous aider dans certaines de vos interrogations quelques soit le domaine 
+                    (exemples: en amour, dans la sphère professionnelle ou familliale).</p>
+                <p>Voici quelques oracles qui pourront vous inspirer</p>
+                <a href="{{ path('oracles') }}">
+                    <p>VOIR LES ORACLES</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</section>
 
 {% endblock %}
