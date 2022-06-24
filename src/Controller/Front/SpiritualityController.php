@@ -20,6 +20,14 @@ class SpiritualityController extends AbstractController
         $this->paginator = $paginatorInterface;
     }
 
+    public function page($request, $items, $nbItems){
+
+       return $result = $this->paginator->paginate(
+            $items,
+            $request->query->getInt('page', 1),
+            $nbItems);
+    }
+
     /**
      * @Route("/spiritualite/ressources-videos", name="spirit-video")
      */
@@ -27,11 +35,8 @@ class SpiritualityController extends AbstractController
     {
         $allVideos = $videoSpirituality->findBy([], ['id' => 'DESC']);
 
-        $videos = $this->paginator->paginate(
-            $allVideos,
-            $request->query->getInt('page', 1),
-            4
-        );
+        $videos = $this->page($request, $allVideos, 4);
+        
 
         return $this->render('front/spirituality/video.html.twig', [
             'videos' => $videos
@@ -46,11 +51,7 @@ class SpiritualityController extends AbstractController
 
         $allReadings = $readingSpirituality->findBy([], ['id' => 'DESC']);
 
-        $readings = $this->paginator->paginate(
-            $allReadings,
-            $request->query->getInt('page', 1),
-            6
-        );
+        $readings = $this->page($request, $allReadings, 6);
 
         return $this->render('front/spirituality/reading.html.twig', [
             'readings' => $readings
@@ -65,11 +66,7 @@ class SpiritualityController extends AbstractController
 
         $allOracles = $oraclesSpirituality->findBy([], ['id' => 'DESC']);
 
-        $oracles = $this->paginator->paginate(
-            $allOracles,
-            $request->query->getInt('page', 1),
-            4
-        );
+        $oracles = $this->page($request, $allOracles, 4);
 
         return $this->render('front/spirituality/oracle.html.twig', [
             'oracles' => $oracles
