@@ -500,17 +500,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 3.5rem;
   }
 
   .pages-main-title h2 {
     display: block;
     font-family: 'poppins';
     color: #42a4bde5;
-    font-size: 2.2rem;
+    font-size: 2rem;
     margin-top: 6rem;
     display: flex;
     align-items: center; 
+  }
+
+  .pages-main-title h2 span{
+    font-family: 'Miniver', cursive;
+    margin-right: 1rem;
+    font-size: 2.4rem;
   }
 
   .pages-main-title h2 img{
@@ -1072,15 +1077,16 @@
   }
 
   .oracle-article_container {
+    background-color: #FFFFFF;
+    border-bottom: 2px solid #5EAABD; 
+    border-top: 2px solid #5EAABD; 
+    border-radius: 40px;
     width: 100%;
     margin-top: 2rem;
-    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
-    padding: 1rem 0.3rem;
+    padding: 1.8rem 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Indie Flower', cursive;
-    background-color: #c1d5ff5d;
   }
 
   .oracle-article_img {
@@ -1089,15 +1095,18 @@
 
   .oracle-article_title {
     font-size: 2rem;
-    font-weight: bold;
     margin-bottom: 1rem;
     text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
   }
 
   .oracle-article_description {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     line-height: 1.7rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
   }
 
 }
@@ -1167,7 +1176,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid #5eaabd;
     border-radius: 0 0 10px 10px;
   }
 
@@ -1699,10 +1708,17 @@
     display: block;
     font-family: 'poppins';
     color: #42a4bde5;
-    font-size: 3.5rem;
+    font-size: 3rem;
     display: flex;
     align-items: center; 
   }
+
+  .pages-main-title h2 span{
+    font-family: 'Miniver', cursive;
+    margin-right: 1rem;
+    font-size: 3.7rem;
+  }
+  
 
   .pages-main-title h2 img{
     padding-left: 2rem;
@@ -2215,18 +2231,19 @@
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    margin-top: 3rem;
   }
 
   .oracle-article_container {
     width: 90%;
     margin: 2rem;
-    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Indie Flower', cursive;
-    background-color: #c1d5ff5d;
+    background-color: #FFFFFF;
+    border: 2px solid #5EAABD;
+    border-radius: 20px;
   }
 
   .oracle-article_img {
@@ -2236,15 +2253,18 @@
 
   .oracle-article_title {
     font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
     text-align: center;
+    font-family: 'Quicksand', sans-serif;
   }
 
   .oracle-article_description {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     line-height: 1.7rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
   }
 
 }
@@ -2463,14 +2483,7 @@
 
   .oracle-article_container {
     width: calc((100% - 12rem) /2);
-    margin: 2rem;
-    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Indie Flower', cursive;
-    background-color: #c1d5ff5d;
+    padding: 1.5rem;
   }
 
 }
