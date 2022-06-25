@@ -15,7 +15,7 @@
 
 <div class="pages-main-title">
 
-    <div><h2><span>Idées</span>d'oracles</h2><img src="{{ asset('assets/images/oeil-oracle.png') }}" alt=""></div>
+    <div><h2><span>Idées</span>d'oracles</h2><img src="{{ asset('assets/images/oeil-oracle.png') }}"></div>
 </div>
 
 <section class="oracles">
@@ -24,7 +24,7 @@
 
     <article class="oracle-article_container">
         <h3 class="oracle-article_title">{{oracle.title}}</h3>
-        <img class="oracle-article_img" src="{{oracle.picture}}" alt="" class="oracle-article_video">
+        <img class="oracle-article_img" src="{{oracle.picture}}" class="oracle-article_video">
         <p class="oracle-article_description">{{oracle.description | raw}}</p>
         <a href="{{ oracle.link}}" target="_blank">
             <p class="oracle-article_details">+ DE DETAILS<i class="bi bi-box-arrow-up-right"></i></p>
