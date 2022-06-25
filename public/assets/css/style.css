@@ -568,7 +568,7 @@
     font-size: 0;
     width: 95%;
     max-width: 430px;
-    height:100%;
+    height: 100%;
     margin: 3rem auto;
     border-top: 2px solid #5eaabd;
     border-bottom: 2px solid #5eaabd;
@@ -598,7 +598,7 @@
     align-items: center;
     text-align: center;
     width: 100%;
-    padding: 0.5rem 1rem ;
+    padding: 0.5rem 1rem;
     background-color: #5EAABD;
     color: white;
     margin: 0 auto;
@@ -610,8 +610,8 @@
     font-family: 'Quicksand';
     font-style: normal;
     font-size: 1.2rem;
-    font-weight: 700;  
-    margin-top: 2rem; 
+    font-weight: 700;
+    margin-top: 2rem;
     text-align: center;
   }
 
@@ -829,61 +829,8 @@
     max-width: 500px;
   }
 
-  .post-page {
-    background-color: #fffaec;
-    display: flex;
-    justify-content: center;
-  }
 
-  .post-page_post {
-    max-width: 100%;
-    margin-top: 4rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .post-page_post h1 {
-    font-size: 1.8rem;
-    padding: 1.5rem 0.5rem;
-    font-family: 'Caveat', cursive;
-    color: cadetblue;
-  }
-
-  .post-page_post img {
-    width: 100%;
-  }
-
-  .post-page_post p {
-    width: 95%;
-    line-height: 1.5rem;
-    margin: 1rem;
-    font-size: 1.2rem;
-    font-family: 'Indie Flower', cursive;
-  }
-
-  .post-author-informations {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin: 1rem 0.5rem;
-    font-size: 1.3rem;
-  }
-
-  .post-author-informations li {
-    padding: 1rem 0;
-    text-align: center;
-
-  }
-
-  .post-author-informations a {
-    text-decoration: underline;
-  }
-
-  .post-author-informations span {
-    font-weight: bold;
-  }
+  
 
   .title_login_page {
     text-align: center;
@@ -1010,17 +957,19 @@
     text-align: center;
     margin-top: 1.2rem;
   }
-
+  .post-page_author,
   .reading-article_author {
     font-weight: 500;
   }
 
+  .post-page_details i,
   .oracle-article_details i,
   .video-article_author i,
   .reading-article_details i {
     padding-left: 0.5rem;
   }
 
+  .post-page_details,
   .oracle-article_details,
   .reading-article_details,
   .video-article_author {
@@ -1054,7 +1003,7 @@
 
   .videos,
   .readings,
-  .oracles {    
+  .oracles {
     width: 99%;
     margin: 0 auto;
     display: flex;
@@ -1062,7 +1011,7 @@
     justify-content: space-around;
     margin-top: 1rem;
   }
-
+  .post-page,
   .video-article_container,
   .oracle-article_container {
     background-color: #FFFFFF;
@@ -1077,10 +1026,17 @@
     align-items: center;
   }
 
+  .post-page{
+    margin-top: 0;
+    border: none;
+  }
+
+  .post-page img,
   .oracle-article_img {
     width: 100%;
   }
 
+  .post-page_title,
   .video-article_title,
   .reading-article_title,
   .oracle-article_title {
@@ -1092,11 +1048,18 @@
     line-height: 2rem;
   }
 
+  .post-page_title{
+    margin-top: 3rem;
+    font-size: 1.5rem;
+  }
+
+  .post-page_description,
   .video-article_description,
   .oracle-article_description,
   .reading-article_informations {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    margin-top: 1rem;
     line-height: 1.7rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
@@ -1776,9 +1739,9 @@
     text-align: center;
     width: 50%;
     height: 95%;
-    padding: 0.5rem 1rem ;
+    padding: 0.5rem 1rem;
     position: relative;
-    top: 3rem ;
+    top: 3rem;
     right: 2rem;
     background-color: #5EAABD;
     color: white;
@@ -2039,50 +2002,21 @@
   }
 
   .post-page_post {
-    max-width: 90%;
+    max-width: 85%;
+    padding: 2rem;
     background-color: #ffffff;
-    border: 2px solid #5EAABD;
-    border-radius: 15px;
+    border: 3px solid #5EAABD;
+    border-radius: 20px;
     margin: 3rem auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
-  .post-page_post h1 {
-    font-size: 3rem;
-    padding: 1.5rem 1rem;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-    color: cadetblue;
-  }
-
   .post-page_post img {
-    width: 100%;
-  }
-
-  .post-page_post p {
-    width: 95%;
-    line-height: 2rem;
-    margin: 1rem;
-    font-size: 1.7rem;
-    font-family: 'Montserrat';
-  }
-
-  .post-author-informations {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    margin: 3rem;
-    font-size: 1.5rem;
-  }
-
-  .post-author-informations a {
-    text-decoration: underline;
-  }
-
-  .post-author-informations span {
-    font-weight: bold;
+    max-width: 100%;
+    border-radius: 20px;
+    margin-top: 2rem;
   }
 
   .title_login_page {
@@ -2146,28 +2080,33 @@
     max-height: 850px;
   }
 
+
   .video-article_description,
   .oracle-article_description,
   .reading-article_informations {
     width: 55%;
     padding: 1rem 0 1rem 1.5rem;
     font-family: 'Montserrat';
+    font-size: 1.1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
   }
 
-  .reading-article_author {
-    font-weight: 500;
+  .post-page_description {
+    margin-top: 2rem;
+    text-align: left;
   }
 
+  .post-page_details i,
   .reading-article_details i,
   .video-article_author i,
   .oracle-article_details i {
     padding-left: 0.5rem;
   }
 
+  .post-page_details,
   .reading-article_details,
   .video-article_author,
   .oracle-article_details {
@@ -2189,6 +2128,8 @@
     border: 1px solid #5EAABD;
   }
 
+
+  .post-page_details:hover,
   .reading-article_details:hover,
   .video-article_author:hover,
   .oracle-article_details:hover {
@@ -2223,20 +2164,23 @@
     max-width: 350px;
   }
 
+  .post-page_title,
   .reading-article_title,
   .video-article_title,
   .oracle-article_title {
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 700;
     margin-bottom: 2rem;
     text-align: center;
     font-family: 'Quicksand', sans-serif;
+    width: 100%;
+    line-height: 2.5rem;
   }
 
-  .reading-article_title {
-    font-weight: 700;
+  .post-page_author,
+  .reading-article_author {
+    font-weight: 500;
   }
-
 
 }
 
@@ -2318,7 +2262,7 @@
     height: 100%;
   }
 
-  .post_description h3 { 
+  .post_description h3 {
     font-size: 1.7rem;
     padding: 0 1rem;
     line-height: 2rem;
@@ -2326,7 +2270,7 @@
 
   .post_description {
     height: 90%;
-    padding: 1.4rem 2rem ;
+    padding: 1.4rem 2rem;
     position: relative;
     top: 4.2rem;
     right: 2rem;
