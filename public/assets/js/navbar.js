@@ -4,6 +4,10 @@ const navbar = {
     init: function () {
 
         let navListItems = document.querySelectorAll('.nav_list_item');
+        let navItems = [];
+        navItems.push(navListItems[2]);
+        navItems.push(navListItems[3]);
+
         
         let burgerButton = document.querySelector('.burger-button');
         
@@ -12,8 +16,8 @@ const navbar = {
         }
       
 
-        for (let index = 0; index < navListItems.length; index++) {
-            let item = navListItems[index];
+        for (let index = 0; index < navItems.length; index++) {
+            let item = navItems[index];
             item.addEventListener('mouseenter', navbar.show);
             item.addEventListener('mouseleave', navbar.hide);
         }
