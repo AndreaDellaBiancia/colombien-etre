@@ -4,7 +4,7 @@ const app = {
 
     
         navbar.init();
-        titleImgEffect.init();
+        animationEffect.init();
         filterButton.init();  
     },
     

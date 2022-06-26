@@ -3,10 +3,13 @@ const filterButton = {
 
     init: function () {
 
-       
+       //Filter button for shop's categories
         let button = document.querySelector('.filters h3');
 
-        button.addEventListener('click', filterButton.toggleMenu);
+        if(button != null){
+            button.addEventListener('click', filterButton.toggleMenu);
+        }
+        
     },
 
     toggleMenu: function () {
