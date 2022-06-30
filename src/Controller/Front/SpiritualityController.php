@@ -31,6 +31,7 @@ class SpiritualityController extends AbstractController
     /**
      * @Route("/spiritualite/ressources-videos", name="spirit-video")
      */
+
     public function video(VideoSpiritualityRepository $videoSpirituality, Request $request): Response
     {
         $allVideos = $videoSpirituality->findBy([], ['id' => 'DESC']);
@@ -62,7 +63,14 @@ class SpiritualityController extends AbstractController
      * @Route("/spiritualite/oracles", name="oracles")
      */
     public function oracles(OracleRepository $oraclesSpirituality, Request $request): Response
+
     {
+        $allOracles = $oracles->findBy([], ['id' => 'DESC']);
+        $oracles = $paginator->paginate(
+            $allOracles,
+            $request->query->getInt('page', 1),
+            10
+        );
 
         $allOracles = $oraclesSpirituality->findBy([], ['id' => 'DESC']);
 
