@@ -65,12 +65,6 @@ class SpiritualityController extends AbstractController
     public function oracles(OracleRepository $oraclesSpirituality, Request $request): Response
 
     {
-        $allOracles = $oracles->findBy([], ['id' => 'DESC']);
-        $oracles = $paginator->paginate(
-            $allOracles,
-            $request->query->getInt('page', 1),
-            10
-        );
 
         $allOracles = $oraclesSpirituality->findBy([], ['id' => 'DESC']);
 
