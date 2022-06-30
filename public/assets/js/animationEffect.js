@@ -29,10 +29,26 @@ const animationEffect = {
 
 
         //Pagination
-        let disabledButton = document.querySelector('.disabled');
+        const paginationButtons = document.querySelector('.pagination ul');
+        let firstButton = paginationButtons.firstElementChild;
+        let lastButton = paginationButtons.lastElementChild;
 
-        if (disabledButton) {
-            disabledButton.style.display = 'none';
+        let linkFirstButton = firstButton.querySelector('a');
+        let linkLastButton = lastButton.querySelector('a');
+
+        if (linkFirstButton) {
+            linkFirstButton.textContent = "< Précédent";
+        } else if (linkLastButton) {
+            linkLastButton.textContent = "Suivant >";
+        }
+
+
+
+
+        if (firstButton.className == 'page-item disabled') {
+            firstButton.style.display = "none";
+        } else if (lastButton.className == 'page-item disabled') {
+            lastButton.style.display = "none";
         }
 
 
@@ -78,8 +94,8 @@ const animationEffect = {
             if (homeShopItems) {
                 homeShopItems.style = "opacity: 1; transition: 6s";
                 setTimeout(() => {
-                    document.querySelector('.home-allProducts').style = "opacity: 1; transition: 2s";
-                }, "1000");
+                    document.querySelector('.home-allProducts').style = "opacity: 1;";
+                }, "2500");
             }
 
         } else {

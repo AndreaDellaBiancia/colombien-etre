@@ -735,6 +735,7 @@
     margin-bottom: 1rem;
     display: flex;
     align-items: baseline;
+    font-family: 'Montserrat', sans-serif;
   }
 
   .filter_checkbox input:last-child {
@@ -1891,6 +1892,7 @@
     margin-bottom: 1rem;
     display: flex;
     align-items: baseline;
+    font-family: 'Montserrat', sans-serif;
   }
 
   .filter_checkbox input {
@@ -2385,6 +2387,7 @@
     color: #5eaabd;
     margin-top: 1rem;
     padding: 1rem;
+    font-family: 'Montserrat', sans-serif;
   }
 
   .filter_checkbox input {
