@@ -1,82 +1,108 @@
 {% extends 'front/base.html.twig' %}
 
-{% block title %}Colombienetre{% endblock %}
+{% block title %}Colombien-etre: site qui repertorie differentes théme de bien-être pour le corps et l'esprit{% endblock %}
 
 {% block body %}
 
-<img class="main-img" src="{{ asset('assets/images/home.jpg') }} " alt="Femme sur balançoire devant cascade">
+<section class="home">
+    
+    <section class="home-intro">
+        <h1>“C’est par le bien-faire que se crée le bien-être”
+        </h1>
+        <img class="home-main-img" src="{{ asset('assets/images/main-home.jpg') }}" alt="Barque sur le lac au coucher du soleil">
+    
+        <aside class="home-description">
+    
+            <p><span>Bienvenue</span></p>
+            <p>
+                Vous êtes sur colombienetre où je répertorie les<span> articles, blogs, livres, podcast, sites</span> et des
+                liens vers
+                des
+                <span>produits utiles</span> pour vous aider au quotidien et trouver
+                <span>vos propres outils de bien-être et de spiritualité.</span>
+            </p>
+            <img src="{{ asset('assets/images/Vector.png') }}">
+            <p>A vous de piocher<span> dans ce qui résonne le plus</span> et de découvrir ce dont <span>
+                    votre corps et
+                    votre esprit ont besoin !</span> </p>
+        </aside>
+    </section>
+    
+    <section class="home-cards">
+        <article class="home-card">
+            <img src="{{ asset('assets/images/corps-home.png') }}" alt="Femme qui fait du yoga">
+    
+            <div>
+                <a href="{{ path('sport') }}">
+                    <h3>Bien-être dans son corps</h3>
 
-<section class="home-description">
-    <h2>Titre de niveau H2</h2>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, modi magnam! Expedita illo mollitia eius
-        adipisci libero, voluptas inventore, nemo quasi sequi necessitatibus labore voluptate possimus sed assumenda sit
-        beatae?
-        Amet aliquam doloribus earum mollitia perspiciatis error omnis asperiores modi, optio velit sint labore
-        obcaecati laborum aspernatur magnam aperiam voluptatum suscipit quis inventore deleniti expedita. Assumenda
-        blanditiis porro amet quaerat?
-        excepturi?</p>
-</section>
-
-<section class="home-cards">
-    <article class="home-card">
-        <img src="{{ asset('assets/images/bien-etrecorps.jpeg') }}" alt="">
-        <div>
-            <a href="{{ path('sport') }}">
-                <h3>Bien-être dans son corps</h3>
-            </a>
-        </div>
-    </article>
-    <article class="home-card">
-        <img src="{{ asset('assets/images/bien-etretete.jpeg') }}" alt="">
-        <div>
-            <a href="{{ path('meditation') }}">
-                <h3>Bien-être dans sa tête</h3>
-            </a>
-        </div>
-    </article>
-    <article class="home-card">
-        <img src="{{ asset('assets/images/bien-etresoi.jpeg') }}" alt="">
-        <div>
-            <a href="{{path('reiki') }}">
-                <h3>L'Énergie</h3>
-            </a>
-        </div>
-    </article>
-    <article class="home-card">
-        <img src="{{ asset('assets/images/spiritualite.jpeg') }}" alt="">
-        <div>
-            <a href="{{path('spirituality') }}">
-                <h3>Spiritualité</h3>
-            </a>
-        </div>
-    </article>
-</section>
-
-
-<h2 class="home-shop_title">Les produits bien-être <span>que je vous conseille</span></h2>
-
-<section class="home-shop">
-
-    <div class="home-shop-left">
-        <h3><a href="{{ path('shop') }}">Tous les produits</a></h3>
-        <img src="{{ asset('assets/images/shop.jpg') }}" alt="">
-    </div>
-    <div class="home-shop-right">
-        {% for product in products %}
-        <article class="shop_item shop_item--home">
-            <div class="shop_item_img-conteiner"><img src="{{product.picture}}" alt=""></div>
-            <div class="shop_item-detail">
-                <h4 class="shop_item-brand">{{product.brand}}</h4>
-                <h3 class="shop_item-title">{{product.title}}</h3>
-                <p class="shop_item-price">€ {{product.price}}</p>
-                <a class="shop_item-show" href="{{ product.source }}">
-                    <p>Voir le produit <i class="bi bi-box-arrow-up-right"></i></p>
                 </a>
             </div>
+    
         </article>
-        {% endfor %}
-    </div>
-    <a href="{{ path('shop') }}"><p class="show-products">Voir tous les produits</p></a>
+        <article class="home-card">
+            <img src="{{ asset('assets/images/téte-home.png') }}" alt="Femme qui médite">
+    
+            <div>
+                <a href="{{ path('meditation') }}">
+                    <h3>Bien-être dans sa tête</h3>
+                </a>
+            </div>
+    
+        </article>
+        <article class="home-card">
+            <img src="{{ asset('assets/images/énergie-home.png') }}" alt="Pierre d'améthyste">
+    
+            <div>
+                <a href="{{path('reiki') }}">
+                    <h3>Bien-être chez soi</h3>
+                </a>
+            </div>
+    
+        </article>
+        <article class="home-card">
+            <img src="{{ asset('assets/images/spiritualité-home.png') }}" alt="Differentes pierres de lithothérapie">
+    
+            <div>
+                <a href="{{path('spirituality') }}">
+                    <h3>Spiritualité</h3>
+                </a>
+            </div>
+    
+        </article>
+    </section>
+    
+    
+    
+    
+    <section class="home-shop">
+        <ul class="home-shop-title-list">
+            <img src="{{ asset('assets/images/vector-flower.png') }}">
+            <h2 class="home-shop_title"> Les produits bien-être <span>que je vous conseille</span></h2>
+            <img src="{{ asset('assets/images/vector-flower.png') }}">
+        </ul>
+        <div class="home-shop-items">
+    
+            {% for product in products %}
+            <article class="shop_item shop_item--home">
+                <div class="shop_item_img-conteiner"><img src="{{product.picture}}" alt=""></div>
+                <div class="shop_item-detail">
+                    <h4 class="shop_item-brand">{{product.brand}}</h4>
+                    <h3 class="shop_item-title">{{product.title}}</h3>
+                    <p class="shop_item-price">€ {{product.price}}</p>
+                    <a class="shop_item-show" href="{{ product.source }}">
+                        <p>Voir le produit <i class="bi bi-box-arrow-up-right"></i></p>
+                    </a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+    <a href="{{path('shop') }}">
+        <p class="home-allProducts">TOUS LES PRODUITS</p>
+    </a>
+    
 </section>
+
 
 {% endblock %}

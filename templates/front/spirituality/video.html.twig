@@ -13,30 +13,29 @@
     <li>Ressources vidéos</li>
 </ul>
 
+<div class="pages-main-title">
+    <div><h2><span>Ressources</span> vidéos</h2><img src="{{ asset('assets/images/video-logo.png') }}"></div>
+</div>
+
 <section class="videos">
-
-    <div class="menu">
-
-        <h2>Ressources vidéos</h2>
-    </div>
-
 
     {% for video in videos %}
     <article class="video-article_container">
 
         <h3 class="video-article_title">{{video.title}}</h3>
-        <div class="video-article_video">{{video.videoLink | raw}}</div>
+        {{video.videoLink | raw}}
         <p class="video-article_description">{{video.description | raw}}</p>
         <a href="{{video.authorLink}}" target="_blank">
-            <p class="video-article_author">Page Author <i class="bi bi-box-arrow-up-right"></i></p>
+            <p class="video-article_author">Page de l'author <i class="bi bi-box-arrow-up-right"></i></p>
         </a>
 
     </article>
     {% endfor %}
 
 </section>
-<div class="navigation_page">
-    <p>{{ knp_pagination_render(videos) }}</p>
+
+<div class="pagination">
+    <p>{{ knp_pagination_render(videos, 'front/_pagination.html.twig') }}</p>
 </div>
 
 

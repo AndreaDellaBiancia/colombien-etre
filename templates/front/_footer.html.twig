@@ -1,9 +1,17 @@
 <footer class="footer">
-   <ul>
-      <li> <img class="logo" src="{{ asset('assets/images/colombe.png') }}" alt="Logo" ></li>
-      <li>Contact : <a href="mailto:lili_lili321@hotmail.com">lili_lili321@hotmail.com</a></li> 
-   </ul>
-     
-   <p>Copyright © 2022 Colombienetre.com
-      </p>
+   <div>
+      <ul>
+         <li><a href="{{ path('corpsEsprit') }}">CORPS & ESPRIT</a></li>
+         <li><a href="{{ path('spirituality') }}">SPIRITUALITÉ</a></li>
+         <li><a href="{{ path('shop') }}">BOUTIQUE</a></li>
+      </ul>
+      <ul>
+         <li><a href="{{ path('home') }}"><img class="logo" src="{{ asset('assets/images/logo-blanc.png') }}" alt="Logo" ></a></li>
+         <li>©Colombienetre 2022 - Tous droits réservés</li>
+      </ul>
+      <ul>
+         <li>CONTACT</li>
+         <li> <a href="mailto:lili_lili321@hotmail.com">  lili_lili321@hotmail.com <img src="{{ asset('assets/images/envloppe.png') }}" alt=""></a></li>
+      </ul>
+   </div>
 </footer>

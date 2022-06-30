@@ -1,6 +1,6 @@
 {% extends 'front/base.html.twig' %}
 
-{% block title %}Colombienetre{% endblock %}
+{% block title %}Article {{ pageTitle}}{% endblock %}
 
 {% block body %}
 <ul class="fil-ariane">
@@ -18,15 +18,16 @@
 <section class="post-page">
 
     <article class="post-page_post">
-        <h1>{{post.title}}</h1>
+        <h1 class="post-page_title">{{post.title}}  {% if post.author  %}<br><span class="post-page_author">de {{post.author}}</span>{% endif %}</h1>
         <img src="{{post.mainPicture}}">
-        <p>{{post.content | raw}}</p>
+        <div class="post-page_description">
+            <p>{{post.content | raw}}</p>
+        </div>
         
         {% if post.author  %}
-        <ul class="post-author-informations">
-            <li class="author-name">Author : <span>{{post.author}}</span></li>
-            <li><a href="{{post.source}}">Voir la source <i class="bi bi-box-arrow-up-right"></i></a></li>
-        </ul>
+        <a href="{{post.source}}" target="_blank">
+            <div class="post-page_details">+ DE DETAILS<i class="bi bi-box-arrow-up-right"></i></div>
+        </a>
         {% endif %}
     </article>
 

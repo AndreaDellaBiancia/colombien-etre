@@ -1,6 +1,6 @@
 {% extends 'front/base.html.twig' %}
 
-{% block title %}Colombienetre{% endblock %}
+{% block title %}Produits de bien-être conseillés{% endblock %}
 
 {% block body %}
 <ul class="fil-ariane">
@@ -72,7 +72,7 @@
         {% if products == true %}
         {% for product in products %}
         <article class="shop_item shop_item--shop">
-            <div class="shop_item_img-conteiner"><img src="{{product.picture}}" alt=""></div>
+            <div class="shop_item_img-conteiner"><img src="{{product.picture}}" alt="{{ product.title}}"></div>
             <div class="shop_item-detail">
                 <h4 class="shop_item-brand">{{product.brand}}</h4>
                 <h3 class="shop_item-title">{{product.title}}</h3>
@@ -87,8 +87,8 @@
     </div>
 
 </section>
-<div class="navigation_page">
-    <p>{{ knp_pagination_render(products) }}</p>
+<div class="pagination">
+    <p>{{ knp_pagination_render(products, 'front/_pagination.html.twig') }}</p>
 </div>
 
 {% endblock %}

@@ -1,6 +1,6 @@
 {% extends 'front/base.html.twig' %}
 
-{% block title %}Colombienetre{% endblock %}
+{% block title %}Liste d'articles sur le bien-être{% endblock %}
 
 {% block body %}
 <ul class="fil-ariane">
@@ -15,7 +15,7 @@
 
 <section class="posts">
 
-    <div class="menu">
+    <div class="pages-main-title">
 
         <h2>{{pageTitle}}</h2>
 
@@ -30,11 +30,10 @@
     {% for post in posts %}
 
     <article class="post">
-        <img src="{{post.thumbnailPicture}}"
-            alt="">
+        <div class="post-img-container"><img src="{{post.thumbnailPicture}}" alt=""></div>
         <div class="post_description">
             <h3>{{post.title}}</h3>
-            <p class="post_p">{{ post.content  | striptags |  slice(0, 160) | raw }}...  </p>
+            <p class="post_p">{{ post.content  | striptags |  slice(0, 320) | raw }}...  </p>
             <a href="{{ path( post.category ~ '_read' , {id:post.id}) }}">
                 <p class="post_show">Lire la suite</p>
             </a>
@@ -44,7 +43,7 @@
 
 </section>
 
-<div class="navigation_page">
-    <p>{{ knp_pagination_render(posts) }}</p>
+<div class="pagination">
+    <p>{{ knp_pagination_render(posts, 'front/_pagination.html.twig') }}</p>
 </div>
 {% endblock %}
