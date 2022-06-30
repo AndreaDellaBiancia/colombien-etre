@@ -3,6 +3,7 @@ const animationEffect = {
 
     init: function () {
 
+
         //Animations for title's icon
         let title = document.querySelector(".pages-main-title");
 
@@ -18,17 +19,29 @@ const animationEffect = {
 
             let cards = document.querySelectorAll(".corps-esprit-cards article");
 
-            cards.forEach(element => {
-                element.addEventListener('mouseenter', animationEffect.turnTimeOut);
-            });
+            if (cards) {
+                cards.forEach(element => {
+                    element.addEventListener('mouseenter', animationEffect.turnTimeOut);
+                });
+            }
+
         }
+
+
+        //Pagination
+        let disabledButton = document.querySelector('.disabled');
+
+        if (disabledButton) {
+            disabledButton.style.display = 'none';
+        }
+
 
         //Animations for homepage
         if (window.matchMedia("(min-width: 860px)").matches) {
 
             //Animations products homepage
             window.addEventListener('scroll', animationEffect.showProduct);
-            
+
             //Animations cards homepage
             window.addEventListener('scroll', animationEffect.showCards);
 
@@ -61,22 +74,28 @@ const animationEffect = {
     showProduct: function () {
 
         if (window.pageYOffset > 1100) {
-            document.querySelector('.home-shop-items').style = "opacity: 1; transition: 6s";
-            setTimeout(() => {
-                document.querySelector('.home-allProducts').style = "opacity: 1; transition: 2s";
-            }, "1000");
+            let homeShopItems = document.querySelector('.home-shop-items');
+            if (homeShopItems) {
+                homeShopItems.style = "opacity: 1; transition: 6s";
+                setTimeout(() => {
+                    document.querySelector('.home-allProducts').style = "opacity: 1; transition: 2s";
+                }, "1000");
+            }
 
         } else {
-            document.querySelector('.home-shop-items').style = "opacity: 0; transition: 2s";
-            document.querySelector('.home-allProducts').style = "opacity: 0; transition: none";
+            let homeShopItems = document.querySelector('.home-shop-items');
+            if (homeShopItems) {
+                homeShopItems.style = "opacity: 0; transition: 2s";
+                document.querySelector('.home-allProducts').style = "opacity: 0; transition: none";
+            }
 
         }
     },
 
     showCards: function () {
-        console.log(window.pageYOffset);
 
-        const cards = document.querySelectorAll('.home-card');
+        let cards = document.querySelectorAll('.home-card');
+
         const leftSide = [];
         const rightSide = [];
 
