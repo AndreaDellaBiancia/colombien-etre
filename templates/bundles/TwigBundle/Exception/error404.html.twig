@@ -1,0 +1,11 @@
+{% extends 'front/base.html.twig' %}
+
+{% block body %}
+   <section class="page404">
+    <img class="sun" src="{{ asset('assets/images/soleil404.png') }}" alt="Soleil">
+    <img class="rainbow" src="{{ asset('assets/images/arcenciel404.png') }}" alt="Arc en ciel">
+    <h1>404 PAGE NON TROUVÉE, MAIS...<br>
+       RESTE ZEN ET RE-VIENS À <a href="{{path('home')}}">L'ACCUEIL</a></h1>
+    <img class="cat" src="{{ asset('assets/images/chat404.png') }}" alt="Chat qui médite">
+   </section>
+{% endblock %}

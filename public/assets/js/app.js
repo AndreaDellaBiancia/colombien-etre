@@ -2,7 +2,6 @@ const app = {
 
     init: function () {
 
-    
         navbar.init();
         animationEffect.init();
         filterButton.init();  

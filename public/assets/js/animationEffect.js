@@ -34,25 +34,24 @@ const animationEffect = {
         if (paginationButtons) {
             let firstButton = paginationButtons.firstElementChild;
             let lastButton = paginationButtons.lastElementChild;
-    
+
             let linkFirstButton = firstButton.querySelector('a');
             let linkLastButton = lastButton.querySelector('a');
-    
+
             if (linkFirstButton) {
                 linkFirstButton.textContent = "< Précédent";
             } else if (linkLastButton) {
                 linkLastButton.textContent = "Suivant >";
             }
-    
-    
-    
+
+
+
             if (firstButton.className == 'page-item disabled') {
                 firstButton.style.display = "none";
             } else if (lastButton.className == 'page-item disabled') {
                 lastButton.style.display = "none";
             }
         }
-       
 
 
         //Animations for homepage
@@ -65,6 +64,16 @@ const animationEffect = {
             window.addEventListener('scroll', animationEffect.showCards);
 
         }
+
+        //Animation page 404
+        const soleil = document.querySelector('.sun');
+        if (soleil) {
+            window.onload = function () {
+                soleil.style.animation = 'spin 15s infinite linear';
+            }
+        }
+
+
     },
 
 
