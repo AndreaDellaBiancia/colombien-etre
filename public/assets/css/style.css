@@ -585,21 +585,35 @@
     margin: 2rem auto;
   }
 
-  .search-form input {
+  .search-form input,
+  .filter_search input {
     justify-self: end;
     height: 2rem;
     border: 1px solid #5eaabd;
+    border-radius: 10px 0 0 10px;
   }
 
   .search-form form {
     font-size: 0;
   }
 
-  .search-form button {
-    border: 1px solid #5eaabd;
+  .search-form button,
+  .filter_search button {
+    background-color: #ffffff;
+    border: none;
+    border-top:1px solid #5eaabd;
+    border-bottom:1px solid #5eaabd;
+    border-right:1px solid #5eaabd;
+    border-radius: 0 10px 10px 0;
     width: 2rem;
     height: 2rem;
   }
+  
+  .search-form button:hover,
+  .filter_search input button:hover {
+    background-color: #5eaabd75;
+  }
+
 
   .post {
     display: flex;
@@ -706,6 +720,7 @@
     width: 100%;
     text-align: center;
     margin-top: 2rem;
+    font-size: 0;
   }
 
   .filters h3 {
@@ -1770,20 +1785,33 @@
     margin: 2rem auto;
   }
 
-  .search-form input {
+  .search-form input, 
+  .filter_search input  {
     justify-self: end;
     height: 2rem;
     border: 1px solid #5eaabd;
+    border-radius: 10px 0 0 10px;
   }
 
   .search-form form {
     font-size: 0;
   }
 
-  .search-form button {
-    border: 1px solid #5eaabd;
+  .search-form button,
+  .filter_search button {
+    background-color: #ffffff;
+    border: none;
+    border-top:1px solid #5eaabd;
+    border-bottom:1px solid #5eaabd;
+    border-right:1px solid #5eaabd;
+    border-radius: 0 10px 10px 0;
     width: 2rem;
     height: 2rem;
+  }
+
+  .search-form button:hover,
+  .filter_search button:hover {
+    background-color: #5eaabd75;
   }
 
   .post {
@@ -1901,6 +1929,7 @@
     width: 100%;
     text-align: center;
     margin-top: 2rem;
+    font-size: 0;
   }
 
   .filters h3 {
