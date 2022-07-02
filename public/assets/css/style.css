@@ -1226,6 +1226,11 @@
     text-align: center;
   }
 
+  .nav_link_child:hover {
+  text-decoration: underline;
+  }
+
+
   .home-intro,
   .spirituality-intro {
     width: 100%;
@@ -1542,6 +1547,10 @@
     text-align: left;
     color: white;
     margin: 0.5rem 0;
+  }
+
+  .footer li:hover {
+    text-decoration: underline;
   }
 
   .fil-ariane {
