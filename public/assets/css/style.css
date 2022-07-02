@@ -348,6 +348,10 @@
     box-sizing: border-box;
   }
 
+  .shop_item-show:hover {
+    text-decoration: underline white;
+   }
+
   .shop_item-show p {
     margin: 0;
     color: white;
@@ -1482,6 +1486,10 @@
     align-self: center;
     box-sizing: border-box;
     margin-bottom: 1rem;
+  }
+
+  .shop_item-show:hover {
+   text-decoration: underline white;
   }
 
   .shop_item-show p {
