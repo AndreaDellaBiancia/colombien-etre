@@ -1033,7 +1033,6 @@
   .oracle-article_details,
   .reading-article_details,
   .video-article_author {
-    text-decoration: underline;
     padding: 0.3rem;
     margin: 0 auto;
     margin-top: 2rem;
@@ -1572,7 +1571,7 @@
     margin: 0.5rem 0;
   }
 
-  .footer li:hover {
+  .footer a:hover {
     text-decoration: underline;
   }
 
@@ -1596,9 +1595,13 @@
     position: absolute;
     margin-top: 6.5rem;
     padding-left: 4rem;
-    width: 51%;
+    width: 75%;
     text-align: center;
     line-height: 4rem;
+  }
+
+  .spirituality-intro h1 span{
+    font-size:1.3rem ;
   }
 
   .spirituality-cards {
@@ -2258,7 +2261,6 @@
   .reading-article_details,
   .video-article_author,
   .oracle-article_details {
-    text-decoration: underline;
     padding: 0.6rem;
     margin-top: 2rem;
     text-align: center;
