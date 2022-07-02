@@ -348,6 +348,10 @@
     box-sizing: border-box;
   }
 
+  .shop_item-show:hover {
+    text-decoration: underline white;
+   }
+
   .shop_item-show p {
     margin: 0;
     color: white;
@@ -585,21 +589,35 @@
     margin: 2rem auto;
   }
 
-  .search-form input {
+  .search-form input,
+  .filter_search input {
     justify-self: end;
     height: 2rem;
     border: 1px solid #5eaabd;
+    border-radius: 10px 0 0 10px;
   }
 
   .search-form form {
     font-size: 0;
   }
 
-  .search-form button {
-    border: 1px solid #5eaabd;
+  .search-form button,
+  .filter_search button {
+    background-color: #ffffff;
+    border: none;
+    border-top:1px solid #5eaabd;
+    border-bottom:1px solid #5eaabd;
+    border-right:1px solid #5eaabd;
+    border-radius: 0 10px 10px 0;
     width: 2rem;
     height: 2rem;
   }
+  
+  .search-form button:hover,
+  .filter_search input button:hover {
+    background-color: #5eaabd75;
+  }
+
 
   .post {
     display: flex;
@@ -706,6 +724,7 @@
     width: 100%;
     text-align: center;
     margin-top: 2rem;
+    font-size: 0;
   }
 
   .filters h3 {
@@ -1014,7 +1033,6 @@
   .oracle-article_details,
   .reading-article_details,
   .video-article_author {
-    text-decoration: underline;
     padding: 0.3rem;
     margin: 0 auto;
     margin-top: 2rem;
@@ -1225,6 +1243,11 @@
     text-decoration: none;
     text-align: center;
   }
+
+  .nav_link_child:hover {
+  text-decoration: underline;
+  }
+
 
   .home-intro,
   .spirituality-intro {
@@ -1464,6 +1487,10 @@
     margin-bottom: 1rem;
   }
 
+  .shop_item-show:hover {
+   text-decoration: underline white;
+  }
+
   .shop_item-show p {
     margin: 0;
     color: white;
@@ -1544,6 +1571,10 @@
     margin: 0.5rem 0;
   }
 
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
   .fil-ariane {
     padding-top: 8.5rem;
     padding-bottom: 0.5rem;
@@ -1564,9 +1595,13 @@
     position: absolute;
     margin-top: 6.5rem;
     padding-left: 4rem;
-    width: 51%;
+    width: 75%;
     text-align: center;
     line-height: 4rem;
+  }
+
+  .spirituality-intro h1 span{
+    font-size:1.3rem ;
   }
 
   .spirituality-cards {
@@ -1761,20 +1796,33 @@
     margin: 2rem auto;
   }
 
-  .search-form input {
+  .search-form input, 
+  .filter_search input  {
     justify-self: end;
     height: 2rem;
     border: 1px solid #5eaabd;
+    border-radius: 10px 0 0 10px;
   }
 
   .search-form form {
     font-size: 0;
   }
 
-  .search-form button {
-    border: 1px solid #5eaabd;
+  .search-form button,
+  .filter_search button {
+    background-color: #ffffff;
+    border: none;
+    border-top:1px solid #5eaabd;
+    border-bottom:1px solid #5eaabd;
+    border-right:1px solid #5eaabd;
+    border-radius: 0 10px 10px 0;
     width: 2rem;
     height: 2rem;
+  }
+
+  .search-form button:hover,
+  .filter_search button:hover {
+    background-color: #5eaabd75;
   }
 
   .post {
@@ -1892,6 +1940,7 @@
     width: 100%;
     text-align: center;
     margin-top: 2rem;
+    font-size: 0;
   }
 
   .filters h3 {
@@ -2212,7 +2261,6 @@
   .reading-article_details,
   .video-article_author,
   .oracle-article_details {
-    text-decoration: underline;
     padding: 0.6rem;
     margin-top: 2rem;
     text-align: center;
