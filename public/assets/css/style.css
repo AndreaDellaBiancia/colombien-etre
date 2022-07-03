@@ -465,9 +465,7 @@
     text-decoration: none;
     margin: 0.1rem;
   }
-  .pagination li:hover {
-    background-color: #07457174;
-  }
+  
 
   .corps-esprit-cards {
     box-sizing: border-box;
@@ -695,10 +693,6 @@
     border-radius: 7px;
   }
 
-  .post_show:hover {
-    color: white;
-    background-color: #5eaabd;
-  }
 
   .shop {
     display: flex;
@@ -983,11 +977,6 @@
     padding: 0.5rem 1rem;
   }
 
-  .spirituality-card p:last-child:hover {
-    background-color: white;
-    box-shadow: none;
-    color: #5EAABD;
-  }
 
   .reading-article_container {
     width: 99%;

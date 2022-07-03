@@ -3,8 +3,14 @@
    <ul class="nav_list">
 
       <li class="nav_list_item">
-         <img class="logo" src="{{ asset('assets/images/colombe.png') }}" alt="Logo">
+         <img class="logo" src="{{ asset('assets/images/logo.png') }}" alt="Logo">
       </li>
+
+      {% if is_granted('ROLE_SUPERADMIN') %}
+      <li class="nav_list_item">
+         <a class="nav_link" href="{{ path('user_browse') }}">Admin</a>
+      </li>
+      {% endif %}
 
       <li class="nav_list_item">
          <a class="nav_link" href="">Corps & esprit</a>
@@ -33,11 +39,7 @@
       <li class="nav_list_item">
          <a class="nav_link" href="{{ path('back_shop_browse') }}">Boutique</a>
       </li>
-      {% if is_granted('ROLE_SUPERADMIN') %}
-      <li class="nav_list_item">
-         <a class="nav_link" href="{{ path('user_browse') }}">Admin</a>
-      </li>
-      {% endif %}
+   
       <li><a href="{{ path('app_logout') }}">DECONNEXION</a></li>
 
    </ul>
