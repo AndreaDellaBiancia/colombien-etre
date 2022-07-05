@@ -73,6 +73,20 @@ const animationEffect = {
             }
         }
 
+        
+        //Resize picture (ckeditor) mobile version
+        if (window.matchMedia("(max-width: 859px)").matches) {
+
+            let imgs = document.querySelectorAll(".post-page_post img");
+
+            for (let index = 1; index < imgs.length; index++) {
+                const postImg = imgs[index];
+                postImg.style.maxHeight = "500px";
+                
+            }
+
+        }
+
 
     },
 
