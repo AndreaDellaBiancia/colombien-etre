@@ -344,6 +344,8 @@
   .shop_item-price {
     margin: 1.5rem 0;
     font-size: 1.5rem;
+    color: #5EAABD;
+    font-weight: 600;
   }
 
   .shop_item-show {
