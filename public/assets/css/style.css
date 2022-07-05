@@ -23,6 +23,7 @@
 
   body {
     background-color: white;
+    margin: 0 auto;
   }
 
   .nav {
@@ -125,6 +126,11 @@
     border-bottom: 1px solid #5eaabd59;
   }
 
+  .home{
+    width: 100%;
+    margin: 0 auto;
+  }
+
   .home-intro,
   .spirituality-intro {
     padding-top: 3.5rem;
@@ -187,9 +193,15 @@
 
   .spirituality-intro h1 {
     position: absolute;
-    margin-top: 8rem;
+    margin-top: 6rem;
+    padding-left: 0rem;
     font-size: 1.2rem;
     line-height: 1.5rem;
+    text-align: center;
+  }
+
+  .spirituality-intro h1 span {
+    font-size: 0.9rem;
   }
 
 
@@ -201,7 +213,7 @@
   }
 
   .home-cards img {
-    width: 350px;
+    width: 100%;
     margin: 1rem;
   }
 
@@ -350,7 +362,7 @@
 
   .shop_item-show:hover {
     text-decoration: underline white;
-   }
+  }
 
   .shop_item-show p {
     margin: 0;
@@ -446,9 +458,9 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-  
 
-  .pagination li a  {
+
+  .pagination li a {
     color: rgb(255, 255, 255);
     float: left;
     padding: 8px 16px;
@@ -465,7 +477,7 @@
     text-decoration: none;
     margin: 0.1rem;
   }
-  
+
 
   .corps-esprit-cards {
     box-sizing: border-box;
@@ -603,14 +615,14 @@
   .filter_search button {
     background-color: #ffffff;
     border: none;
-    border-top:1px solid #5eaabd;
-    border-bottom:1px solid #5eaabd;
-    border-right:1px solid #5eaabd;
+    border-top: 1px solid #5eaabd;
+    border-bottom: 1px solid #5eaabd;
+    border-right: 1px solid #5eaabd;
     border-radius: 0 10px 10px 0;
     width: 2rem;
     height: 2rem;
   }
-  
+
   .search-form button:hover,
   .filter_search input button:hover {
     background-color: #5eaabd75;
@@ -1106,7 +1118,7 @@
   .video-article_description,
   .oracle-article_description,
   .reading-article_informations {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 1rem;
     margin-top: 1rem;
     line-height: 1.7rem;
@@ -1114,7 +1126,25 @@
     font-weight: 400;
   }
 
-  .page404{
+  .post-page_description h2 {
+    font-weight: 500;
+    font-size: 2rem ;
+    margin: 1.5rem auto;
+    line-height: 2rem;
+  }
+
+  .post-page_description h3 {
+    font-weight: 500;
+    font-size: 1.7rem ;
+    margin: 1.5rem auto;
+  }
+
+  .post-page_description li {
+    list-style-type: disc;
+    margin: 0.7rem 0 0.7rem 2rem;
+  }
+
+  .page404 {
     padding-top: 6rem;
     display: flex;
     flex-wrap: wrap;
@@ -1123,7 +1153,8 @@
     width: 85%;
     margin: 0 auto;
   }
-  .page404 h1{
+
+  .page404 h1 {
     width: 100%;
     text-align: center;
     font-family: 'Quicksand', sans-serif;
@@ -1132,18 +1163,19 @@
     line-height: 2rem;
   }
 
-  .page404 h1 a{
+  .page404 h1 a {
     text-decoration: underline;
   }
 
-  .cat{
+  .cat {
     width: 100%;
   }
-  .rainbow{
-   display: none; 
+
+  .rainbow {
+    display: none;
   }
 
-  .sun{
+  .sun {
     width: 50%;
     margin-bottom: 3rem;
   }
@@ -1151,6 +1183,7 @@
 }
 
 @media screen and (min-width: 860px) {
+  
 
   body {
     background-color: white;
@@ -1234,7 +1267,7 @@
   }
 
   .nav_link_child:hover {
-  text-decoration: underline;
+    text-decoration: underline;
   }
 
 
@@ -1477,7 +1510,7 @@
   }
 
   .shop_item-show:hover {
-   text-decoration: underline white;
+    text-decoration: underline white;
   }
 
   .shop_item-show p {
@@ -1589,8 +1622,8 @@
     line-height: 4rem;
   }
 
-  .spirituality-intro h1 span{
-    font-size:1.3rem ;
+  .spirituality-intro h1 span {
+    font-size: 1.3rem;
   }
 
   .spirituality-cards {
@@ -1785,8 +1818,8 @@
     margin: 2rem auto;
   }
 
-  .search-form input, 
-  .filter_search input  {
+  .search-form input,
+  .filter_search input {
     justify-self: end;
     height: 2rem;
     border: 1px solid #5eaabd;
@@ -1801,9 +1834,9 @@
   .filter_search button {
     background-color: #ffffff;
     border: none;
-    border-top:1px solid #5eaabd;
-    border-bottom:1px solid #5eaabd;
-    border-right:1px solid #5eaabd;
+    border-top: 1px solid #5eaabd;
+    border-bottom: 1px solid #5eaabd;
+    border-right: 1px solid #5eaabd;
     border-radius: 0 10px 10px 0;
     width: 2rem;
     height: 2rem;
@@ -2041,9 +2074,9 @@
   .pagination {
     display: flex;
   }
-  
 
-  .pagination li a  {
+
+  .pagination li a {
     color: rgb(255, 255, 255);
     float: left;
     padding: 8px 16px;
@@ -2060,11 +2093,12 @@
     text-decoration: none;
     margin: 0.1rem;
   }
+
   .pagination li:hover {
     background-color: #07457174;
   }
-  
-  
+
+
 
   .row,
   .title_form {
@@ -2237,7 +2271,32 @@
   .post-page_description {
     margin-top: 2rem;
     text-align: left;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    line-height: 1.8rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
   }
+
+  .post-page_description h2 {
+    font-weight: 500;
+    font-size: 2rem ;
+    margin: 1.5rem auto;
+    line-height: 2rem;
+  }
+
+  .post-page_description h3 {
+    font-weight: 500;
+    font-size: 1.7rem ;
+    margin: 1.5rem auto;
+  }
+
+  .post-page_description li {
+    list-style-type: disc;
+    margin: 0.7rem 0 0.7rem 2rem;
+  }
+
 
   .post-page_details i,
   .reading-article_details i,
@@ -2321,7 +2380,7 @@
     font-weight: 500;
   }
 
-  .page404{
+  .page404 {
     padding-top: 10rem;
     display: flex;
     flex-wrap: wrap;
@@ -2330,7 +2389,8 @@
     width: 85%;
     margin: 0 auto;
   }
-  .page404 h1{
+
+  .page404 h1 {
     width: 100%;
     text-align: center;
     font-family: 'Quicksand', sans-serif;
@@ -2341,21 +2401,22 @@
     line-height: 2rem;
   }
 
-  .page404 h1 a{
+  .page404 h1 a {
     text-decoration: underline;
   }
 
-  .cat{
+  .cat {
     width: 500px;
     position: relative;
     bottom: 13rem;
   }
-  .rainbow{
+
+  .rainbow {
     width: 900px;
     height: 500px;
   }
 
-  .sun{
+  .sun {
     width: 100%;
     max-width: 200px;
     position: absolute;
@@ -2363,7 +2424,7 @@
     top: 7rem;
 
   }
-  
+
 
 }
 
