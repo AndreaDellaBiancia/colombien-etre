@@ -73,6 +73,31 @@ const animationEffect = {
             }
         }
 
+        
+        //Resize picture post page (ckeditor) mobile version
+        if (window.matchMedia("(max-width: 859px)").matches) {
+
+            let imgs = document.querySelectorAll(".post-page_post img");
+
+            for (let index = 1; index < imgs.length; index++) {
+                const postImg = imgs[index];
+                postImg.style.maxHeight = "500px";
+                
+            }
+
+        }
+
+        //Resize picture post page desktop version
+        if (window.matchMedia("(min-width: 860px)").matches) {
+
+            let imgs = document.querySelectorAll(".post-page_post img");
+                console.log(imgs);
+            for (let index = 1; index < imgs.length; index++) {
+                const el = imgs[index];
+                el.style.maxHeight = "850px";
+                
+            }
+        }
 
     },
 
