@@ -1077,6 +1077,8 @@
   .post-page,
   .video-article_container,
   .oracle-article_container {
+    font-family: 'Montserrat';
+    line-height: 1.5rem;
     background-color: #FFFFFF;
     border-bottom: 2px solid #5EAABD;
     border-top: 2px solid #5EAABD;
@@ -2263,6 +2265,7 @@
     width: 55%;
     padding: 1rem 0 1rem 1.5rem;
     font-family: 'Montserrat';
+    line-height: 1.5rem;
     font-size: 1.1rem;
     display: flex;
     flex-direction: column;
@@ -2349,6 +2352,8 @@
 
   .video-article_container,
   .oracle-article_container {
+    font-family: 'Montserrat';
+    line-height: 1.5rem;
     width: 90%;
     margin: 2rem;
     padding: 1rem;
