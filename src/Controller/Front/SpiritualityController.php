@@ -37,7 +37,6 @@ class SpiritualityController extends AbstractController
         $allVideos = $videoSpirituality->findBy([], ['id' => 'DESC']);
 
         $videos = $this->page($request, $allVideos, 4);
-        
 
         return $this->render('front/spirituality/video.html.twig', [
             'videos' => $videos

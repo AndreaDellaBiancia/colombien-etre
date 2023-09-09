@@ -22,7 +22,7 @@ class VideoType extends AbstractType
             'attr' => ['class' => 'ckeditor']
             ])
         ->add('videoLink', null, [
-            'label' => 'Link Video*',
+            'label' => 'Iframe Video*',
             'constraints' => [new NotBlank()]
         ])
         ->add('authorLink', null, [
