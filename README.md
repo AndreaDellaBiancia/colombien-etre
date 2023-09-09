@@ -39,7 +39,7 @@ Les objectifs de Colombienetre sont de :
 ## Instructions d'installation et d'utilisation
 
 1. Clonez le projet sur votre machine.
-2. Lancez la commande `composer install`.
+2. Lancez la commande `composer install` et `composer update`.
 3. Dans le fichier .env, modifiez les informations de connexion à la base de données.  
     `DATABASE_URL="mysql://name_user:password@127.0.0.1:3306/colombienetre?serverVersion=5.7&charset=utf8mb4`
 4. Lancez les commandes suivantes pour créer la base de données et les tables :  
